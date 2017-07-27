@@ -1,0 +1,40 @@
+#!/usr/bin/python
+
+import numpy as np
+import matplotlib.pyplot as pl
+from camera import *
+
+c = LineCamera()
+print('Firmware version', c.get_firmware_ver())
+print('Device version', c.get_device_info())
+c.set_work_mode(WorkMode.NORMAL)
+c.set_exposure_time(0x0001)
+
+def read_frame():
+    try: frame = c.get_frame()
+    except: return None
+    if frame is not None:
+        return frame.image #- np.mean(frame.dark)
+    else:
+        return None
+
+fig = pl.figure()
+ax = fig.add_subplot(111)
+curve, = ax.plot([], [])
+ax.set_ylim(-10, 0xffff+10)
+ax.set_xlim(0, 3648)
+ax.axvline(x=1824, color='r')
+
+def update():
+    data = read_frame()
+    if data is None: return True
+    x = np.arange(len(data))
+    print x
+    curve.set_data(x, data)
+    fig.canvas.draw()
+    
+read_frame()
+timer = fig.canvas.new_timer(interval=100)
+timer.add_callback(update)
+timer.start()
+pl.show()
