@@ -1,0 +1,18 @@
+---8.15.17----
+Downloaded OpenCV module for Python. Possibility that this will allow for Clik & Drag selection of wells in actual GUi.  
+Link for download: http://docs.opencv.org/2.4/doc/tutorials/introduction/linux_install/linux_install.html
+Link for Click & Drag (kind of): http://www.pyimagesearch.com/2015/03/09/capturing-mouse-click-events-with-python-and-opencv/
+
+OpenCV module was not the proper module to use for click & drag
+Turned out that the proper method is called RUBBERBAND SELECTION, which is a QtGui reference which can be initiated with QtGui.Rubberband. 
+
+Switched to making GUI by writing code manually rather than creating the layouts and widget positioning via QtDesigner. 
+
+---8.16.17----
+Added 'Clear All' functionality to radio button well selection. 
+Added 'Measure' functionatlity (initial) where the system recognizes which well were highlighted and outputs the LETTER+NUMBER of each well. 
+
+Added the labels of ROWS & COLUMNS of the wells to make well selection easier. 
+
+Added pop-up warning window, saying that no wells were selected in the case that a person selects no wells and then presses MEASURE 
+

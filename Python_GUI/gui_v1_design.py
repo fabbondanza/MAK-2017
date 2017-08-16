@@ -681,3 +681,4 @@ class Ui_MainWindow(object):
         self.label_19.setText(_translate("MainWindow", "11", None))
         self.label_20.setText(_translate("MainWindow", "12", None))
 
+    

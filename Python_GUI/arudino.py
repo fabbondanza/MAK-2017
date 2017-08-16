@@ -40,7 +40,7 @@ class MotorMove(object):
     def _set_new_position(self,well):
         y_done = 0;
         x_done = 0;
-        wellDistance = 60
+        wellDistance = 65
         currentRow = int(self.currentWell.split('_')[0])
         currentCol = int(self.currentWell.split('_')[1])
         newRow = int(well.split('_')[0])
@@ -86,7 +86,7 @@ class MotorMove(object):
                     motorStatus = 1
 
 
-##m = MotorMove()
+#m = MotorMove()
 ##m._set_initial_position()
 ##m._get_current_position()
 ##toReadNum = m._convert_labels_to_numericals(['B10','C12'])
