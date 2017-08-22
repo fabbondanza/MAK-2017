@@ -21,6 +21,7 @@ class WellPlate(QtGui.QWidget):
                    self.grid.addWidget(label, *position)
                 else:
                    label = QtGui.QLabel(str(position[1]))
+                   label.setAlignment(QtCore.Qt.AlignCenter | QtCore.Qt.AlignVCenter)
                    self.grid.addWidget(label, *position)
             elif position[1] == 0:
                if position[0] == 0:
@@ -84,8 +85,6 @@ class MeasurementSettings(QtGui.QWidget):
 
         self.measurementType.addWidget(self.flrCheck)
         self.vbox.addLayout(self.measurementType)
-
-        
         self.hbox_1 = QtGui.QHBoxLayout()
 
         self.vbox.addLayout(self.hbox_1)
@@ -93,17 +92,18 @@ class MeasurementSettings(QtGui.QWidget):
         self.vbox_1_1 = QtGui.QVBoxLayout()
         
         self.vbox_1_2 = QtGui.QVBoxLayout()
-
+        self.vbox_1_3 = QtGui.QVBoxLayout()
         self.hbox_1.addLayout(self.vbox_1_1)
-
+        self.hbox_1.addLayout(self.vbox_1_3)
         self.hbox_1.addLayout(self.vbox_1_2)
-        
-        self.buttontest = QtGui.QPushButton('Hello')
-        self.buttontests2 = QtGui.QPushButton('Hi')
-        self.vbox_1_1.addWidget(self.buttontest)
-        self.vbox_1_2.addWidget(self.buttontests2)
-        self.buttontest.hide()
-        self.buttontests2.hide()
+
+        self.absExposureTimeLabel = QtGui.QLabel('Exposure Time:')
+        self.flrExposureTimeLabel = QtGui.QLabel('Exposure Time:')
+        self.absExposureTimeLabel.setFrameStyle(1)
+        self.vbox_1_1.addWidget(self.absExposureTimeLabel)
+        self.vbox_1_2.addWidget(self.flrExposureTimeLabel)
+        self.absExposureTimeLabel.hide()
+        self.flrExposureTimeLabel.hide()
         
 
 class Example(QtGui.QWidget):
@@ -172,7 +172,7 @@ class Example(QtGui.QWidget):
 
     def abs_state_change(self):
         button = self.sett.absCheck
-        settings = self.sett.buttontest
+        settings = self.sett.absExposureTimeLabel
         if button.isChecked():
             settings.show()
         else:
@@ -180,7 +180,7 @@ class Example(QtGui.QWidget):
 
     def flr_state_change(self):
         button = self.sett.flrCheck
-        settings = self.sett.buttontests2
+        settings = self.sett.flrExposureTimeLabel
         if button.isChecked():
             settings.show()
         else:
