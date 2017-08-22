@@ -1,11 +1,3 @@
-# -*- coding: utf-8 -*-
-
-# Form implementation generated from reading ui file 'protocolOptions.ui'
-#
-# Created by: PyQt4 UI code generator 4.11.4
-#
-# WARNING! All changes made in this file will be lost!
-
 from PyQt4 import QtCore, QtGui
 
 try:
@@ -22,11 +14,15 @@ except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
 
-class protocolOpt_Form(object):
-    def setupUi(self, Form):
-        Form.setObjectName(_fromUtf8("Form"))
-        Form.resize(161, 312)
-        self.label = QtGui.QLabel(Form)
+class Example_1(QtGui.QWidget):
+    def __init__(self):
+        super(Example_1, self).__init__()
+        self.initUI()
+
+    def initUI(self):
+        self.setObjectName(_fromUtf8("Protocol Menu"))
+        self.resize(161, 312)
+        self.label = QtGui.QLabel(self)
         self.label.setGeometry(QtCore.QRect(30, 10, 101, 51))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Cambria"))
@@ -36,7 +32,7 @@ class protocolOpt_Form(object):
         self.label.setFont(font)
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName(_fromUtf8("label"))
-        self.splitter = QtGui.QSplitter(Form)
+        self.splitter = QtGui.QSplitter(self)
         self.splitter.setGeometry(QtCore.QRect(10, 70, 131, 221))
         self.splitter.setOrientation(QtCore.Qt.Vertical)
         self.splitter.setObjectName(_fromUtf8("splitter"))
@@ -101,28 +97,30 @@ class protocolOpt_Form(object):
         self.pushButton_5.setIconSize(QtCore.QSize(40, 40))
         self.pushButton_5.setObjectName(_fromUtf8("pushButton_5"))
 
-        self.retranslateUi(Form)
-        QtCore.QMetaObject.connectSlotsByName(Form)
+        self.retranslateUi()
+        QtCore.QMetaObject.connectSlotsByName(self)
 
-    def retranslateUi(self, Form):
-        Form.setWindowTitle(_translate("Form", "Form", None))
+    def retranslateUi(self):
+        self.setWindowTitle(_translate("Protocol Menu", "Protocol Menu", None))
         self.label.setText(_translate("Form", "<html><head/><body><p align=\"center\">Protocol <br/>Options</p></body></html>", None))
-        self.pushButton.setText(_translate("Form", "Shaking", None))
-        self.pushButton_2.setText(_translate("Form", "Absorbance", None))
-        self.pushButton_3.setText(_translate("Form", "Absorbance \n"
+        self.pushButton.setText(_translate("Protocol Menu", "Shaking", None))
+        self.pushButton_2.setText(_translate("Protocol Menu", "Absorbance", None))
+        self.pushButton_3.setText(_translate("Protocol Menu", "Absorbance \n"
 "  Spectrum", None))
-        self.pushButton_4.setText(_translate("Form", "Flourescent \n"
+        self.pushButton_4.setText(_translate("Protocol Menu", "Flourescent \n"
 "  Intensity", None))
-        self.pushButton_5.setText(_translate("Form", "Flourescence\n"
+        self.pushButton_5.setText(_translate("Protocol Menu", "Flourescence\n"
 "   Spectrum", None))
 
 
-if __name__ == "__main__":
-    import sys
-    app = QtGui.QApplication(sys.argv)
-    Form = QtGui.QWidget()
-    ui = Ui_Form()
-    ui.setupUi(Form)
-    Form.show()
-    sys.exit(app.exec_())
 
+
+# def main():
+#     import sys
+#     app = QtGui.QApplication(sys.argv)
+#     app.setStyle("Cleanlooks")
+#     ex = Example_1()
+#     ex.show()
+#     sys.exit(app.exec_())
+# if __name__ == '__main__':
+#     main()

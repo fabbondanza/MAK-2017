@@ -113,12 +113,12 @@ class Example(QtGui.QWidget):
         
         self.measureButton.clicked.connect(self.checkWells)
         self.clearButton.clicked.connect(self.clearWells)
-        self.sett.absCheck.stateChanged.connect(self.abs_state_change)
-        self.sett.flrCheck.stateChanged.connect(self.flr_state_change)
+        #self.sett.absCheck.stateChanged.connect(self.abs_state_change)
+        #self.sett.flrCheck.stateChanged.connect(self.flr_state_change)
 
     def initUI(self):
         self.well = WellPlate()
-        self.sett = MeasurementSettings()
+        #self.sett = MeasurementSettings()
         self.measureButton = QtGui.QPushButton('Measure')
         self.clearButton = QtGui.QPushButton('Clear Selection')
 
@@ -132,7 +132,7 @@ class Example(QtGui.QWidget):
         hbox_total.addLayout(vbox)
 
         hbox_1 = QtGui.QHBoxLayout()
-        hbox_1.addWidget(self.sett)
+        #hbox_1.addWidget(self.sett)
         vbox_1 = QtGui.QVBoxLayout()
         vbox_1.addLayout(hbox_1)
         vbox_1.addStretch()
@@ -170,21 +170,21 @@ class Example(QtGui.QWidget):
        msg.setStandardButtons(QtGui.QMessageBox.Ok | QtGui.QMessageBox.Cancel)
        retval = msg.exec_()
 
-    def abs_state_change(self):
-        button = self.sett.absCheck
-        settings = self.sett.absExposureTimeLabel
-        if button.isChecked():
-            settings.show()
-        else:
-            settings.hide()
+    # def abs_state_change(self):
+    #     button = self.sett.absCheck
+    #     settings = self.sett.absExposureTimeLabel
+    #     if button.isChecked():
+    #         settings.show()
+    #     else:
+    #         settings.hide()
 
-    def flr_state_change(self):
-        button = self.sett.flrCheck
-        settings = self.sett.flrExposureTimeLabel
-        if button.isChecked():
-            settings.show()
-        else:
-            settings.hide()
+    # def flr_state_change(self):
+    #     button = self.sett.flrCheck
+    #     settings = self.sett.flrExposureTimeLabel
+    #     if button.isChecked():
+    #         settings.show()
+    #     else:
+    #         settings.hide()
         
 def main():
     import sys

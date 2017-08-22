@@ -22,7 +22,7 @@ except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
 
-class flrSpecMenu_Widget(object):
+class flrSpecMenu_Widget(QtGui.QWidget):
     def __init__(self):
         super(flrSpecMenu_Widget, self).__init__()
         self.initUI()
@@ -246,13 +246,13 @@ class flrSpecMenu_Widget(object):
         self.label_19.setFrameShadow(QtGui.QFrame.Sunken)
         self.label_19.setLineWidth(1)
         self.label_19.setObjectName(_fromUtf8("label_19"))
-        self.comboBox = QtGui.QComboBox(Form)
+        self.comboBox = QtGui.QComboBox(self)
         self.comboBox.setGeometry(QtCore.QRect(90, 50, 69, 22))
         self.comboBox.setObjectName(_fromUtf8("comboBox"))
         self.comboBox.addItem(_fromUtf8(""))
         self.comboBox.addItem(_fromUtf8(""))
         self.comboBox.addItem(_fromUtf8(""))
-        self.label_20 = QtGui.QLabel(Form)
+        self.label_20 = QtGui.QLabel(self)
         self.label_20.setGeometry(QtCore.QRect(170, 50, 31, 21))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Cambria"))
@@ -262,7 +262,7 @@ class flrSpecMenu_Widget(object):
         self.label_20.setFrameShadow(QtGui.QFrame.Sunken)
         self.label_20.setLineWidth(1)
         self.label_20.setObjectName(_fromUtf8("label_20"))
-        self.pushButton = QtGui.QPushButton(Form)
+        self.pushButton = QtGui.QPushButton(self)
         self.pushButton.setGeometry(QtCore.QRect(510, 0, 31, 20))
         self.pushButton.setText(_fromUtf8(""))
         icon = QtGui.QIcon()
@@ -293,34 +293,26 @@ class flrSpecMenu_Widget(object):
         self.label_20.raise_()
         self.pushButton.raise_()
 
-        self.retranslateUi(Form)
-        QtCore.QMetaObject.connectSlotsByName(Form)
+        self.retranslateUi()
+        QtCore.QMetaObject.connectSlotsByName(self)
 
-    def retranslateUi(self, Form):
-        Form.setWindowTitle(_translate("Form", "Form", None))
-        self.label_17.setText(_translate("Form", "(nm)", None))
-        self.label_2.setText(_translate("Form", "Flourescence Spectrum", None))
-        self.label_10.setText(_translate("Form", "Reading", None))
-        self.label_15.setText(_translate("Form", " Max: 6500", None))
-        self.label_11.setText(_translate("Form", "Start:", None))
-        self.label_12.setText(_translate("Form", "(nm)", None))
-        self.label_4.setText(_translate("Form", "Wavelength", None))
-        self.label_13.setText(_translate("Form", "Exposure Time:", None))
-        self.label_14.setText(_translate("Form", "(ms)", None))
-        self.label_16.setText(_translate("Form", "Stop:", None))
-        self.label_19.setText(_translate("Form", "Excitation:", None))
-        self.comboBox.setItemText(0, _translate("Form", "Blue", None))
-        self.comboBox.setItemText(1, _translate("Form", "Green", None))
-        self.comboBox.setItemText(2, _translate("Form", "Orange", None))
-        self.label_20.setText(_translate("Form", "(nm)", None))
+    def retranslateUi(self):
+        self.setWindowTitle(_translate("Flourescence Spectrum", "Flourescence Spectrum", None))
+        self.label_17.setText(_translate("Flourescence Spectrum", "(nm)", None))
+        self.label_2.setText(_translate("Flourescence Spectrum", "Flourescence Spectrum", None))
+        self.label_10.setText(_translate("Flourescence Spectrum", "Reading", None))
+        self.label_15.setText(_translate("Flourescence Spectrum", " Max: 6500", None))
+        self.label_11.setText(_translate("Flourescence Spectrum", "Start:", None))
+        self.label_12.setText(_translate("Flourescence Spectrum", "(nm)", None))
+        self.label_4.setText(_translate("Flourescence Spectrum", "Wavelength", None))
+        self.label_13.setText(_translate("Flourescence Spectrum", "Exposure Time:", None))
+        self.label_14.setText(_translate("Flourescence Spectrum", "(ms)", None))
+        self.label_16.setText(_translate("Flourescence Spectrum", "Stop:", None))
+        self.label_19.setText(_translate("Flourescence Spectrum", "Excitation:", None))
+        self.comboBox.setItemText(0, _translate("Flourescence Spectrum", "Blue", None))
+        self.comboBox.setItemText(1, _translate("Flourescence Spectrum", "Green", None))
+        self.comboBox.setItemText(2, _translate("Flourescence Spectrum", "Orange", None))
+        self.label_20.setText(_translate("Flourescence Spectrum", "(nm)", None))
 
 
-if __name__ == "__main__":
-    import sys
-    app = QtGui.QApplication(sys.argv)
-    Form = QtGui.QWidget()
-    ui = Ui_Form()
-    ui.setupUi(Form)
-    Form.show()
-    sys.exit(app.exec_())
 
