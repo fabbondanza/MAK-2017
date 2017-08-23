@@ -1,40 +1,57 @@
-import sys
 from PyQt4 import QtGui, QtCore
+import sys
+from absMenu_Widget import *
+class Main(QtGui.QMainWindow):
+    def __init__(self, parent = None):
+        super(Main, self).__init__(parent)
 
-class MyDialog(QtGui.QDialog):
-    def __init__(self, parent=None):
-        super(MyDialog, self).__init__(parent)
+        # main button
+        self.addButton = QtGui.QPushButton('button to add other widgets')
+        self.addButton.clicked.connect(self.addWidget)
 
-        scrolllayout = QtGui.QVBoxLayout()
+        # scroll area widget contents - layout
+        self.scrollLayout = QtGui.QFormLayout()
 
-        scrollwidget = QtGui.QWidget()
-        scrollwidget.setLayout(scrolllayout)
+        # scroll area widget contents
+        self.scrollWidget = QtGui.QWidget()
+        self.scrollWidget.setLayout(self.scrollLayout)
 
-        scroll = QtGui.QScrollArea()
-        scroll.setWidgetResizable(True)  # Set to make the inner widget resize with scroll area
-        scroll.setWidget(scrollwidget)
+        # scroll area
+        self.scrollArea = QtGui.QScrollArea()
+        self.scrollArea.setWidgetResizable(True)
+        self.scrollArea.setWidget(self.scrollWidget)
 
-        self.groupboxes = []  # Keep a reference to groupboxes for later use
-        for i in range(8):    # 8 groupboxes with textedit in them
-            groupbox = QtGui.QGroupBox('%d' % i)
-            grouplayout = QtGui.QHBoxLayout()
-            grouptext = QtGui.QTextEdit()
-            grouplayout.addWidget(grouptext)
-            groupbox.setLayout(grouplayout)
-            scrolllayout.addWidget(groupbox)
-            self.groupboxes.append(groupbox)
+        # main layout
+        self.mainLayout = QtGui.QVBoxLayout()
 
-        self.buttonbox = QtGui.QDialogButtonBox()
-        self.buttonbox.setOrientation(QtCore.Qt.Vertical)
-        self.buttonbox.setStandardButtons(QtGui.QDialogButtonBox.Cancel|QtGui.QDialogButtonBox.Ok)
+        # add all main to the main vLayout
+        self.mainLayout.addWidget(self.addButton)
+        self.mainLayout.addWidget(self.scrollArea)
 
-        layout = QtGui.QHBoxLayout()
-        layout.addWidget(scroll)
-        layout.addWidget(self.buttonbox)
-        self.setLayout(layout)
+        # central widget
+        self.centralWidget = QtGui.QWidget()
+        self.centralWidget.setLayout(self.mainLayout)
 
-if __name__ == '__main__':
-    app = QtGui.QApplication(sys.argv)
-    dialog = MyDialog()
-    dialog.show()
-    sys.exit(app.exec_())
+        # set central widget
+        self.setCentralWidget(self.centralWidget)
+
+    def addWidget(self):
+        self.scrollLayout.addRow(Test())
+
+
+class Test(QtGui.QWidget):
+  def __init__( self, parent=None):
+      super(Test, self).__init__(parent)
+
+      self.pushButton = QtGui.QPushButton('I am in Test widget')
+
+      layout = QtGui.QHBoxLayout()
+      layout.addWidget(absMenu_Widget())
+      self.setLayout(layout)
+
+
+
+app = QtGui.QApplication(sys.argv)
+myWidget = Main()
+myWidget.show()
+app.exec_()

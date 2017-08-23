@@ -9,6 +9,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Python_GUI/flrSpecMenu_Widget.py" afterPath="$PROJECT_DIR$/Python_GUI/flrSpecMenu_Widget.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Python_GUI/protocol_functionality_test.py" afterPath="$PROJECT_DIR$/Python_GUI/protocol_functionality_test.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Python_GUI/shakeMenu_Widget.py" afterPath="$PROJECT_DIR$/Python_GUI/shakeMenu_Widget.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Python_GUI/test_scroll_2.py" afterPath="$PROJECT_DIR$/Python_GUI/test_scroll_2.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,21 +20,21 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/MAK_2017$testScroll.coverage" NAME="testScroll Coverage Results" MODIFIED="1503433820716" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
-    <SUITE FILE_PATH="coverage/MAK_2017$click_drag_test_working.coverage" NAME="click_drag_test_working Coverage Results" MODIFIED="1503442612090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
-    <SUITE FILE_PATH="coverage/MAK_2017$protocol_functionality_test.coverage" NAME="protocol_functionality_test Coverage Results" MODIFIED="1503449562134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
+    <SUITE FILE_PATH="coverage/MAK_2017$click_drag_test_working.coverage" NAME="click_drag_test_working Coverage Results" MODIFIED="1503503218340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
+    <SUITE FILE_PATH="coverage/MAK_2017$protocol_functionality_test.coverage" NAME="protocol_functionality_test Coverage Results" MODIFIED="1503526362756" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
     <SUITE FILE_PATH="coverage/MAK_2017$absorbance_menu_2.coverage" NAME="absorbance_menu_2 Coverage Results" MODIFIED="1503348325921" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
     <SUITE FILE_PATH="coverage/MAK_2017$rewrite_test.coverage" NAME="rewrite_test Coverage Results" MODIFIED="1503428292190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
     <SUITE FILE_PATH="coverage/MAK_2017$absorbance_menu.coverage" NAME="absorbance_menu Coverage Results" MODIFIED="1503346191381" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
     <SUITE FILE_PATH="coverage/MAK_2017$absMenu_Widget.coverage" NAME="absMenu_Widget Coverage Results" MODIFIED="1503434789550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
-    <SUITE FILE_PATH="coverage/MAK_2017$test_scroll_2.coverage" NAME="test_scroll_2 Coverage Results" MODIFIED="1503438212057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
+    <SUITE FILE_PATH="coverage/MAK_2017$test_scroll_2.coverage" NAME="test_scroll_2 Coverage Results" MODIFIED="1503517786078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="click_drag_test_working.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Python_GUI/click_drag_test_working.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-578">
-              <caret line="101" column="50" lean-forward="true" selection-start-line="101" selection-start-column="50" selection-end-line="101" selection-end-column="50" />
+            <state relative-caret-position="136">
+              <caret line="113" column="59" lean-forward="false" selection-start-line="113" selection-start-column="59" selection-end-line="113" selection-end-column="59" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -44,8 +45,8 @@
       <file leaf-file-name="protocol_functionality_test.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Python_GUI/protocol_functionality_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="105" column="67" lean-forward="false" selection-start-line="105" selection-start-column="67" selection-end-line="105" selection-end-column="67" />
+            <state relative-caret-position="294">
+              <caret line="325" column="18" lean-forward="true" selection-start-line="325" selection-start-column="18" selection-end-line="325" selection-end-column="18" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -73,9 +74,11 @@
       <find>pus</find>
       <find>absButton</find>
       <find>abs</find>
-      <find>icon</find>
       <find>push</find>
       <find>sett</find>
+      <find>icon</find>
+      <find>spin</find>
+      <find>excitation</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -94,13 +97,13 @@
         <option value="$PROJECT_DIR$/Python_GUI/flourescencespectrum_menu.py" />
         <option value="$PROJECT_DIR$/Python_GUI/click_drag_test_working.py" />
         <option value="$PROJECT_DIR$/Python_GUI/testScroll.py" />
-        <option value="$PROJECT_DIR$/Python_GUI/test_scroll_2.py" />
         <option value="$PROJECT_DIR$/Python_GUI/protocolMenu_Widget.py" />
-        <option value="$PROJECT_DIR$/Python_GUI/absMenu_Widget.py" />
         <option value="$PROJECT_DIR$/Python_GUI/shakeMenu_Widget.py" />
         <option value="$PROJECT_DIR$/Python_GUI/absSpecMenu_Widget.py" />
         <option value="$PROJECT_DIR$/Python_GUI/flrMenu_Widget.py" />
         <option value="$PROJECT_DIR$/Python_GUI/flrSpecMenu_Widget.py" />
+        <option value="$PROJECT_DIR$/Python_GUI/absMenu_Widget.py" />
+        <option value="$PROJECT_DIR$/Python_GUI/test_scroll_2.py" />
         <option value="$PROJECT_DIR$/Python_GUI/protocol_functionality_test.py" />
       </list>
     </option>
@@ -132,7 +135,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -150,6 +152,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -274,8 +277,8 @@
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.protocol_functionality_test" />
-        <item index="1" class="java.lang.String" itemvalue="Python.click_drag_test_working" />
-        <item index="2" class="java.lang.String" itemvalue="Python.test_scroll_2" />
+        <item index="1" class="java.lang.String" itemvalue="Python.test_scroll_2" />
+        <item index="2" class="java.lang.String" itemvalue="Python.click_drag_test_working" />
         <item index="3" class="java.lang.String" itemvalue="Python.absMenu_Widget" />
         <item index="4" class="java.lang.String" itemvalue="Python.testScroll" />
       </list>
@@ -332,6 +335,34 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Python_GUI/click_drag_test_working.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1700">
+          <caret line="101" column="50" lean-forward="false" selection-start-line="101" selection-start-column="50" selection-end-line="101" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Python_GUI/protocol_functionality_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="29" column="32" lean-forward="true" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Python_GUI/flrMenu_Widget.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3876">
+          <caret line="228" column="0" lean-forward="false" selection-start-line="228" selection-start-column="0" selection-end-line="229" selection-end-column="105" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Python_GUI/click_drag_test_working.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
@@ -354,9 +385,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="701">
           <caret line="74" column="4" lean-forward="true" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#31#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -364,7 +392,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
           <caret line="108" column="8" lean-forward="false" selection-start-line="108" selection-start-column="8" selection-end-line="108" selection-end-column="134" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -372,7 +399,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="31" lean-forward="true" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -380,7 +406,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="24" column="18" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -388,7 +413,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="24" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="273" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -396,7 +420,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="11" column="39" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="277" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -404,25 +427,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1100">
           <caret line="240" column="28" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="326" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Python_GUI/test_scroll_2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="30" column="36" lean-forward="true" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#10#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Python_GUI/testScroll.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="33" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -436,70 +440,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Python_GUI/absMenu_Widget.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="205" column="59" lean-forward="false" selection-start-line="205" selection-start-column="59" selection-end-line="205" selection-end-column="59" />
-          <folding>
-            <element signature="e#204#235#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Python_GUI/shaking_menu.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="12" column="22" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Python_GUI/KAM-Spec Logo.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Python_GUI/click_drag_test_working.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-578">
-          <caret line="101" column="50" lean-forward="true" selection-start-line="101" selection-start-column="50" selection-end-line="101" selection-end-column="50" />
+        <state relative-caret-position="136">
+          <caret line="113" column="59" lean-forward="false" selection-start-line="113" selection-start-column="59" selection-end-line="113" selection-end-column="59" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Python_GUI/shakeMenu_Widget.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2346">
-          <caret line="150" column="23" lean-forward="false" selection-start-line="150" selection-start-column="23" selection-end-line="150" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Python_GUI/absSpecMenu_Widget.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="249" column="23" lean-forward="false" selection-start-line="249" selection-start-column="23" selection-end-line="249" selection-end-column="23" />
+        <state relative-caret-position="282">
+          <caret line="213" column="55" lean-forward="false" selection-start-line="213" selection-start-column="55" selection-end-line="213" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Python_GUI/flrMenu_Widget.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="250" column="23" lean-forward="false" selection-start-line="250" selection-start-column="23" selection-end-line="250" selection-end-column="23" />
+        <state relative-caret-position="316">
+          <caret line="224" column="63" lean-forward="false" selection-start-line="224" selection-start-column="63" selection-end-line="224" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Python_GUI/READ-ME">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Python_GUI/flrSpecMenu_Widget.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="293" column="23" lean-forward="false" selection-start-line="293" selection-start-column="23" selection-end-line="293" selection-end-column="23" />
+        <state relative-caret-position="119">
+          <caret line="280" column="22" lean-forward="false" selection-start-line="280" selection-start-column="22" selection-end-line="280" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Python_GUI/testScroll.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="33" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Python_GUI/test_scroll_2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="48" column="39" lean-forward="false" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Python_GUI/absMenu_Widget.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3191">
+          <caret line="30" column="9" lean-forward="false" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+          <folding>
+            <element signature="e#204#235#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Python_GUI/shakeMenu_Widget.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2295">
+          <caret line="147" column="21" lean-forward="false" selection-start-line="147" selection-start-column="21" selection-end-line="147" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Python_GUI/protocol_functionality_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="105" column="67" lean-forward="false" selection-start-line="105" selection-start-column="67" selection-end-line="105" selection-end-column="67" />
+        <state relative-caret-position="294">
+          <caret line="325" column="18" lean-forward="true" selection-start-line="325" selection-start-column="18" selection-end-line="325" selection-end-column="18" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

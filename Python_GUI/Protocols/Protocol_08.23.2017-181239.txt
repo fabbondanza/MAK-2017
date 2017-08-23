@@ -1,0 +1,48 @@
+Protocol - 08.23.2017-181239
+
+Final Y: 494
+
+Type: 1
+ObjectName: 1
+X: 0
+Y: 105
+W: 547
+H: 85
+Wavelength: 350
+Exposure Time: 1
+
+Type: 1
+ObjectName: 2
+X: 0
+Y: 195
+W: 547
+H: 85
+Wavelength: 350
+Exposure Time: 1
+
+Type: 2
+ObjectName: 3
+X: 0
+Y: 285
+W: 555
+H: 109
+Start Wavelength: 350
+Stop Wavelength: 350
+Exposure Time: 1
+
+Type: 5
+ObjectName: 0
+X: 0
+Y: 5
+W: 576
+H: 95
+Duration: 1
+
+Type: 5
+ObjectName: 4
+X: 0
+Y: 399
+W: 576
+H: 95
+Duration: 1
+
