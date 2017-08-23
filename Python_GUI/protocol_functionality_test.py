@@ -22,19 +22,21 @@ class Example(QtGui.QWidget):
         self.protocolWidget.absSpecButton.clicked.connect(lambda: self.on_pushButton_clicked('AbsSpec'))
         self.protocolWidget.flrButton.clicked.connect(lambda: self.on_pushButton_clicked('Flr'))
         self.protocolWidget.flrSpecButton.clicked.connect(lambda: self.on_pushButton_clicked('FlrSpec'))
+
     def initUI(self):
-        self.setGeometry(300,300,800,550)
+        self.setGeometry(50,50,775,550)
         self.grid = QtGui.QGridLayout()
         self.setLayout(self.grid)
         self.protocolWidget = protocolMenu_Widget()
-        self.grid.addWidget(self.protocolWidget, 0, 0, 35, 10)
+        self.shakeWidget = shakeMenu_Widget()
+        self.grid.addWidget(self.protocolWidget, 0, 0, 35, 3)
 
         self.scrollArea = QtGui.QScrollArea(self)
         self.scrollArea.setWidgetResizable(False)
         self.scrollAreaWidgetContents = QtGui.QWidget(self.scrollArea)
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 600, 10000))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 545, 2500))
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
-        self.grid.addWidget(self.scrollArea, 5, 25, 50, 25)
+        self.grid.addWidget(self.scrollArea, 2, 25, 50, 10)
         self.blank = []
         self.show()
 
@@ -45,6 +47,7 @@ class Example(QtGui.QWidget):
         print protocolString
         if protocolString == 'Abs':
             protocol = absMenu_Widget()
+            protocol.stopButton.clicked.connect(lambda: self.closeProtocol(1,protocol.pos()))
             protocol.setParent(self.scrollAreaWidgetContents)
             protocol.setGeometry(0,self.y_position+5, 547, 85)
             protocol.show()
@@ -52,6 +55,7 @@ class Example(QtGui.QWidget):
             #self.last_protocol = 1
         elif protocolString == 'AbsSpec':
             protocol = absSpecMenu_Widget()
+            protocol.stopButton.clicked.connect(lambda: self.closeProtocol(2,protocol.pos()))
             protocol.setParent(self.scrollAreaWidgetContents)
             protocol.setGeometry(0, self.y_position+5, 555, 109)
             protocol.show()
@@ -59,6 +63,7 @@ class Example(QtGui.QWidget):
             #self.last_protocol = 2
         elif protocolString == 'Flr':
             protocol = flrMenu_Widget()
+            protocol.stopButton.clicked.connect(lambda: self.closeProtocol(3,protocol.pos()))
             protocol.setParent(self.scrollAreaWidgetContents)
             protocol.setGeometry(0, self.y_position+5, 552, 119)
             protocol.show()
@@ -66,6 +71,7 @@ class Example(QtGui.QWidget):
             #self.last_protocol = 3
         elif protocolString == 'FlrSpec':
             protocol = flrSpecMenu_Widget()
+            protocol.stopButton.clicked.connect(lambda: self.closeProtocol(4,protocol.pos()))
             protocol.setParent(self.scrollAreaWidgetContents)
             protocol.setGeometry(0, self.y_position+5, 559, 182)
             protocol.show()
@@ -73,16 +79,39 @@ class Example(QtGui.QWidget):
             #self.last_protocol = 4
         elif protocolString == 'Shake':
             protocol = shakeMenu_Widget()
+            protocol.stopButton.clicked.connect(lambda: self.closeProtocol(5,protocol.pos()))
             protocol.setParent(self.scrollAreaWidgetContents)
             protocol.setGeometry(0, self.y_position+5, 576, 95)
             protocol.show()
             self.y_position += 100
             #self.last_protocol = 5
 
+
+    def closeProtocol(self,type, pos):
+        y_position = pos.y()
+        list = [absMenu_Widget, absSpecMenu_Widget, flrMenu_Widget, flrSpecMenu_Widget, shakeMenu_Widget]
+
+        for child in self.scrollAreaWidgetContents.findChildren(list[type-1]):
+            if child.pos().y() == y_position:
+                self.updateY = child.geometry().height()
+                child.hide()
+                self.y_position -= self.updateY
+                for selection in list:
+                    for child in self.scrollAreaWidgetContents.findChildren(selection):
+                        x = child.pos().x()
+                        y = child.pos().y()
+                        w = child.geometry().width()
+                        h = child.geometry().height()
+                        if y > y_position:
+                            child.setGeometry(x,y-self.updateY,w,h)
+
+
+
+
 def main():
     import sys
     app = QtGui.QApplication(sys.argv)
-    app.setStyle("Cleanlooks")
+    app.setStyle("Plastique")
     ex = Example()
     sys.exit(app.exec_())
 if __name__ == '__main__':
