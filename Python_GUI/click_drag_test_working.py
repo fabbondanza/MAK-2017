@@ -118,7 +118,7 @@ class Example(QtGui.QWidget):
 
     def initUI(self):
         self.well = WellPlate()
-        #self.sett = MeasurementSettings()
+
         self.measureButton = QtGui.QPushButton('Measure')
         self.clearButton = QtGui.QPushButton('Clear Selection')
 
