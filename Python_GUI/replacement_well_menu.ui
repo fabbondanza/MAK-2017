@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="absButton">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -44,7 +44,7 @@
     </size>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="absSpecButton">
    <property name="geometry">
     <rect>
      <x>140</x>
@@ -76,7 +76,7 @@
     </size>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="flrButton">
    <property name="geometry">
     <rect>
      <x>270</x>
@@ -108,7 +108,7 @@
     </size>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_4">
+  <widget class="QPushButton" name="flrSpecButton">
    <property name="geometry">
     <rect>
      <x>400</x>
@@ -140,7 +140,7 @@
     </size>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_5">
+  <widget class="QPushButton" name="shakeButton">
    <property name="geometry">
     <rect>
      <x>530</x>
@@ -171,7 +171,7 @@
     </size>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_6">
+  <widget class="QPushButton" name="kineticsButton">
    <property name="geometry">
     <rect>
      <x>660</x>
@@ -218,7 +218,7 @@
     <enum>Qt::Horizontal</enum>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="protocolLabel">
    <property name="geometry">
     <rect>
      <x>400</x>
@@ -234,7 +234,7 @@
     <string>Protocol Label</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_7">
+  <widget class="QPushButton" name="clearWellsButton">
    <property name="geometry">
     <rect>
      <x>400</x>
@@ -247,7 +247,7 @@
     <string>Clear Wells</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_8">
+  <widget class="QPushButton" name="deletePlateButton">
    <property name="geometry">
     <rect>
      <x>400</x>
@@ -260,7 +260,7 @@
     <string>Delete Plate</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_9">
+  <widget class="QPushButton" name="closeButton">
    <property name="geometry">
     <rect>
      <x>760</x>
@@ -399,7 +399,7 @@
      </widget>
     </item>
     <item row="2" column="5">
-     <widget class="QRadioButton" name="radioButton_38">
+     <widget class="QRadioButton" name="B5">
       <property name="text">
        <string/>
       </property>
@@ -409,7 +409,7 @@
      </widget>
     </item>
     <item row="1" column="1">
-     <widget class="QRadioButton" name="radioButton">
+     <widget class="QRadioButton" name="A1">
       <property name="layoutDirection">
        <enum>Qt::LeftToRight</enum>
       </property>
@@ -422,7 +422,7 @@
      </widget>
     </item>
     <item row="2" column="9">
-     <widget class="QRadioButton" name="radioButton_70">
+     <widget class="QRadioButton" name="B9">
       <property name="text">
        <string/>
       </property>
@@ -432,7 +432,7 @@
      </widget>
     </item>
     <item row="2" column="2">
-     <widget class="QRadioButton" name="radioButton_14">
+     <widget class="QRadioButton" name="B2">
       <property name="text">
        <string/>
       </property>
@@ -442,7 +442,7 @@
      </widget>
     </item>
     <item row="1" column="9">
-     <widget class="QRadioButton" name="radioButton_72">
+     <widget class="QRadioButton" name="A9">
       <property name="text">
        <string/>
       </property>
@@ -452,7 +452,7 @@
      </widget>
     </item>
     <item row="2" column="4">
-     <widget class="QRadioButton" name="radioButton_30">
+     <widget class="QRadioButton" name="B4">
       <property name="text">
        <string/>
       </property>
@@ -462,7 +462,7 @@
      </widget>
     </item>
     <item row="1" column="2">
-     <widget class="QRadioButton" name="radioButton_16">
+     <widget class="QRadioButton" name="A2">
       <property name="text">
        <string/>
       </property>
@@ -472,7 +472,7 @@
      </widget>
     </item>
     <item row="2" column="7">
-     <widget class="QRadioButton" name="radioButton_54">
+     <widget class="QRadioButton" name="B7">
       <property name="text">
        <string/>
       </property>
@@ -503,7 +503,7 @@
      </widget>
     </item>
     <item row="2" column="10">
-     <widget class="QRadioButton" name="radioButton_78">
+     <widget class="QRadioButton" name="B10">
       <property name="text">
        <string/>
       </property>
@@ -534,7 +534,7 @@
      </widget>
     </item>
     <item row="2" column="1">
-     <widget class="QRadioButton" name="radioButton_2">
+     <widget class="QRadioButton" name="B1">
       <property name="text">
        <string/>
       </property>
@@ -544,7 +544,7 @@
      </widget>
     </item>
     <item row="2" column="11">
-     <widget class="QRadioButton" name="radioButton_86">
+     <widget class="QRadioButton" name="B11">
       <property name="text">
        <string/>
       </property>
@@ -575,7 +575,7 @@
      </widget>
     </item>
     <item row="1" column="7">
-     <widget class="QRadioButton" name="radioButton_56">
+     <widget class="QRadioButton" name="A7">
       <property name="text">
        <string/>
       </property>
@@ -585,7 +585,7 @@
      </widget>
     </item>
     <item row="1" column="8">
-     <widget class="QRadioButton" name="radioButton_64">
+     <widget class="QRadioButton" name="A8">
       <property name="text">
        <string/>
       </property>
@@ -595,7 +595,7 @@
      </widget>
     </item>
     <item row="2" column="6">
-     <widget class="QRadioButton" name="radioButton_46">
+     <widget class="QRadioButton" name="B6">
       <property name="text">
        <string/>
       </property>
@@ -605,7 +605,7 @@
      </widget>
     </item>
     <item row="2" column="3">
-     <widget class="QRadioButton" name="radioButton_22">
+     <widget class="QRadioButton" name="B3">
       <property name="text">
        <string/>
       </property>
@@ -630,7 +630,7 @@
      </widget>
     </item>
     <item row="1" column="4">
-     <widget class="QRadioButton" name="radioButton_32">
+     <widget class="QRadioButton" name="A4">
       <property name="text">
        <string/>
       </property>
@@ -682,7 +682,7 @@
      </widget>
     </item>
     <item row="1" column="3">
-     <widget class="QRadioButton" name="radioButton_24">
+     <widget class="QRadioButton" name="A3">
       <property name="text">
        <string/>
       </property>
@@ -692,7 +692,7 @@
      </widget>
     </item>
     <item row="1" column="5">
-     <widget class="QRadioButton" name="radioButton_40">
+     <widget class="QRadioButton" name="A5">
       <property name="text">
        <string/>
       </property>
@@ -744,7 +744,7 @@
      </widget>
     </item>
     <item row="1" column="6">
-     <widget class="QRadioButton" name="radioButton_48">
+     <widget class="QRadioButton" name="A6">
       <property name="text">
        <string/>
       </property>
@@ -754,7 +754,7 @@
      </widget>
     </item>
     <item row="1" column="10">
-     <widget class="QRadioButton" name="radioButton_80">
+     <widget class="QRadioButton" name="A10">
       <property name="text">
        <string/>
       </property>
@@ -764,7 +764,7 @@
      </widget>
     </item>
     <item row="1" column="11">
-     <widget class="QRadioButton" name="radioButton_88">
+     <widget class="QRadioButton" name="A11">
       <property name="text">
        <string/>
       </property>
@@ -774,7 +774,7 @@
      </widget>
     </item>
     <item row="1" column="12">
-     <widget class="QRadioButton" name="radioButton_96">
+     <widget class="QRadioButton" name="A12">
       <property name="text">
        <string/>
       </property>
@@ -799,7 +799,7 @@
      </widget>
     </item>
     <item row="2" column="8">
-     <widget class="QRadioButton" name="radioButton_62">
+     <widget class="QRadioButton" name="B8">
       <property name="text">
        <string/>
       </property>
@@ -824,7 +824,7 @@
      </widget>
     </item>
     <item row="5" column="2">
-     <widget class="QRadioButton" name="radioButton_15">
+     <widget class="QRadioButton" name="E2">
       <property name="text">
        <string/>
       </property>
@@ -834,7 +834,7 @@
      </widget>
     </item>
     <item row="3" column="10">
-     <widget class="QRadioButton" name="radioButton_74">
+     <widget class="QRadioButton" name="C10">
       <property name="text">
        <string/>
       </property>
@@ -844,7 +844,7 @@
      </widget>
     </item>
     <item row="4" column="11">
-     <widget class="QRadioButton" name="radioButton_81">
+     <widget class="QRadioButton" name="D11">
       <property name="text">
        <string/>
       </property>
@@ -854,7 +854,7 @@
      </widget>
     </item>
     <item row="3" column="5">
-     <widget class="QRadioButton" name="radioButton_34">
+     <widget class="QRadioButton" name="C5">
       <property name="text">
        <string/>
       </property>
@@ -864,7 +864,7 @@
      </widget>
     </item>
     <item row="4" column="5">
-     <widget class="QRadioButton" name="radioButton_33">
+     <widget class="QRadioButton" name="D5">
       <property name="text">
        <string/>
       </property>
@@ -874,7 +874,7 @@
      </widget>
     </item>
     <item row="5" column="1">
-     <widget class="QRadioButton" name="radioButton_5">
+     <widget class="QRadioButton" name="E1">
       <property name="text">
        <string/>
       </property>
@@ -884,7 +884,7 @@
      </widget>
     </item>
     <item row="3" column="1">
-     <widget class="QRadioButton" name="radioButton_3">
+     <widget class="QRadioButton" name="C1">
       <property name="text">
        <string/>
       </property>
@@ -894,7 +894,7 @@
      </widget>
     </item>
     <item row="5" column="3">
-     <widget class="QRadioButton" name="radioButton_23">
+     <widget class="QRadioButton" name="E3">
       <property name="text">
        <string/>
       </property>
@@ -904,7 +904,7 @@
      </widget>
     </item>
     <item row="5" column="4">
-     <widget class="QRadioButton" name="radioButton_31">
+     <widget class="QRadioButton" name="E4">
       <property name="text">
        <string/>
       </property>
@@ -914,7 +914,7 @@
      </widget>
     </item>
     <item row="3" column="12">
-     <widget class="QRadioButton" name="radioButton_90">
+     <widget class="QRadioButton" name="C12">
       <property name="text">
        <string/>
       </property>
@@ -924,7 +924,7 @@
      </widget>
     </item>
     <item row="3" column="4">
-     <widget class="QRadioButton" name="radioButton_26">
+     <widget class="QRadioButton" name="C4">
       <property name="text">
        <string/>
       </property>
@@ -934,7 +934,7 @@
      </widget>
     </item>
     <item row="3" column="3">
-     <widget class="QRadioButton" name="radioButton_18">
+     <widget class="QRadioButton" name="C3">
       <property name="text">
        <string/>
       </property>
@@ -944,7 +944,7 @@
      </widget>
     </item>
     <item row="4" column="3">
-     <widget class="QRadioButton" name="radioButton_17">
+     <widget class="QRadioButton" name="D3">
       <property name="text">
        <string/>
       </property>
@@ -969,7 +969,7 @@
      </widget>
     </item>
     <item row="3" column="9">
-     <widget class="QRadioButton" name="radioButton_66">
+     <widget class="QRadioButton" name="C9">
       <property name="text">
        <string/>
       </property>
@@ -979,7 +979,7 @@
      </widget>
     </item>
     <item row="3" column="6">
-     <widget class="QRadioButton" name="radioButton_42">
+     <widget class="QRadioButton" name="C6">
       <property name="text">
        <string/>
       </property>
@@ -1004,7 +1004,7 @@
      </widget>
     </item>
     <item row="4" column="1">
-     <widget class="QRadioButton" name="radioButton_4">
+     <widget class="QRadioButton" name="D1">
       <property name="text">
        <string/>
       </property>
@@ -1014,7 +1014,7 @@
      </widget>
     </item>
     <item row="3" column="11">
-     <widget class="QRadioButton" name="radioButton_82">
+     <widget class="QRadioButton" name="C11">
       <property name="text">
        <string/>
       </property>
@@ -1024,7 +1024,7 @@
      </widget>
     </item>
     <item row="3" column="2">
-     <widget class="QRadioButton" name="radioButton_10">
+     <widget class="QRadioButton" name="C2">
       <property name="text">
        <string/>
       </property>
@@ -1034,7 +1034,7 @@
      </widget>
     </item>
     <item row="3" column="8">
-     <widget class="QRadioButton" name="radioButton_58">
+     <widget class="QRadioButton" name="C8">
       <property name="text">
        <string/>
       </property>
@@ -1044,7 +1044,7 @@
      </widget>
     </item>
     <item row="4" column="2">
-     <widget class="QRadioButton" name="radioButton_9">
+     <widget class="QRadioButton" name="D2">
       <property name="text">
        <string/>
       </property>
@@ -1054,7 +1054,7 @@
      </widget>
     </item>
     <item row="4" column="4">
-     <widget class="QRadioButton" name="radioButton_25">
+     <widget class="QRadioButton" name="D4">
       <property name="text">
        <string/>
       </property>
@@ -1064,7 +1064,7 @@
      </widget>
     </item>
     <item row="4" column="6">
-     <widget class="QRadioButton" name="radioButton_41">
+     <widget class="QRadioButton" name="D6">
       <property name="text">
        <string/>
       </property>
@@ -1074,7 +1074,7 @@
      </widget>
     </item>
     <item row="4" column="7">
-     <widget class="QRadioButton" name="radioButton_49">
+     <widget class="QRadioButton" name="D7">
       <property name="text">
        <string/>
       </property>
@@ -1084,7 +1084,7 @@
      </widget>
     </item>
     <item row="4" column="8">
-     <widget class="QRadioButton" name="radioButton_57">
+     <widget class="QRadioButton" name="D8">
       <property name="text">
        <string/>
       </property>
@@ -1094,7 +1094,7 @@
      </widget>
     </item>
     <item row="4" column="9">
-     <widget class="QRadioButton" name="radioButton_65">
+     <widget class="QRadioButton" name="D9">
       <property name="text">
        <string/>
       </property>
@@ -1104,7 +1104,7 @@
      </widget>
     </item>
     <item row="2" column="12">
-     <widget class="QRadioButton" name="radioButton_94">
+     <widget class="QRadioButton" name="B12">
       <property name="text">
        <string/>
       </property>
@@ -1114,7 +1114,7 @@
      </widget>
     </item>
     <item row="4" column="10">
-     <widget class="QRadioButton" name="radioButton_73">
+     <widget class="QRadioButton" name="D10">
       <property name="text">
        <string/>
       </property>
@@ -1124,7 +1124,7 @@
      </widget>
     </item>
     <item row="3" column="7">
-     <widget class="QRadioButton" name="radioButton_50">
+     <widget class="QRadioButton" name="C7">
       <property name="text">
        <string/>
       </property>
@@ -1134,7 +1134,7 @@
      </widget>
     </item>
     <item row="4" column="12">
-     <widget class="QRadioButton" name="radioButton_89">
+     <widget class="QRadioButton" name="D12">
       <property name="text">
        <string/>
       </property>
@@ -1144,7 +1144,7 @@
      </widget>
     </item>
     <item row="7" column="4">
-     <widget class="QRadioButton" name="radioButton_29">
+     <widget class="QRadioButton" name="G4">
       <property name="text">
        <string/>
       </property>
@@ -1154,7 +1154,7 @@
      </widget>
     </item>
     <item row="5" column="10">
-     <widget class="QRadioButton" name="radioButton_79">
+     <widget class="QRadioButton" name="E10">
       <property name="text">
        <string/>
       </property>
@@ -1164,7 +1164,7 @@
      </widget>
     </item>
     <item row="5" column="5">
-     <widget class="QRadioButton" name="radioButton_39">
+     <widget class="QRadioButton" name="E5">
       <property name="text">
        <string/>
       </property>
@@ -1174,7 +1174,7 @@
      </widget>
     </item>
     <item row="5" column="6">
-     <widget class="QRadioButton" name="radioButton_47">
+     <widget class="QRadioButton" name="E6">
       <property name="text">
        <string/>
       </property>
@@ -1184,7 +1184,7 @@
      </widget>
     </item>
     <item row="5" column="12">
-     <widget class="QRadioButton" name="radioButton_95">
+     <widget class="QRadioButton" name="E12">
       <property name="text">
        <string/>
       </property>
@@ -1194,7 +1194,7 @@
      </widget>
     </item>
     <item row="6" column="8">
-     <widget class="QRadioButton" name="radioButton_59">
+     <widget class="QRadioButton" name="F8">
       <property name="text">
        <string/>
       </property>
@@ -1219,7 +1219,7 @@
      </widget>
     </item>
     <item row="5" column="11">
-     <widget class="QRadioButton" name="radioButton_87">
+     <widget class="QRadioButton" name="E11">
       <property name="text">
        <string/>
       </property>
@@ -1229,7 +1229,7 @@
      </widget>
     </item>
     <item row="7" column="5">
-     <widget class="QRadioButton" name="radioButton_37">
+     <widget class="QRadioButton" name="G5">
       <property name="text">
        <string/>
       </property>
@@ -1239,7 +1239,7 @@
      </widget>
     </item>
     <item row="7" column="8">
-     <widget class="QRadioButton" name="radioButton_61">
+     <widget class="QRadioButton" name="G8">
       <property name="text">
        <string/>
       </property>
@@ -1249,7 +1249,7 @@
      </widget>
     </item>
     <item row="6" column="2">
-     <widget class="QRadioButton" name="radioButton_11">
+     <widget class="QRadioButton" name="F2">
       <property name="text">
        <string/>
       </property>
@@ -1259,7 +1259,7 @@
      </widget>
     </item>
     <item row="7" column="9">
-     <widget class="QRadioButton" name="radioButton_69">
+     <widget class="QRadioButton" name="G9">
       <property name="text">
        <string/>
       </property>
@@ -1269,7 +1269,7 @@
      </widget>
     </item>
     <item row="5" column="8">
-     <widget class="QRadioButton" name="radioButton_63">
+     <widget class="QRadioButton" name="E8">
       <property name="text">
        <string/>
       </property>
@@ -1279,7 +1279,7 @@
      </widget>
     </item>
     <item row="6" column="9">
-     <widget class="QRadioButton" name="radioButton_67">
+     <widget class="QRadioButton" name="F9">
       <property name="text">
        <string/>
       </property>
@@ -1289,7 +1289,7 @@
      </widget>
     </item>
     <item row="5" column="9">
-     <widget class="QRadioButton" name="radioButton_71">
+     <widget class="QRadioButton" name="E9">
       <property name="text">
        <string/>
       </property>
@@ -1299,7 +1299,7 @@
      </widget>
     </item>
     <item row="5" column="7">
-     <widget class="QRadioButton" name="radioButton_55">
+     <widget class="QRadioButton" name="E7">
       <property name="text">
        <string/>
       </property>
@@ -1309,7 +1309,7 @@
      </widget>
     </item>
     <item row="6" column="1">
-     <widget class="QRadioButton" name="radioButton_6">
+     <widget class="QRadioButton" name="F1">
       <property name="text">
        <string/>
       </property>
@@ -1319,7 +1319,7 @@
      </widget>
     </item>
     <item row="6" column="6">
-     <widget class="QRadioButton" name="radioButton_43">
+     <widget class="QRadioButton" name="F6">
       <property name="text">
        <string/>
       </property>
@@ -1329,7 +1329,7 @@
      </widget>
     </item>
     <item row="6" column="7">
-     <widget class="QRadioButton" name="radioButton_51">
+     <widget class="QRadioButton" name="F7">
       <property name="text">
        <string/>
       </property>
@@ -1339,7 +1339,7 @@
      </widget>
     </item>
     <item row="6" column="5">
-     <widget class="QRadioButton" name="radioButton_35">
+     <widget class="QRadioButton" name="F5">
       <property name="text">
        <string/>
       </property>
@@ -1349,7 +1349,7 @@
      </widget>
     </item>
     <item row="7" column="2">
-     <widget class="QRadioButton" name="radioButton_13">
+     <widget class="QRadioButton" name="G2">
       <property name="text">
        <string/>
       </property>
@@ -1359,7 +1359,7 @@
      </widget>
     </item>
     <item row="6" column="3">
-     <widget class="QRadioButton" name="radioButton_19">
+     <widget class="QRadioButton" name="F3">
       <property name="text">
        <string/>
       </property>
@@ -1369,7 +1369,7 @@
      </widget>
     </item>
     <item row="6" column="10">
-     <widget class="QRadioButton" name="radioButton_75">
+     <widget class="QRadioButton" name="F10">
       <property name="text">
        <string/>
       </property>
@@ -1379,7 +1379,7 @@
      </widget>
     </item>
     <item row="7" column="3">
-     <widget class="QRadioButton" name="radioButton_21">
+     <widget class="QRadioButton" name="G3">
       <property name="text">
        <string/>
       </property>
@@ -1404,7 +1404,7 @@
      </widget>
     </item>
     <item row="6" column="12">
-     <widget class="QRadioButton" name="radioButton_91">
+     <widget class="QRadioButton" name="F12">
       <property name="text">
        <string/>
       </property>
@@ -1414,7 +1414,7 @@
      </widget>
     </item>
     <item row="7" column="6">
-     <widget class="QRadioButton" name="radioButton_45">
+     <widget class="QRadioButton" name="G6">
       <property name="text">
        <string/>
       </property>
@@ -1424,7 +1424,7 @@
      </widget>
     </item>
     <item row="7" column="7">
-     <widget class="QRadioButton" name="radioButton_53">
+     <widget class="QRadioButton" name="G7">
       <property name="text">
        <string/>
       </property>
@@ -1434,7 +1434,7 @@
      </widget>
     </item>
     <item row="6" column="11">
-     <widget class="QRadioButton" name="radioButton_83">
+     <widget class="QRadioButton" name="F11">
       <property name="text">
        <string/>
       </property>
@@ -1444,7 +1444,7 @@
      </widget>
     </item>
     <item row="6" column="4">
-     <widget class="QRadioButton" name="radioButton_27">
+     <widget class="QRadioButton" name="F4">
       <property name="text">
        <string/>
       </property>
@@ -1454,7 +1454,7 @@
      </widget>
     </item>
     <item row="7" column="1">
-     <widget class="QRadioButton" name="radioButton_7">
+     <widget class="QRadioButton" name="G1">
       <property name="text">
        <string/>
       </property>
@@ -1464,7 +1464,7 @@
      </widget>
     </item>
     <item row="8" column="4">
-     <widget class="QRadioButton" name="radioButton_28">
+     <widget class="QRadioButton" name="H4">
       <property name="text">
        <string/>
       </property>
@@ -1474,7 +1474,7 @@
      </widget>
     </item>
     <item row="8" column="7">
-     <widget class="QRadioButton" name="radioButton_52">
+     <widget class="QRadioButton" name="H7">
       <property name="text">
        <string/>
       </property>
@@ -1484,7 +1484,7 @@
      </widget>
     </item>
     <item row="7" column="12">
-     <widget class="QRadioButton" name="radioButton_93">
+     <widget class="QRadioButton" name="G12">
       <property name="text">
        <string/>
       </property>
@@ -1494,7 +1494,7 @@
      </widget>
     </item>
     <item row="7" column="10">
-     <widget class="QRadioButton" name="radioButton_77">
+     <widget class="QRadioButton" name="G10">
       <property name="text">
        <string/>
       </property>
@@ -1504,7 +1504,7 @@
      </widget>
     </item>
     <item row="8" column="6">
-     <widget class="QRadioButton" name="radioButton_44">
+     <widget class="QRadioButton" name="H6">
       <property name="text">
        <string/>
       </property>
@@ -1514,7 +1514,7 @@
      </widget>
     </item>
     <item row="8" column="5">
-     <widget class="QRadioButton" name="radioButton_36">
+     <widget class="QRadioButton" name="H5">
       <property name="text">
        <string/>
       </property>
@@ -1524,7 +1524,7 @@
      </widget>
     </item>
     <item row="8" column="11">
-     <widget class="QRadioButton" name="radioButton_84">
+     <widget class="QRadioButton" name="H11">
       <property name="text">
        <string/>
       </property>
@@ -1534,7 +1534,7 @@
      </widget>
     </item>
     <item row="8" column="2">
-     <widget class="QRadioButton" name="radioButton_12">
+     <widget class="QRadioButton" name="H2">
       <property name="text">
        <string/>
       </property>
@@ -1544,7 +1544,7 @@
      </widget>
     </item>
     <item row="8" column="9">
-     <widget class="QRadioButton" name="radioButton_68">
+     <widget class="QRadioButton" name="H9">
       <property name="text">
        <string/>
       </property>
@@ -1554,7 +1554,7 @@
      </widget>
     </item>
     <item row="8" column="12">
-     <widget class="QRadioButton" name="radioButton_92">
+     <widget class="QRadioButton" name="H12">
       <property name="text">
        <string/>
       </property>
@@ -1564,7 +1564,7 @@
      </widget>
     </item>
     <item row="8" column="10">
-     <widget class="QRadioButton" name="radioButton_76">
+     <widget class="QRadioButton" name="H10">
       <property name="text">
        <string/>
       </property>
@@ -1574,7 +1574,7 @@
      </widget>
     </item>
     <item row="8" column="8">
-     <widget class="QRadioButton" name="radioButton_60">
+     <widget class="QRadioButton" name="H8">
       <property name="text">
        <string/>
       </property>
@@ -1599,7 +1599,7 @@
      </widget>
     </item>
     <item row="7" column="11">
-     <widget class="QRadioButton" name="radioButton_85">
+     <widget class="QRadioButton" name="G11">
       <property name="text">
        <string/>
       </property>
@@ -1609,7 +1609,7 @@
      </widget>
     </item>
     <item row="8" column="1">
-     <widget class="QRadioButton" name="radioButton_8">
+     <widget class="QRadioButton" name="H1">
       <property name="text">
        <string/>
       </property>
@@ -1619,7 +1619,7 @@
      </widget>
     </item>
     <item row="8" column="3">
-     <widget class="QRadioButton" name="radioButton_20">
+     <widget class="QRadioButton" name="H3">
       <property name="text">
        <string/>
       </property>

@@ -158,7 +158,7 @@
     <string/>
    </property>
   </widget>
-  <widget class="QSpinBox" name="spinBox_2">
+  <widget class="QSpinBox" name="exposureTimeBox">
    <property name="geometry">
     <rect>
      <x>410</x>
@@ -415,7 +415,7 @@
     <string>Excitation:</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox">
+  <widget class="QComboBox" name="excitationBox">
    <property name="geometry">
     <rect>
      <x>130</x>
@@ -496,7 +496,7 @@
     <string>(nm)</string>
    </property>
   </widget>
-  <widget class="QSpinBox" name="spinBox_3">
+  <widget class="QSpinBox" name="emissionBox">
    <property name="geometry">
     <rect>
      <x>130</x>
@@ -512,7 +512,7 @@
     <number>700</number>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="closeButton">
    <property name="geometry">
     <rect>
      <x>550</x>
@@ -526,7 +526,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>x-mark-4-512.png</normaloff>x-mark-4-512.png</iconset>
+     <normaloff>../Python_GUI/x-mark-4-512.png</normaloff>../Python_GUI/x-mark-4-512.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -535,7 +535,7 @@
     </size>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="moveDownButton">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -549,10 +549,10 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>MoveDownLogo.svg</normaloff>MoveDownLogo.svg</iconset>
+     <normaloff>../Python_GUI/MoveDownLogo.svg</normaloff>../Python_GUI/MoveDownLogo.svg</iconset>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="moveUpButton">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -566,7 +566,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>MoveUpLogo.svg</normaloff>MoveUpLogo.svg</iconset>
+     <normaloff>../Python_GUI/MoveUpLogo.svg</normaloff>../Python_GUI/MoveUpLogo.svg</iconset>
    </property>
   </widget>
   <zorder>label_6</zorder>
@@ -574,7 +574,7 @@
   <zorder>label_12</zorder>
   <zorder>label_14</zorder>
   <zorder>label_10</zorder>
-  <zorder>spinBox_2</zorder>
+  <zorder>exposureTimeBox</zorder>
   <zorder>label_15</zorder>
   <zorder>label_5</zorder>
   <zorder>label_2</zorder>
@@ -583,13 +583,13 @@
   <zorder>label_13</zorder>
   <zorder>label_4</zorder>
   <zorder>label_11</zorder>
-  <zorder>comboBox</zorder>
+  <zorder>excitationBox</zorder>
   <zorder>label_16</zorder>
   <zorder>label_17</zorder>
-  <zorder>spinBox_3</zorder>
-  <zorder>pushButton</zorder>
-  <zorder>pushButton_3</zorder>
-  <zorder>pushButton_2</zorder>
+  <zorder>emissionBox</zorder>
+  <zorder>closeButton</zorder>
+  <zorder>moveDownButton</zorder>
+  <zorder>moveUpButton</zorder>
  </widget>
  <resources/>
  <connections/>

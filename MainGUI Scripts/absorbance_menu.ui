@@ -257,7 +257,7 @@
     <string>Reading</string>
    </property>
   </widget>
-  <widget class="QSpinBox" name="spinBox">
+  <widget class="QSpinBox" name="wavelengthBox">
    <property name="geometry">
     <rect>
      <x>150</x>
@@ -357,7 +357,7 @@
     <string>Exposure Time:</string>
    </property>
   </widget>
-  <widget class="QSpinBox" name="spinBox_2">
+  <widget class="QSpinBox" name="exposureTimeBox">
    <property name="geometry">
     <rect>
      <x>410</x>
@@ -431,7 +431,7 @@
     <string> Max: 6500</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="closeButton">
    <property name="geometry">
     <rect>
      <x>550</x>
@@ -445,7 +445,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>x-mark-4-512.png</normaloff>x-mark-4-512.png</iconset>
+     <normaloff>../Python_GUI/x-mark-4-512.png</normaloff>../Python_GUI/x-mark-4-512.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -454,7 +454,7 @@
     </size>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="moveUpButton">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -468,10 +468,10 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>MoveUpLogo.svg</normaloff>MoveUpLogo.svg</iconset>
+     <normaloff>../Python_GUI/MoveUpLogo.svg</normaloff>../Python_GUI/MoveUpLogo.svg</iconset>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="moveDownButton">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -485,7 +485,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>MoveDownLogo.svg</normaloff>MoveDownLogo.svg</iconset>
+     <normaloff>../Python_GUI/MoveDownLogo.svg</normaloff>../Python_GUI/MoveDownLogo.svg</iconset>
    </property>
   </widget>
   <zorder>label_6</zorder>
@@ -496,16 +496,16 @@
   <zorder>label_8</zorder>
   <zorder>label_9</zorder>
   <zorder>label_10</zorder>
-  <zorder>spinBox</zorder>
+  <zorder>wavelengthBox</zorder>
   <zorder>label_11</zorder>
   <zorder>label_12</zorder>
   <zorder>label_13</zorder>
-  <zorder>spinBox_2</zorder>
+  <zorder>exposureTimeBox</zorder>
   <zorder>label_14</zorder>
   <zorder>label_15</zorder>
-  <zorder>pushButton</zorder>
-  <zorder>pushButton_2</zorder>
-  <zorder>pushButton_3</zorder>
+  <zorder>closeButton</zorder>
+  <zorder>moveUpButton</zorder>
+  <zorder>moveDownButton</zorder>
  </widget>
  <resources/>
  <connections/>
