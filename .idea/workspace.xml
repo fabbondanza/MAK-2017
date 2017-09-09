@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1529667-ee9d-49b3-8d49-43f3442f2034" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MainGUI Scripts/mainGUI_script.py" afterPath="$PROJECT_DIR$/MainGUI Scripts/mainGUI_script.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MainGUI Scripts/wellplateMenu.py" afterPath="$PROJECT_DIR$/MainGUI Scripts/wellplateMenu.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Python_GUI/wellPlate_Widg.py" afterPath="$PROJECT_DIR$/Python_GUI/wellPlate_Widg.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,7 +17,7 @@
     <SUITE FILE_PATH="coverage/MAK_2017$testScroll.coverage" NAME="testScroll Coverage Results" MODIFIED="1504391217853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI/Obselete" />
     <SUITE FILE_PATH="coverage/MAK_2017$protocol_functionality_test.coverage" NAME="protocol_functionality_test Coverage Results" MODIFIED="1504818363942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
     <SUITE FILE_PATH="coverage/MAK_2017$click_drag_test_working.coverage" NAME="click_drag_test_working Coverage Results" MODIFIED="1504818401336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
-    <SUITE FILE_PATH="coverage/MAK_2017$mainGUI_script.coverage" NAME="mainGUI_script Coverage Results" MODIFIED="1504921399926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MainGUI Scripts" />
+    <SUITE FILE_PATH="coverage/MAK_2017$mainGUI_script.coverage" NAME="mainGUI_script Coverage Results" MODIFIED="1504932463171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MainGUI Scripts" />
     <SUITE FILE_PATH="coverage/MAK_2017$rewrite_test.coverage" NAME="rewrite_test Coverage Results" MODIFIED="1503428292190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
     <SUITE FILE_PATH="coverage/MAK_2017$wellPlate_Widg_CD.coverage" NAME="wellPlate_Widg_CD Coverage Results" MODIFIED="1504394744317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
     <SUITE FILE_PATH="coverage/MAK_2017$testExport.coverage" NAME="testExport Coverage Results" MODIFIED="1504895041634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
@@ -26,45 +27,15 @@
     <SUITE FILE_PATH="coverage/MAK_2017$absorbance_menu_2.coverage" NAME="absorbance_menu_2 Coverage Results" MODIFIED="1503348325921" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
     <SUITE FILE_PATH="coverage/MAK_2017$absorbance_menu.coverage" NAME="absorbance_menu Coverage Results" MODIFIED="1503346191381" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
     <SUITE FILE_PATH="coverage/MAK_2017$absMenu_Widget.coverage" NAME="absMenu_Widget Coverage Results" MODIFIED="1503434789550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
-    <SUITE FILE_PATH="coverage/MAK_2017$protocol_click_drag_check.coverage" NAME="protocol_click_drag_check Coverage Results" MODIFIED="1504839999694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
+    <SUITE FILE_PATH="coverage/MAK_2017$protocol_click_drag_check.coverage" NAME="protocol_click_drag_check Coverage Results" MODIFIED="1504922193977" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="mainGUI_script.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mainGUI_script.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MainGUI Scripts/mainGUI_script.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="207" column="36" lean-forward="true" selection-start-line="207" selection-start-column="36" selection-end-line="207" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="protocol_functionality_test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Python_GUI/protocol_functionality_test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="382" column="85" lean-forward="true" selection-start-line="382" selection-start-column="42" selection-end-line="382" selection-end-column="85" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="protocolFunctionality_V2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Python_GUI/protocolFunctionality_V2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6181">
-              <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="protocolMenu_Widget.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Python_GUI/protocolMenu_Widget.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="48" column="54" lean-forward="false" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
+            <state relative-caret-position="85">
+              <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -81,8 +52,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>self.pushButton</find>
-      <find>self.pushButton_2</find>
       <find>pushButton_3</find>
       <find>pushButton_4</find>
       <find>pushButton_5</find>
@@ -111,6 +80,8 @@
       <find>(Form)</find>
       <find>Form</find>
       <find>delete</find>
+      <find>1, 1)</find>
+      <find>A1</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -133,7 +104,6 @@
         <option value="$PROJECT_DIR$/Python_GUI/flrSpecMenu_Widget.py" />
         <option value="$PROJECT_DIR$/Python_GUI/absMenu_Widget.py" />
         <option value="$PROJECT_DIR$/Python_GUI/test_scroll_2.py" />
-        <option value="$PROJECT_DIR$/Python_GUI/protocolMenu_Widget.py" />
         <option value="$PROJECT_DIR$/Python_GUI/click_drag_test_working.py" />
         <option value="$PROJECT_DIR$/Python_GUI/protocol_functionality_test.py" />
         <option value="$PROJECT_DIR$/Python_GUI/protocolFunctionality_V2.py" />
@@ -141,13 +111,11 @@
         <option value="$PROJECT_DIR$/Python_GUI/Obselete/testScroll.py" />
         <option value="$PROJECT_DIR$/Python_GUI/shakeMenu_Widget.py" />
         <option value="$PROJECT_DIR$/Python_GUI/shakeMenu_Widget_CD.py" />
-        <option value="$PROJECT_DIR$/Python_GUI/wellPlate_Widg.py" />
         <option value="$PROJECT_DIR$/Python_GUI/protocol_click_drag_check.py" />
         <option value="$PROJECT_DIR$/Python_GUI/Obselete/testExport.py" />
         <option value="$PROJECT_DIR$/Python_GUI/wellPlate_Widg_CD.py" />
         <option value="$PROJECT_DIR$/Python_GUI/main_gui_V1.py" />
         <option value="$PROJECT_DIR$/MainGUI Scripts/wellMenu.py" />
-        <option value="$PROJECT_DIR$/MainGUI Scripts/wellplateMenu.py" />
         <option value="$PROJECT_DIR$/MainGUI Scripts/absMenu.py" />
         <option value="$PROJECT_DIR$/MainGUI Scripts/flrMenu.py" />
         <option value="$PROJECT_DIR$/MainGUI Scripts/shakeMenu.py" />
@@ -155,6 +123,9 @@
         <option value="$PROJECT_DIR$/Python_GUI/testExport.py" />
         <option value="$PROJECT_DIR$/MainGUI Scripts/absSpecMenu.py" />
         <option value="$PROJECT_DIR$/MainGUI Scripts/flrSpecMenu.py" />
+        <option value="$PROJECT_DIR$/Python_GUI/protocolMenu_Widget.py" />
+        <option value="$PROJECT_DIR$/Python_GUI/wellPlate_Widg.py" />
+        <option value="$PROJECT_DIR$/MainGUI Scripts/wellplateMenu.py" />
         <option value="$PROJECT_DIR$/MainGUI Scripts/mainGUI_script.py" />
       </list>
     </option>
@@ -240,7 +211,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.protocol_click_drag_check">
+  <component name="RunManager" selected="Python.mainGUI_script">
     <configuration name="mainGUI_script" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -341,10 +312,10 @@
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.mainGUI_script" />
-        <item index="1" class="java.lang.String" itemvalue="Python.testExport" />
-        <item index="2" class="java.lang.String" itemvalue="Python.main_gui_V1" />
-        <item index="3" class="java.lang.String" itemvalue="Python.protocolFunctionality_V2" />
-        <item index="4" class="java.lang.String" itemvalue="Python.protocol_click_drag_check" />
+        <item index="1" class="java.lang.String" itemvalue="Python.protocol_click_drag_check" />
+        <item index="2" class="java.lang.String" itemvalue="Python.testExport" />
+        <item index="3" class="java.lang.String" itemvalue="Python.main_gui_V1" />
+        <item index="4" class="java.lang.String" itemvalue="Python.protocolFunctionality_V2" />
       </list>
     </recent_temporary>
   </component>
@@ -393,7 +364,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -416,9 +389,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5032">
           <caret line="309" column="62" lean-forward="false" selection-start-line="309" selection-start-column="62" selection-end-line="309" selection-end-column="62" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -535,14 +506,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Python_GUI/wellPlate_Widg.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1258">
-          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="83" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Python_GUI/Obselete/testExport" />
     <entry file="file://$PROJECT_DIR$/Python_GUI/Obselete/testScroll.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -573,24 +536,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MainGUI Scripts/wellMenu.py" />
-    <entry file="file://$PROJECT_DIR$/Python_GUI/main_gui_V1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="13" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MainGUI Scripts/optionsMenu.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
           <caret line="135" column="0" lean-forward="true" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Python_GUI/testExport.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="22" lean-forward="false" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -642,14 +592,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MainGUI Scripts/wellplateMenu.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="24" column="35" lean-forward="true" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MainGUI Scripts/flrMenu.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -674,14 +616,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MainGUI Scripts/mainGUI_script.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="207" column="36" lean-forward="true" selection-start-line="207" selection-start-column="36" selection-end-line="207" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Python_GUI/protocol_click_drag_check.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -693,18 +627,16 @@
     <entry file="file://$PROJECT_DIR$/Python_GUI/protocol_functionality_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="382" column="85" lean-forward="true" selection-start-line="382" selection-start-column="42" selection-end-line="382" selection-end-column="85" />
+          <caret line="382" column="85" lean-forward="false" selection-start-line="382" selection-start-column="42" selection-end-line="382" selection-end-column="85" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Python_GUI/protocolFunctionality_V2.py">
+    <entry file="file://$PROJECT_DIR$/Python_GUI/main_gui_V1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6181">
-          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="-809">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="13" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -712,6 +644,48 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="799">
           <caret line="48" column="54" lean-forward="false" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Python_GUI/wellPlate_Widg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="7" column="21" lean-forward="false" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Python_GUI/protocolFunctionality_V2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3808">
+          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MainGUI Scripts/wellplateMenu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="859" column="0" lean-forward="false" selection-start-line="859" selection-start-column="0" selection-end-line="859" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Python_GUI/testExport.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MainGUI Scripts/mainGUI_script.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
           <folding />
         </state>
       </provider>

@@ -26,6 +26,7 @@ class wellplateMenu(QtGui.QWidget):
     def __init__(self):
         super(wellplateMenu, self).__init__()
         self.initUI()
+        self.clearWellsButton.clicked.connect(self.clearWells)
 
     def initUI(self):
         self.setObjectName(_fromUtf8("Well Plate Menu"))
@@ -827,8 +828,43 @@ class wellplateMenu(QtGui.QWidget):
         self.line_2.setFrameShape(QtGui.QFrame.HLine)
         self.line_2.setObjectName(_fromUtf8("line_2"))
 
+        self.rubberband = QtGui.QRubberBand(
+            QtGui.QRubberBand.Rectangle, self)
+
+        self.setMouseTracking(True)
+
         self.retranslateUi()
         QtCore.QMetaObject.connectSlotsByName(self)
+
+    def mousePressEvent(self, event):
+        self.origin = event.pos()
+        self.rubberband.setGeometry(
+            QtCore.QRect(self.origin, QtCore.QSize()))
+        self.rubberband.show()
+        QtGui.QWidget.mousePressEvent(self, event)
+
+    def mouseMoveEvent(self, event):
+        if self.rubberband.isVisible():
+            self.rubberband.setGeometry(
+                QtCore.QRect(self.origin, event.pos()).normalized())
+        QtGui.QWidget.mouseMoveEvent(self, event)
+
+    def mouseReleaseEvent(self, event):
+        if self.rubberband.isVisible():
+            self.rubberband.hide()
+            selected = []
+            rect = self.rubberband.geometry()
+            rect_correct = QtCore.QRect(rect.x(),rect.y(),int(str(rect.width()))-18,int(str(rect.height()))-18)
+            for child in self.findChildren(QtGui.QRadioButton):
+                if rect_correct.intersects(child.geometry()):
+
+                    child.toggle()
+
+        QtGui.QWidget.mouseReleaseEvent(self, event)
+
+    def clearWells(self):
+        for child in self.findChildren(QtGui.QRadioButton):
+            child.setChecked(False)
 
     def retranslateUi(self):
         self.setWindowTitle(_translate("Well Plate Menu", "Well Plate Menu", None))

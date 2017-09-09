@@ -6,7 +6,6 @@ class WellPlate(QtGui.QWidget):
     def __init__(self):
         super(WellPlate, self).__init__()
         self.initUI()
-
     def initUI(self):
 
         self.grid = QtGui.QGridLayout()
