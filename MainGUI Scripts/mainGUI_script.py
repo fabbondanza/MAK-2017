@@ -117,7 +117,7 @@ class KAMSpec(QtGui.QWidget):
             protocol.show()
 
             self.yPosDict[int(str(parent.objectName()))] += 100 #Update lowest y-position of last widget in scroll area where widget was just added
-            self.widgetTypesAdded[int(str(parent.objectName()))].append([type, protocol.pos().y()])
+            self.widgetTypesAdded[int(str(parent.objectName()))].append([protocol.pos().y(),type])
         if type == 2:
             yposition = self.yPosDict[int(str(parent.objectName()))]
             protocol = absSpecMenu()
@@ -128,7 +128,7 @@ class KAMSpec(QtGui.QWidget):
             protocol.show()
 
             self.yPosDict[int(str(parent.objectName()))] += 130 #Update lowest y-position of last widget in scroll area where widget was just added
-            self.widgetTypesAdded[int(str(parent.objectName()))].append([type, protocol.pos().y()])
+            self.widgetTypesAdded[int(str(parent.objectName()))].append([protocol.pos().y(),type])
         if type == 3:
             yposition = self.yPosDict[int(str(parent.objectName()))]
             protocol = flrMenu()
@@ -139,7 +139,7 @@ class KAMSpec(QtGui.QWidget):
             protocol.show()
 
             self.yPosDict[int(str(parent.objectName()))] += 125 #Update lowest y-position of last widget in scroll area where widget was just added
-            self.widgetTypesAdded[int(str(parent.objectName()))].append([type, protocol.pos().y()])
+            self.widgetTypesAdded[int(str(parent.objectName()))].append([protocol.pos().y(),type])
         if type == 4:
             yposition = self.yPosDict[int(str(parent.objectName()))]
             protocol = flrSpecMenu()
@@ -150,7 +150,7 @@ class KAMSpec(QtGui.QWidget):
             protocol.show()
 
             self.yPosDict[int(str(parent.objectName()))] += 186 #Update lowest y-position of last widget in scroll area where widget was just added
-            self.widgetTypesAdded[int(str(parent.objectName()))].append([type, protocol.pos().y()])
+            self.widgetTypesAdded[int(str(parent.objectName()))].append([protocol.pos().y(),type])
         if type == 5:
             yposition = self.yPosDict[int(str(parent.objectName()))]
             protocol = shakeMenu()
@@ -161,7 +161,7 @@ class KAMSpec(QtGui.QWidget):
             protocol.show()
 
             self.yPosDict[int(str(parent.objectName()))] += 99 #Update lowest y-position of last widget in scroll area where widget was just added
-            self.widgetTypesAdded[int(str(parent.objectName()))].append([type, protocol.pos().y()])
+            self.widgetTypesAdded[int(str(parent.objectName()))].append([protocol.pos().y(),type])
 
     def deleteProtocol(self,type,parent):
         widgetHeights = [100, 130, 125, 186, 99]
@@ -171,28 +171,41 @@ class KAMSpec(QtGui.QWidget):
         formerProtocolList = []
         deletedProtocol = 0
         listOfParentArea = self.widgetTypesAdded[int(str(parent.objectName()))]
-        for i in range(0, len(listOfParentArea)):
-            formerProtocolList.append(listOfParentArea[i][1])
-
+        sortedListofParentArea = sorted(listOfParentArea, key = lambda x: x[0])
+        #print sortedListofParentArea
+        for i in range(0, len(sortedListofParentArea)):
+            formerProtocolList.append(sortedListofParentArea[i][0])
 
         for i in range(0,len(widgetOptions)):
             for child in parent.findChildren(widgetOptions[i]):
                 protocolsLeftYpositionsList.append(child.pos().y())
 
         sortedRemainingProtocolyPositions = np.sort(protocolsLeftYpositionsList)
-
+        print sortedRemainingProtocolyPositions
         for i in range(0,len(sortedRemainingProtocolyPositions)):
             if formerProtocolList[i] != sortedRemainingProtocolyPositions[i]:
                 deletedProtocol = formerProtocolList[i]
+                #print deletedProtocol
+                break
 
         if deletedProtocol != 0:
+            self.widgetTypesAdded[int(str(parent.objectName()))] = []
             for i in range(0, len(widgetOptions)):
                 for child in parent.findChildren(widgetOptions[i]):
-                    if child.pos().y() > deletedProtocol:
+                    if child.pos().y() <= deletedProtocol:
+                        self.widgetTypesAdded[int(str(parent.objectName()))].append([child.pos().y(),i+1])
+                    elif child.pos().y() > deletedProtocol:
                         #print int(str(child.objectName()))
                         child.setGeometry(child.pos().x(),child.pos().y()-deletedHeight,child.geometry().width(),child.geometry().height())
+                        self.widgetTypesAdded[int(str(parent.objectName()))].append([child.pos().y(),i+1])
                         #print int(str(child.objectName()))
+        else:
+            self.widgetTypesAdded[int(str(parent.objectName()))] = []
+            for i in range(0, len(widgetOptions)):
+                for child in parent.findChildren(widgetOptions[i]):
+                    self.widgetTypesAdded[int(str(parent.objectName()))].append([child.pos().y(),i+1])
         self.yPosDict[int(str(parent.objectName()))] -= deletedHeight
+        #print self.widgetTypesAdded
 def main():
     import sys
     app = QtGui.QApplication(sys.argv)

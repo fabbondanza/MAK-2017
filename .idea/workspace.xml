@@ -2,25 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1529667-ee9d-49b3-8d49-43f3442f2034" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MainGUI Scripts/mainGUI_script.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MainGUI Scripts/absorbance_menu.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MainGUI Scripts/absorbancespectrum_menu.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MainGUI Scripts/flourescencespectrum_menu.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MainGUI Scripts/flourescentintensity_menu.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MainGUI Scripts/optionMenu.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MainGUI Scripts/shaking_menu.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MainGUI Scripts/wellMenu.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MainGUI Scripts/absorbance_menu.ui" afterPath="$PROJECT_DIR$/MainGUI Scripts/absorbance_menu.ui" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MainGUI Scripts/absorbancespectrum_menu.ui" afterPath="$PROJECT_DIR$/MainGUI Scripts/absorbancespectrum_menu.ui" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MainGUI Scripts/flourescencespectrum_menu.ui" afterPath="$PROJECT_DIR$/MainGUI Scripts/flourescencespectrum_menu.ui" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MainGUI Scripts/flourescentintensity_menu.ui" afterPath="$PROJECT_DIR$/MainGUI Scripts/flourescentintensity_menu.ui" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MainGUI Scripts/replacement_options_menu.ui" afterPath="$PROJECT_DIR$/MainGUI Scripts/replacement_options_menu.ui" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MainGUI Scripts/replacement_well_menu.ui" afterPath="$PROJECT_DIR$/MainGUI Scripts/replacement_well_menu.ui" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MainGUI Scripts/shaking_menu.ui" afterPath="$PROJECT_DIR$/MainGUI Scripts/shaking_menu.ui" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Python_GUI/absorbance_menu.ui" afterPath="$PROJECT_DIR$/Python_GUI/absorbance_menu.ui" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Python_GUI/replacement_options_menu.ui" afterPath="$PROJECT_DIR$/Python_GUI/replacement_options_menu.ui" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Python_GUI/replacement_well_menu.ui" afterPath="$PROJECT_DIR$/Python_GUI/replacement_well_menu.ui" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MainGUI Scripts/mainGUI_script.py" afterPath="$PROJECT_DIR$/MainGUI Scripts/mainGUI_script.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,7 +16,7 @@
     <SUITE FILE_PATH="coverage/MAK_2017$testScroll.coverage" NAME="testScroll Coverage Results" MODIFIED="1504391217853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI/Obselete" />
     <SUITE FILE_PATH="coverage/MAK_2017$protocol_functionality_test.coverage" NAME="protocol_functionality_test Coverage Results" MODIFIED="1504818363942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
     <SUITE FILE_PATH="coverage/MAK_2017$click_drag_test_working.coverage" NAME="click_drag_test_working Coverage Results" MODIFIED="1504818401336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
-    <SUITE FILE_PATH="coverage/MAK_2017$mainGUI_script.coverage" NAME="mainGUI_script Coverage Results" MODIFIED="1504903921918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MainGUI Scripts" />
+    <SUITE FILE_PATH="coverage/MAK_2017$mainGUI_script.coverage" NAME="mainGUI_script Coverage Results" MODIFIED="1504921399926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MainGUI Scripts" />
     <SUITE FILE_PATH="coverage/MAK_2017$rewrite_test.coverage" NAME="rewrite_test Coverage Results" MODIFIED="1503428292190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
     <SUITE FILE_PATH="coverage/MAK_2017$wellPlate_Widg_CD.coverage" NAME="wellPlate_Widg_CD Coverage Results" MODIFIED="1504394744317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
     <SUITE FILE_PATH="coverage/MAK_2017$testExport.coverage" NAME="testExport Coverage Results" MODIFIED="1504895041634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
@@ -47,14 +30,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="mainGUI_script.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mainGUI_script.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MainGUI Scripts/mainGUI_script.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="203" column="26" lean-forward="true" selection-start-line="203" selection-start-column="26" selection-end-line="203" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="313">
+              <caret line="207" column="36" lean-forward="true" selection-start-line="207" selection-start-column="36" selection-end-line="207" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="protocol_functionality_test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Python_GUI/protocol_functionality_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="382" column="85" lean-forward="true" selection-start-line="382" selection-start-column="42" selection-end-line="382" selection-end-column="85" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="protocolFunctionality_V2.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Python_GUI/protocolFunctionality_V2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-6181">
+              <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="protocolMenu_Widget.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Python_GUI/protocolMenu_Widget.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="799">
+              <caret line="48" column="54" lean-forward="false" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -193,6 +204,11 @@
               <item name="MAK-2017" type="462c0819:PsiDirectoryNode" />
               <item name="MainGUI Scripts" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="MAK-2017" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MAK-2017" type="462c0819:PsiDirectoryNode" />
+              <item name="Python_GUI" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -224,7 +240,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.mainGUI_script">
+  <component name="RunManager" selected="Python.protocol_click_drag_check">
     <configuration name="mainGUI_script" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -504,16 +520,6 @@
     <entry file="file://$PROJECT_DIR$/Python_GUI/absorbance_menu_2.py" />
     <entry file="file://$PROJECT_DIR$/Python_GUI/absorbance_menu.py" />
     <entry file="file://$PROJECT_DIR$/Python_GUI/protocolOptions2.py" />
-    <entry file="file://$PROJECT_DIR$/Python_GUI/protocolMenu_Widget.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="48" column="54" lean-forward="false" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#31#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Python_GUI/class_click_and_drag_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="362">
@@ -566,21 +572,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MainGUI Scripts/wellMenu.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="815" column="54" lean-forward="false" selection-start-line="815" selection-start-column="54" selection-end-line="815" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/MainGUI Scripts/wellMenu.py" />
     <entry file="file://$PROJECT_DIR$/Python_GUI/main_gui_V1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="13" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -588,7 +584,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
           <caret line="135" column="0" lean-forward="true" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -596,7 +591,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="22" lean-forward="false" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -628,22 +622,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="27" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Python_GUI/protocol_click_drag_check.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="50" column="51" lean-forward="true" selection-start-line="50" selection-start-column="51" selection-end-line="50" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Python_GUI/protocol_functionality_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4245">
-          <caret line="382" column="85" lean-forward="true" selection-start-line="382" selection-start-column="42" selection-end-line="382" selection-end-column="85" />
           <folding />
         </state>
       </provider>
@@ -680,14 +658,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Python_GUI/protocolFunctionality_V2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="457" column="65" lean-forward="true" selection-start-line="457" selection-start-column="65" selection-end-line="457" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MainGUI Scripts/flrSpecMenu.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5304">
@@ -706,11 +676,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MainGUI Scripts/mainGUI_script.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="203" column="26" lean-forward="true" selection-start-line="203" selection-start-column="26" selection-end-line="203" selection-end-column="26" />
+        <state relative-caret-position="313">
+          <caret line="207" column="36" lean-forward="true" selection-start-line="207" selection-start-column="36" selection-end-line="207" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Python_GUI/protocol_click_drag_check.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="50" column="51" lean-forward="true" selection-start-line="50" selection-start-column="51" selection-end-line="50" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Python_GUI/protocol_functionality_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="382" column="85" lean-forward="true" selection-start-line="382" selection-start-column="42" selection-end-line="382" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Python_GUI/protocolFunctionality_V2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6181">
+          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Python_GUI/protocolMenu_Widget.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="48" column="54" lean-forward="false" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>
