@@ -26,10 +26,10 @@ class Ui_Form(QtGui.QWidget):
     def __init__(self):
         super(Ui_Form, self).__init__()
         self.initUI()
-        self.show()
+
     def initUI(self):
         self.setObjectName(_fromUtf8("Form"))
-        self.resize(794, 480)
+        self.resize(794, 430)
         self.setStyleSheet(_fromUtf8("background-color: rgb(255, 255, 165);"))
         self.label = QtGui.QLabel(self)
         self.label.setGeometry(QtCore.QRect(600, 100, 71, 71))
@@ -38,7 +38,7 @@ class Ui_Form(QtGui.QWidget):
         self.label.setScaledContents(True)
         self.label.setObjectName(_fromUtf8("label"))
         self.label_2 = QtGui.QLabel(self)
-        self.label_2.setGeometry(QtCore.QRect(560, 40, 151, 51))
+        self.label_2.setGeometry(QtCore.QRect(560, 40, 181, 51))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Calibri"))
         font.setPointSize(48)
@@ -80,7 +80,7 @@ class Ui_Form(QtGui.QWidget):
         self.logoImg.setPixmap(QtGui.QPixmap(_fromUtf8("../Python_GUI/KAM-Spec Logo LtoH.svg")))
         self.logoImg.setObjectName(_fromUtf8("logoImg"))
         self.label_3 = QtGui.QLabel(self)
-        self.label_3.setGeometry(QtCore.QRect(570, 180, 151, 51))
+        self.label_3.setGeometry(QtCore.QRect(570, 180, 161, 51))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Calibri"))
         font.setPointSize(48)
@@ -88,7 +88,7 @@ class Ui_Form(QtGui.QWidget):
         self.label_3.setObjectName(_fromUtf8("label_3"))
         self.startButton = QtGui.QPushButton(self)
         self.startButton.setEnabled(True)
-        self.startButton.setGeometry(QtCore.QRect(450, 300, 331, 151))
+        self.startButton.setGeometry(QtCore.QRect(450, 270, 331, 151))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Calibri"))
         font.setPointSize(48)
@@ -106,6 +106,7 @@ class Ui_Form(QtGui.QWidget):
 
         self.retranslateUi()
         QtCore.QMetaObject.connectSlotsByName(self)
+        self.show()
 
     def retranslateUi(self):
         self.setWindowTitle(_translate("Form", "Form", None))
