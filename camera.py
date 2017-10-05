@@ -3,8 +3,7 @@ import numpy as np
 import usb.core
 import usb.util
 from collections import namedtuple
-
-# endpoints
+# endpoints*
 cmd_out = 0x01
 cmd_in  = 0x81
 data_in = 0x82
@@ -164,18 +163,17 @@ class LineCamera (object):
         self._write_cmd(b'\x39\x01'+[red,green,blue])
         
     
-if __name__ == '__main__':
-    c = LineCamera()
-    print(c.get_firmware_ver())
-    print(c.get_device_info())
-    c.set_exposure_time(0x0004)
-    c.set_work_mode(WorkMode.NORMAL)
-
-    import time
-    while True:
-        time.sleep(1e-2)
-        count = c.get_buffered_frames_count()
-        if count == 0: continue
-        c._prepare_frames(1)
-        frame = c._read_frames(1)
-print frame.timestamp, frame.dark
+# if __name__ == '__main__':
+#     c = LineCamera()
+#     print(c.get_firmware_ver())
+#     print(c.get_device_info())
+#     c.set_exposure_time(0x0004)
+#     c.set_work_mode(WorkMode.NORMAL)
+#
+#     import time
+#     while True:
+#         time.sleep(1e-2)
+#         count = c.get_buffered_frames_count()
+#         if count == 0: continue
+#         c._prepare_frames
+#         frame = c._read_frames

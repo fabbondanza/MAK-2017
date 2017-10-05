@@ -1,28 +1,46 @@
-import serial
 import time
+import warnings
+import serial
+import serial.tools.list_ports
+
+
 
 class MotorMove(object):
     def __init__(self, parent=None):
-        self.arduino = serial.Serial('/dev/ttyACM0', 9600)
-        if self.arduino is None:
+        ser_ports = [
+            p.device
+            for p in serial.tools.list_ports.comports()
+            if 'Arduino' in p.description
+        ]
+        if not ser_ports:
+            raise IOError("No ser found")
+        if len(ser_ports) > 1:
+            warnings.warn('Multiple sers found - using the first')
+        print ser_ports[0]
+        self.ser = serial.Serial(ser_ports[0], 9600)
+        time.sleep(5)
+        if self.ser is None:
             print 'Device not found'
 
     def _set_initial_position(self):
-        self.arduino.write('(1,1)')
+        print 'Moving to initial position...'
+        self.ser.write('M0,0')
         motorStatus = 0
         while motorStatus == 0:
-            status = self.arduino.readline()
+            status = self.ser.readline()
             print status
             if status[0] == 'D':
-                time.sleep(1); #Take Camera Reading
                 motorStatus = 1
+        print 'Read to take measurement...'
         self.currentWell = '1_12'
+        time.sleep(1)
+
 
     def _get_current_position(self):
-        self.arduino.write('X')
-        positionX = int(self.arduino.readline())
-        self.arduino.write('Y')
-        positionY = int(self.arduino.readline())
+        self.ser.write('X')
+        positionX = int(self.ser.readline())
+        self.ser.write('Y')
+        positionY = int(self.ser.readline())
         return positionX, positionY
 
     def _convert_labels_to_numericals(self, toRead):
@@ -38,61 +56,65 @@ class MotorMove(object):
         return toReadNum
 
     def _set_new_position(self,well):
-        y_done = 0;
-        x_done = 0;
-        wellDistance = 60
+        y_done = 0
+        x_done = 0
+        wellDistanceY = 64
+        wellDistanceX = 94
         currentRow = int(self.currentWell.split('_')[0])
         currentCol = int(self.currentWell.split('_')[1])
         newRow = int(well.split('_')[0])
+        print 'newRow: ', newRow
         newCol = int(well.split('_')[1])
         rowsToMove = int(newRow-currentRow)
         colsToMove = int(newCol-currentCol)
         currentX, currentY = self._get_current_position()
         if rowsToMove < 0:
-            newY = currentY-(abs(rowsToMove*wellDistance))
+            newY = currentY-(abs(rowsToMove*wellDistanceY))
             y_done = 1
         elif rowsToMove > 0:
-            newY = currentY + (abs(rowsToMove*wellDistance))
+            newY = currentY + (abs(rowsToMove*wellDistanceY))
             y_done = 1
         else:
             newY = currentY
             y_done = 1
         if colsToMove < 0:
-            newX = currentX-(abs(colsToMove*wellDistance))
+            newX = currentX-(abs(colsToMove*wellDistanceX))
             x_done = 1
         elif colsToMove > 0:
-            newX = currentX + (abs(colsToMove*wellDistance))
+            newX = currentX + (abs(colsToMove*wellDistanceX))
             x_done = 1
         else:
             newX = currentX
             x_done = 1
         if x_done == 1 & y_done == 1:
-            newPosition = '('+str(newX)+','+str(newY)+')'
-
+            newPosition = 'M'+str(abs(newX))+','+str(newY)
         return newPosition
 
-    def _move_to_new_position(self,toReadNum):
-        for well in toReadNum:
-            motorStatus = 0
-            newPosition = self._set_new_position(well)
-            print newPosition
-            self.currentWell = well
-            self.arduino.write(newPosition)
-            while motorStatus == 0:
-                status = self.arduino.readline()
-                if status[0] == 'D':
-                    time.sleep(1)
-                    #Take Camera Reading
-                    motorStatus = 1
-
-
-##m = MotorMove()
-##m._set_initial_position()
-##m._get_current_position()
-##toReadNum = m._convert_labels_to_numericals(['B10','C12'])
+    def _move_to_new_position(self,well):
+        motorStatus = 0
+        newPosition = self._set_new_position(well)
+        print newPosition
+        self.currentWell = well
+        self.ser.write(newPosition)
+        while motorStatus == 0:
+            status = self.ser.readline()
+            if status[0] == 'D':
+                time.sleep(1)
+                #Take Camera Reading
+                motorStatus = 1
+                return motorStatus
+    def _set_led_in_position(self,color):
+        self.ser.write('S'+color)
+    def _toggle_led(self,color):
+        self.ser.write('L'+color)
+        time.sleep(1)
+#m = MotorMove()
+#m._set_initial_position()
+#m._get_current_position()
+#toReadNum = m._convert_labels_to_numericals(['B10','C12'])
 ##print toReadNum
 ##m._move_to_new_position(toReadNum)
-##m.arduino.close() #NECESSARY TO MAINTAIN PROPER POTENTIOMETER VALUE CONVENTION
+##m.ser.close() #NECESSARY TO MAINTAIN PROPER POTENTIOMETER VALUE CONVENTION
 
 #toRead = ['A12']
 #toReadNum = m._convert_labels_to_numericals(toRead)

@@ -97,7 +97,7 @@ void loop() {
       }
    }
 
-  if ((positionX != 0) && (positionY != 0) && (positionRecord == 3)) { //Only runs if X & Y Positions were successfully read
+  if ((positionX >= 0) && (positionY >= 0) && (positionRecord == 3)) { //Only runs if X & Y Positions were successfully read
       //Case 1 -- Motor X moves IN, Motor Y moves IN
       if ((positionX < potVal_1) && (positionY < potVal_2)) {
         stopCheck_1 = 1; // Marks the direction Motor 1 is moving (IN)
