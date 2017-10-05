@@ -2,23 +2,26 @@ from PyQt4 import QtGui
 from PyQt4 import QtCore
 
 from introScreen import *
+from wellSelectScreen_v2 import *
 
 class KAMSpec(QtGui.QWidget):
     def __init__(self):
         super(KAMSpec, self).__init__()
         self.initUI()
+        self.intro.startButton.clicked.connect(self.startWellSelect)
+        self.wellSelect.nextButton.clicked.connect(self.protocolSelectScreen)
 
     def initUI(self):
-        self.setWindowTitle('KAM-Spec 2017')
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap('KAM-Spec Logo LtoH.svg'), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.setWindowIcon(icon)
-        self.setGeometry(2, 2, 800, 480)
-        self.vbox = QtGui.QVBoxLayout()
-        self.setLayout(self.vbox)
-        self.intro = Ui_Form()
-        self.vbox.addWidget(self.intro)
-        self.show()
+        self.intro = introScreen()
+        self.wellSelect = wellSelectScreen()
+
+    def startWellSelect(self):
+        self.intro.hide()
+        self.wellSelect.show()
+
+    def protocolSelectScreen(self):
+        self.wellSelect.hide()
+
 
 def main():
     import sys

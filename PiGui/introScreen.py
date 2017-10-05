@@ -22,12 +22,13 @@ except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
 
-class Ui_Form(QtGui.QWidget):
+class introScreen(QtGui.QWidget):
     def __init__(self):
-        super(Ui_Form, self).__init__()
+        super(introScreen, self).__init__()
         self.initUI()
 
     def initUI(self):
+
         self.setObjectName(_fromUtf8("Form"))
         self.resize(794, 430)
         self.setStyleSheet(_fromUtf8("background-color: rgb(255, 255, 165);"))
@@ -109,7 +110,11 @@ class Ui_Form(QtGui.QWidget):
         self.show()
 
     def retranslateUi(self):
-        self.setWindowTitle(_translate("Form", "Form", None))
+        self.setWindowTitle('KAM-Spec 2017')
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap('KAM-Spec Logo LtoH.svg'), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.setWindowIcon(icon)
+        #self.setWindowTitle(_translate("Form", "Form", None))
         self.label_2.setText(_translate("Form", "PENN", None))
         self.label_3.setText(_translate("Form", "2017", None))
         self.startButton.setText(_translate("Form", "START", None))
@@ -118,7 +123,7 @@ def main():
     import sys
     app = QtGui.QApplication(sys.argv)
     app.setStyle("Plastique")
-    ex = Ui_Form()
+    ex = introScreen()
     sys.exit(app.exec_())
 
 

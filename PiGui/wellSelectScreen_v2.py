@@ -27,7 +27,7 @@ class wellSelectScreen(QtGui.QWidget):
         super(wellSelectScreen, self).__init__()
         self.initUI()
         self.clearButton.clicked.connect(self.clearWells)
-        self.show()
+        #self.show()
 
     def initUI(self):
         self.setObjectName(_fromUtf8("self"))
@@ -925,6 +925,20 @@ class wellSelectScreen(QtGui.QWidget):
 
     def mousePressEvent(self, event):
         self.origin = event.pos()
+
+        for child in self.findChildren(QtGui.QLabel):
+            rect_correct = QtCore.QRect(child.pos().x(), child.pos().y(), int(str(child.geometry().width())) - 15, int(str(child.geometry().height())) - 15)
+            if rect_correct.contains(self.origin):
+                if str(child.objectName()) in self.wellNames:
+                    name = str(child.objectName())
+                    row = name[0]
+                    column = int(name[1:len(name)]) - 1
+                    if self.selectionDict[row][column] == 'OFF':
+                        child.setPixmap(QtGui.QPixmap(_fromUtf8("selectedWellLogo.svg")))
+                        self.selectionDict[row][column] = 'ON'
+                    elif self.selectionDict[row][column] == 'ON':
+                        child.setPixmap(QtGui.QPixmap(_fromUtf8("notSelectedWellLogo.svg")))
+                        self.selectionDict[row][column] = 'OFF'
         self.rubberband.setGeometry(
             QtCore.QRect(self.origin, QtCore.QSize()))
         self.rubberband.show()
@@ -941,9 +955,9 @@ class wellSelectScreen(QtGui.QWidget):
             self.rubberband.hide()
             #selected = []
             rect = self.rubberband.geometry()
-            #rect_correct = QtCore.QRect(rect.x(),rect.y(),int(str(rect.width()))-18,int(str(rect.height()))-18)
+            rect_correct = QtCore.QRect(rect.x(),rect.y(),int(str(rect.width()))-18,int(str(rect.height()))-18)
             for child in self.findChildren(QtGui.QLabel):
-                if rect.intersects(child.geometry()):
+                if rect_correct.intersects(child.geometry()):
                     if str(child.objectName()) in self.wellNames:
                         name = str(child.objectName())
                         row = name[0]
@@ -967,7 +981,11 @@ class wellSelectScreen(QtGui.QWidget):
                 self.selectionDict[row][column] = 'OFF'
 
     def retranslateUi(self):
-        self.setWindowTitle(_translate("self", "self", None))
+        self.setWindowTitle('KAM-Spec 2017')
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap('KAM-Spec Logo LtoH.svg'), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.setWindowIcon(icon)
+        #self.setWindowTitle(_translate("self", "self", None))
         self.nextButton.setText(_translate("self", "NEXT", None))
         self.label_118.setText(_translate("self", "Click & Drag ", None))
         self.label_119.setText(_translate("self", "to select wells", None))
