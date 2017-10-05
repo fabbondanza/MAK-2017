@@ -16,7 +16,7 @@
   <property name="styleSheet">
    <string notr="true">background-color: rgb(170, 170, 255);</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="nextButton">
    <property name="geometry">
     <rect>
      <x>610</x>
@@ -71,6 +71,27 @@
    </property>
    <property name="text">
     <string>to select wells</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="clearButton">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>270</y>
+     <width>161</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 57, 43);</string>
+   </property>
+   <property name="text">
+    <string>Clear All</string>
    </property>
   </widget>
   <widget class="QWidget" name="">
@@ -141,7 +162,7 @@
      </widget>
     </item>
     <item row="1" column="1">
-     <widget class="QLabel" name="label">
+     <widget class="QLabel" name="A1">
       <property name="text">
        <string/>
       </property>
@@ -199,7 +220,7 @@
      </widget>
     </item>
     <item row="1" column="2">
-     <widget class="QLabel" name="label_11">
+     <widget class="QLabel" name="A2">
       <property name="text">
        <string/>
       </property>
@@ -242,7 +263,7 @@
      </widget>
     </item>
     <item row="1" column="3">
-     <widget class="QLabel" name="label_19">
+     <widget class="QLabel" name="A3">
       <property name="text">
        <string/>
       </property>
@@ -267,7 +288,7 @@
      </widget>
     </item>
     <item row="1" column="4">
-     <widget class="QLabel" name="label_27">
+     <widget class="QLabel" name="A4">
       <property name="text">
        <string/>
       </property>
@@ -325,7 +346,7 @@
      </widget>
     </item>
     <item row="2" column="6">
-     <widget class="QLabel" name="label_46">
+     <widget class="QLabel" name="B6">
       <property name="text">
        <string/>
       </property>
@@ -338,7 +359,7 @@
      </widget>
     </item>
     <item row="1" column="11">
-     <widget class="QLabel" name="label_83">
+     <widget class="QLabel" name="A11">
       <property name="text">
        <string/>
       </property>
@@ -351,7 +372,7 @@
      </widget>
     </item>
     <item row="1" column="6">
-     <widget class="QLabel" name="label_43">
+     <widget class="QLabel" name="A6">
       <property name="text">
        <string/>
       </property>
@@ -364,7 +385,7 @@
      </widget>
     </item>
     <item row="2" column="3">
-     <widget class="QLabel" name="label_22">
+     <widget class="QLabel" name="B3">
       <property name="text">
        <string/>
       </property>
@@ -377,7 +398,7 @@
      </widget>
     </item>
     <item row="2" column="8">
-     <widget class="QLabel" name="label_62">
+     <widget class="QLabel" name="B8">
       <property name="text">
        <string/>
       </property>
@@ -390,7 +411,7 @@
      </widget>
     </item>
     <item row="1" column="12">
-     <widget class="QLabel" name="label_93">
+     <widget class="QLabel" name="A12">
       <property name="text">
        <string/>
       </property>
@@ -403,7 +424,7 @@
      </widget>
     </item>
     <item row="3" column="1">
-     <widget class="QLabel" name="label_3">
+     <widget class="QLabel" name="C1">
       <property name="text">
        <string/>
       </property>
@@ -416,7 +437,7 @@
      </widget>
     </item>
     <item row="2" column="1">
-     <widget class="QLabel" name="label_2">
+     <widget class="QLabel" name="B1">
       <property name="text">
        <string/>
       </property>
@@ -429,7 +450,7 @@
      </widget>
     </item>
     <item row="3" column="7">
-     <widget class="QLabel" name="label_56">
+     <widget class="QLabel" name="C7">
       <property name="text">
        <string/>
       </property>
@@ -442,7 +463,7 @@
      </widget>
     </item>
     <item row="3" column="8">
-     <widget class="QLabel" name="label_64">
+     <widget class="QLabel" name="C8">
       <property name="text">
        <string/>
       </property>
@@ -455,7 +476,7 @@
      </widget>
     </item>
     <item row="1" column="8">
-     <widget class="QLabel" name="label_59">
+     <widget class="QLabel" name="A8">
       <property name="text">
        <string/>
       </property>
@@ -480,7 +501,7 @@
      </widget>
     </item>
     <item row="2" column="10">
-     <widget class="QLabel" name="label_78">
+     <widget class="QLabel" name="B10">
       <property name="text">
        <string/>
       </property>
@@ -493,7 +514,7 @@
      </widget>
     </item>
     <item row="3" column="3">
-     <widget class="QLabel" name="label_24">
+     <widget class="QLabel" name="C3">
       <property name="text">
        <string/>
       </property>
@@ -506,7 +527,7 @@
      </widget>
     </item>
     <item row="3" column="5">
-     <widget class="QLabel" name="label_40">
+     <widget class="QLabel" name="C5">
       <property name="text">
        <string/>
       </property>
@@ -519,7 +540,7 @@
      </widget>
     </item>
     <item row="3" column="9">
-     <widget class="QLabel" name="label_72">
+     <widget class="QLabel" name="C9">
       <property name="text">
        <string/>
       </property>
@@ -532,7 +553,7 @@
      </widget>
     </item>
     <item row="3" column="10">
-     <widget class="QLabel" name="label_80">
+     <widget class="QLabel" name="C10">
       <property name="text">
        <string/>
       </property>
@@ -545,7 +566,7 @@
      </widget>
     </item>
     <item row="2" column="7">
-     <widget class="QLabel" name="label_54">
+     <widget class="QLabel" name="B7">
       <property name="text">
        <string/>
       </property>
@@ -558,7 +579,7 @@
      </widget>
     </item>
     <item row="2" column="5">
-     <widget class="QLabel" name="label_38">
+     <widget class="QLabel" name="B5">
       <property name="text">
        <string/>
       </property>
@@ -571,7 +592,7 @@
      </widget>
     </item>
     <item row="1" column="7">
-     <widget class="QLabel" name="label_51">
+     <widget class="QLabel" name="A7">
       <property name="text">
        <string/>
       </property>
@@ -584,7 +605,7 @@
      </widget>
     </item>
     <item row="2" column="12">
-     <widget class="QLabel" name="label_90">
+     <widget class="QLabel" name="B12">
       <property name="text">
        <string/>
       </property>
@@ -597,7 +618,7 @@
      </widget>
     </item>
     <item row="3" column="2">
-     <widget class="QLabel" name="label_16">
+     <widget class="QLabel" name="C2">
       <property name="text">
        <string/>
       </property>
@@ -610,7 +631,7 @@
      </widget>
     </item>
     <item row="2" column="9">
-     <widget class="QLabel" name="label_70">
+     <widget class="QLabel" name="B9">
       <property name="text">
        <string/>
       </property>
@@ -623,7 +644,7 @@
      </widget>
     </item>
     <item row="3" column="4">
-     <widget class="QLabel" name="label_32">
+     <widget class="QLabel" name="C4">
       <property name="text">
        <string/>
       </property>
@@ -636,7 +657,7 @@
      </widget>
     </item>
     <item row="1" column="5">
-     <widget class="QLabel" name="label_35">
+     <widget class="QLabel" name="A5">
       <property name="text">
        <string/>
       </property>
@@ -649,7 +670,7 @@
      </widget>
     </item>
     <item row="2" column="2">
-     <widget class="QLabel" name="label_14">
+     <widget class="QLabel" name="B2">
       <property name="text">
        <string/>
       </property>
@@ -662,7 +683,7 @@
      </widget>
     </item>
     <item row="1" column="10">
-     <widget class="QLabel" name="label_75">
+     <widget class="QLabel" name="A10">
       <property name="text">
        <string/>
       </property>
@@ -675,7 +696,7 @@
      </widget>
     </item>
     <item row="2" column="4">
-     <widget class="QLabel" name="label_30">
+     <widget class="QLabel" name="B4">
       <property name="text">
        <string/>
       </property>
@@ -688,7 +709,7 @@
      </widget>
     </item>
     <item row="1" column="9">
-     <widget class="QLabel" name="label_67">
+     <widget class="QLabel" name="A9">
       <property name="text">
        <string/>
       </property>
@@ -701,7 +722,7 @@
      </widget>
     </item>
     <item row="2" column="11">
-     <widget class="QLabel" name="label_86">
+     <widget class="QLabel" name="B11">
       <property name="text">
        <string/>
       </property>
@@ -726,7 +747,7 @@
      </widget>
     </item>
     <item row="3" column="6">
-     <widget class="QLabel" name="label_48">
+     <widget class="QLabel" name="C6">
       <property name="text">
        <string/>
       </property>
@@ -739,7 +760,7 @@
      </widget>
     </item>
     <item row="5" column="1">
-     <widget class="QLabel" name="label_5">
+     <widget class="QLabel" name="E1">
       <property name="text">
        <string/>
       </property>
@@ -752,7 +773,7 @@
      </widget>
     </item>
     <item row="3" column="12">
-     <widget class="QLabel" name="label_91">
+     <widget class="QLabel" name="C12">
       <property name="text">
        <string/>
       </property>
@@ -765,7 +786,7 @@
      </widget>
     </item>
     <item row="4" column="2">
-     <widget class="QLabel" name="label_12">
+     <widget class="QLabel" name="D2">
       <property name="text">
        <string/>
       </property>
@@ -778,7 +799,7 @@
      </widget>
     </item>
     <item row="5" column="2">
-     <widget class="QLabel" name="label_13">
+     <widget class="QLabel" name="E2">
       <property name="text">
        <string/>
       </property>
@@ -791,7 +812,7 @@
      </widget>
     </item>
     <item row="5" column="3">
-     <widget class="QLabel" name="label_21">
+     <widget class="QLabel" name="E3">
       <property name="text">
        <string/>
       </property>
@@ -804,7 +825,7 @@
      </widget>
     </item>
     <item row="5" column="4">
-     <widget class="QLabel" name="label_29">
+     <widget class="QLabel" name="E4">
       <property name="text">
        <string/>
       </property>
@@ -817,7 +838,7 @@
      </widget>
     </item>
     <item row="4" column="7">
-     <widget class="QLabel" name="label_52">
+     <widget class="QLabel" name="D7">
       <property name="text">
        <string/>
       </property>
@@ -830,7 +851,7 @@
      </widget>
     </item>
     <item row="5" column="5">
-     <widget class="QLabel" name="label_37">
+     <widget class="QLabel" name="E5">
       <property name="text">
        <string/>
       </property>
@@ -843,7 +864,7 @@
      </widget>
     </item>
     <item row="3" column="11">
-     <widget class="QLabel" name="label_88">
+     <widget class="QLabel" name="C11">
       <property name="text">
        <string/>
       </property>
@@ -856,7 +877,7 @@
      </widget>
     </item>
     <item row="5" column="6">
-     <widget class="QLabel" name="label_45">
+     <widget class="QLabel" name="E6">
       <property name="text">
        <string/>
       </property>
@@ -881,7 +902,7 @@
      </widget>
     </item>
     <item row="4" column="4">
-     <widget class="QLabel" name="label_28">
+     <widget class="QLabel" name="D4">
       <property name="text">
        <string/>
       </property>
@@ -894,7 +915,7 @@
      </widget>
     </item>
     <item row="5" column="11">
-     <widget class="QLabel" name="label_85">
+     <widget class="QLabel" name="E11">
       <property name="text">
        <string/>
       </property>
@@ -907,7 +928,7 @@
      </widget>
     </item>
     <item row="5" column="10">
-     <widget class="QLabel" name="label_77">
+     <widget class="QLabel" name="E10">
       <property name="text">
        <string/>
       </property>
@@ -920,7 +941,7 @@
      </widget>
     </item>
     <item row="5" column="12">
-     <widget class="QLabel" name="label_89">
+     <widget class="QLabel" name="E12">
       <property name="text">
        <string/>
       </property>
@@ -933,7 +954,7 @@
      </widget>
     </item>
     <item row="4" column="11">
-     <widget class="QLabel" name="label_84">
+     <widget class="QLabel" name="D11">
       <property name="text">
        <string/>
       </property>
@@ -958,7 +979,7 @@
      </widget>
     </item>
     <item row="6" column="1">
-     <widget class="QLabel" name="label_6">
+     <widget class="QLabel" name="F1">
       <property name="text">
        <string/>
       </property>
@@ -971,7 +992,7 @@
      </widget>
     </item>
     <item row="6" column="2">
-     <widget class="QLabel" name="label_9">
+     <widget class="QLabel" name="F2">
       <property name="text">
        <string/>
       </property>
@@ -984,7 +1005,7 @@
      </widget>
     </item>
     <item row="4" column="3">
-     <widget class="QLabel" name="label_20">
+     <widget class="QLabel" name="D3">
       <property name="text">
        <string/>
       </property>
@@ -997,7 +1018,7 @@
      </widget>
     </item>
     <item row="5" column="7">
-     <widget class="QLabel" name="label_53">
+     <widget class="QLabel" name="E7">
       <property name="text">
        <string/>
       </property>
@@ -1010,7 +1031,7 @@
      </widget>
     </item>
     <item row="5" column="8">
-     <widget class="QLabel" name="label_61">
+     <widget class="QLabel" name="E8">
       <property name="text">
        <string/>
       </property>
@@ -1023,7 +1044,7 @@
      </widget>
     </item>
     <item row="5" column="9">
-     <widget class="QLabel" name="label_69">
+     <widget class="QLabel" name="E9">
       <property name="text">
        <string/>
       </property>
@@ -1036,7 +1057,7 @@
      </widget>
     </item>
     <item row="6" column="3">
-     <widget class="QLabel" name="label_17">
+     <widget class="QLabel" name="F3">
       <property name="text">
        <string/>
       </property>
@@ -1049,7 +1070,7 @@
      </widget>
     </item>
     <item row="4" column="1">
-     <widget class="QLabel" name="label_4">
+     <widget class="QLabel" name="D1">
       <property name="text">
        <string/>
       </property>
@@ -1062,7 +1083,7 @@
      </widget>
     </item>
     <item row="4" column="8">
-     <widget class="QLabel" name="label_60">
+     <widget class="QLabel" name="D8">
       <property name="text">
        <string/>
       </property>
@@ -1075,7 +1096,7 @@
      </widget>
     </item>
     <item row="4" column="6">
-     <widget class="QLabel" name="label_44">
+     <widget class="QLabel" name="D6">
       <property name="text">
        <string/>
       </property>
@@ -1088,7 +1109,7 @@
      </widget>
     </item>
     <item row="4" column="9">
-     <widget class="QLabel" name="label_68">
+     <widget class="QLabel" name="D9">
       <property name="text">
        <string/>
       </property>
@@ -1101,7 +1122,7 @@
      </widget>
     </item>
     <item row="4" column="5">
-     <widget class="QLabel" name="label_36">
+     <widget class="QLabel" name="D5">
       <property name="text">
        <string/>
       </property>
@@ -1114,7 +1135,7 @@
      </widget>
     </item>
     <item row="4" column="10">
-     <widget class="QLabel" name="label_76">
+     <widget class="QLabel" name="D10">
       <property name="text">
        <string/>
       </property>
@@ -1127,7 +1148,7 @@
      </widget>
     </item>
     <item row="4" column="12">
-     <widget class="QLabel" name="label_92">
+     <widget class="QLabel" name="D12">
       <property name="text">
        <string/>
       </property>
@@ -1152,7 +1173,7 @@
      </widget>
     </item>
     <item row="6" column="5">
-     <widget class="QLabel" name="label_33">
+     <widget class="QLabel" name="F5">
       <property name="text">
        <string/>
       </property>
@@ -1165,7 +1186,7 @@
      </widget>
     </item>
     <item row="6" column="10">
-     <widget class="QLabel" name="label_73">
+     <widget class="QLabel" name="F10">
       <property name="text">
        <string/>
       </property>
@@ -1178,7 +1199,7 @@
      </widget>
     </item>
     <item row="7" column="1">
-     <widget class="QLabel" name="label_7">
+     <widget class="QLabel" name="G1">
       <property name="text">
        <string/>
       </property>
@@ -1191,7 +1212,7 @@
      </widget>
     </item>
     <item row="7" column="10">
-     <widget class="QLabel" name="label_74">
+     <widget class="QLabel" name="G10">
       <property name="text">
        <string/>
       </property>
@@ -1204,7 +1225,7 @@
      </widget>
     </item>
     <item row="6" column="4">
-     <widget class="QLabel" name="label_25">
+     <widget class="QLabel" name="F4">
       <property name="text">
        <string/>
       </property>
@@ -1217,7 +1238,7 @@
      </widget>
     </item>
     <item row="6" column="11">
-     <widget class="QLabel" name="label_81">
+     <widget class="QLabel" name="F11">
       <property name="text">
        <string/>
       </property>
@@ -1230,7 +1251,7 @@
      </widget>
     </item>
     <item row="6" column="7">
-     <widget class="QLabel" name="label_49">
+     <widget class="QLabel" name="F7">
       <property name="text">
        <string/>
       </property>
@@ -1243,7 +1264,7 @@
      </widget>
     </item>
     <item row="6" column="6">
-     <widget class="QLabel" name="label_41">
+     <widget class="QLabel" name="F6">
       <property name="text">
        <string/>
       </property>
@@ -1256,7 +1277,7 @@
      </widget>
     </item>
     <item row="6" column="12">
-     <widget class="QLabel" name="label_95">
+     <widget class="QLabel" name="F12">
       <property name="text">
        <string/>
       </property>
@@ -1269,7 +1290,7 @@
      </widget>
     </item>
     <item row="7" column="6">
-     <widget class="QLabel" name="label_42">
+     <widget class="QLabel" name="G6">
       <property name="text">
        <string/>
       </property>
@@ -1282,7 +1303,7 @@
      </widget>
     </item>
     <item row="6" column="8">
-     <widget class="QLabel" name="label_57">
+     <widget class="QLabel" name="F8">
       <property name="text">
        <string/>
       </property>
@@ -1295,7 +1316,7 @@
      </widget>
     </item>
     <item row="7" column="3">
-     <widget class="QLabel" name="label_18">
+     <widget class="QLabel" name="G3">
       <property name="text">
        <string/>
       </property>
@@ -1308,7 +1329,7 @@
      </widget>
     </item>
     <item row="7" column="12">
-     <widget class="QLabel" name="label_94">
+     <widget class="QLabel" name="G12">
       <property name="text">
        <string/>
       </property>
@@ -1321,7 +1342,7 @@
      </widget>
     </item>
     <item row="7" column="11">
-     <widget class="QLabel" name="label_82">
+     <widget class="QLabel" name="G11">
       <property name="text">
        <string/>
       </property>
@@ -1346,7 +1367,7 @@
      </widget>
     </item>
     <item row="8" column="1">
-     <widget class="QLabel" name="label_8">
+     <widget class="QLabel" name="H1">
       <property name="text">
        <string/>
       </property>
@@ -1371,7 +1392,7 @@
      </widget>
     </item>
     <item row="8" column="3">
-     <widget class="QLabel" name="label_23">
+     <widget class="QLabel" name="H3">
       <property name="text">
        <string/>
       </property>
@@ -1384,7 +1405,7 @@
      </widget>
     </item>
     <item row="7" column="9">
-     <widget class="QLabel" name="label_66">
+     <widget class="QLabel" name="G9">
       <property name="text">
        <string/>
       </property>
@@ -1397,7 +1418,7 @@
      </widget>
     </item>
     <item row="8" column="4">
-     <widget class="QLabel" name="label_31">
+     <widget class="QLabel" name="H4">
       <property name="text">
        <string/>
       </property>
@@ -1410,7 +1431,7 @@
      </widget>
     </item>
     <item row="8" column="5">
-     <widget class="QLabel" name="label_39">
+     <widget class="QLabel" name="H5">
       <property name="text">
        <string/>
       </property>
@@ -1423,7 +1444,7 @@
      </widget>
     </item>
     <item row="7" column="7">
-     <widget class="QLabel" name="label_50">
+     <widget class="QLabel" name="F7_2">
       <property name="text">
        <string/>
       </property>
@@ -1436,7 +1457,7 @@
      </widget>
     </item>
     <item row="7" column="2">
-     <widget class="QLabel" name="label_10">
+     <widget class="QLabel" name="G2">
       <property name="text">
        <string/>
       </property>
@@ -1449,7 +1470,7 @@
      </widget>
     </item>
     <item row="7" column="8">
-     <widget class="QLabel" name="label_58">
+     <widget class="QLabel" name="G8">
       <property name="text">
        <string/>
       </property>
@@ -1462,7 +1483,7 @@
      </widget>
     </item>
     <item row="8" column="6">
-     <widget class="QLabel" name="label_47">
+     <widget class="QLabel" name="H6">
       <property name="text">
        <string/>
       </property>
@@ -1475,7 +1496,7 @@
      </widget>
     </item>
     <item row="8" column="8">
-     <widget class="QLabel" name="label_63">
+     <widget class="QLabel" name="H8">
       <property name="text">
        <string/>
       </property>
@@ -1488,7 +1509,7 @@
      </widget>
     </item>
     <item row="6" column="9">
-     <widget class="QLabel" name="label_65">
+     <widget class="QLabel" name="F9">
       <property name="text">
        <string/>
       </property>
@@ -1501,7 +1522,7 @@
      </widget>
     </item>
     <item row="7" column="4">
-     <widget class="QLabel" name="label_26">
+     <widget class="QLabel" name="G4">
       <property name="text">
        <string/>
       </property>
@@ -1514,7 +1535,7 @@
      </widget>
     </item>
     <item row="7" column="5">
-     <widget class="QLabel" name="label_34">
+     <widget class="QLabel" name="G5">
       <property name="text">
        <string/>
       </property>
@@ -1527,7 +1548,7 @@
      </widget>
     </item>
     <item row="8" column="2">
-     <widget class="QLabel" name="label_15">
+     <widget class="QLabel" name="H2">
       <property name="text">
        <string/>
       </property>
@@ -1540,7 +1561,7 @@
      </widget>
     </item>
     <item row="8" column="7">
-     <widget class="QLabel" name="label_55">
+     <widget class="QLabel" name="H7">
       <property name="text">
        <string/>
       </property>
@@ -1553,7 +1574,7 @@
      </widget>
     </item>
     <item row="8" column="9">
-     <widget class="QLabel" name="label_71">
+     <widget class="QLabel" name="H9">
       <property name="text">
        <string/>
       </property>
@@ -1566,7 +1587,7 @@
      </widget>
     </item>
     <item row="8" column="11">
-     <widget class="QLabel" name="label_87">
+     <widget class="QLabel" name="H11">
       <property name="text">
        <string/>
       </property>
@@ -1579,7 +1600,7 @@
      </widget>
     </item>
     <item row="8" column="10">
-     <widget class="QLabel" name="label_79">
+     <widget class="QLabel" name="H10">
       <property name="text">
        <string/>
       </property>
@@ -1592,7 +1613,7 @@
      </widget>
     </item>
     <item row="8" column="12">
-     <widget class="QLabel" name="label_96">
+     <widget class="QLabel" name="H12">
       <property name="text">
        <string/>
       </property>
@@ -1621,102 +1642,102 @@
     </item>
    </layout>
   </widget>
-  <zorder>label</zorder>
-  <zorder>label_2</zorder>
-  <zorder>label_3</zorder>
-  <zorder>label_4</zorder>
-  <zorder>label_5</zorder>
-  <zorder>label_6</zorder>
-  <zorder>label_7</zorder>
-  <zorder>label_8</zorder>
-  <zorder>label_9</zorder>
-  <zorder>label_10</zorder>
-  <zorder>label_11</zorder>
-  <zorder>label_12</zorder>
-  <zorder>label_13</zorder>
-  <zorder>label_14</zorder>
-  <zorder>label_15</zorder>
-  <zorder>label_16</zorder>
-  <zorder>label_17</zorder>
-  <zorder>label_18</zorder>
-  <zorder>label_19</zorder>
-  <zorder>label_20</zorder>
-  <zorder>label_21</zorder>
-  <zorder>label_22</zorder>
-  <zorder>label_23</zorder>
-  <zorder>label_24</zorder>
-  <zorder>label_25</zorder>
-  <zorder>label_26</zorder>
-  <zorder>label_27</zorder>
-  <zorder>label_28</zorder>
-  <zorder>label_29</zorder>
-  <zorder>label_30</zorder>
-  <zorder>label_31</zorder>
-  <zorder>label_32</zorder>
-  <zorder>label_33</zorder>
-  <zorder>label_34</zorder>
-  <zorder>label_35</zorder>
-  <zorder>label_36</zorder>
-  <zorder>label_37</zorder>
-  <zorder>label_38</zorder>
-  <zorder>label_39</zorder>
-  <zorder>label_40</zorder>
-  <zorder>label_41</zorder>
-  <zorder>label_42</zorder>
-  <zorder>label_43</zorder>
-  <zorder>label_44</zorder>
-  <zorder>label_45</zorder>
-  <zorder>label_46</zorder>
-  <zorder>label_47</zorder>
-  <zorder>label_48</zorder>
-  <zorder>label_49</zorder>
-  <zorder>label_50</zorder>
-  <zorder>label_51</zorder>
-  <zorder>label_52</zorder>
-  <zorder>label_53</zorder>
-  <zorder>label_54</zorder>
-  <zorder>label_55</zorder>
-  <zorder>label_56</zorder>
-  <zorder>label_57</zorder>
-  <zorder>label_58</zorder>
-  <zorder>label_59</zorder>
-  <zorder>label_60</zorder>
-  <zorder>label_61</zorder>
-  <zorder>label_62</zorder>
-  <zorder>label_63</zorder>
-  <zorder>label_64</zorder>
-  <zorder>label_65</zorder>
-  <zorder>label_66</zorder>
-  <zorder>label_67</zorder>
-  <zorder>label_68</zorder>
-  <zorder>label_69</zorder>
-  <zorder>label_70</zorder>
-  <zorder>label_71</zorder>
-  <zorder>label_72</zorder>
-  <zorder>label_73</zorder>
-  <zorder>label_74</zorder>
-  <zorder>label_75</zorder>
-  <zorder>label_76</zorder>
-  <zorder>label_77</zorder>
-  <zorder>label_78</zorder>
-  <zorder>label_79</zorder>
-  <zorder>label_80</zorder>
-  <zorder>label_81</zorder>
-  <zorder>label_82</zorder>
-  <zorder>label_83</zorder>
-  <zorder>label_84</zorder>
-  <zorder>label_85</zorder>
-  <zorder>label_86</zorder>
-  <zorder>label_87</zorder>
-  <zorder>label_88</zorder>
-  <zorder>label_89</zorder>
-  <zorder>label_90</zorder>
-  <zorder>label_91</zorder>
-  <zorder>label_92</zorder>
-  <zorder>label_93</zorder>
-  <zorder>label_94</zorder>
-  <zorder>label_95</zorder>
-  <zorder>label_96</zorder>
+  <zorder>A1</zorder>
+  <zorder>B1</zorder>
+  <zorder>C1</zorder>
+  <zorder>D1</zorder>
+  <zorder>E1</zorder>
+  <zorder>F1</zorder>
+  <zorder>G1</zorder>
+  <zorder>H1</zorder>
+  <zorder>F2</zorder>
+  <zorder>G2</zorder>
+  <zorder>A2</zorder>
+  <zorder>D2</zorder>
+  <zorder>E2</zorder>
+  <zorder>B2</zorder>
+  <zorder>H2</zorder>
+  <zorder>C2</zorder>
+  <zorder>F3</zorder>
+  <zorder>G3</zorder>
+  <zorder>A3</zorder>
+  <zorder>D3</zorder>
+  <zorder>E3</zorder>
+  <zorder>B3</zorder>
+  <zorder>H3</zorder>
+  <zorder>C3</zorder>
+  <zorder>F4</zorder>
+  <zorder>G4</zorder>
+  <zorder>A4</zorder>
+  <zorder>D4</zorder>
+  <zorder>E4</zorder>
+  <zorder>B4</zorder>
+  <zorder>H4</zorder>
+  <zorder>C4</zorder>
+  <zorder>F5</zorder>
+  <zorder>G5</zorder>
+  <zorder>A5</zorder>
+  <zorder>D5</zorder>
+  <zorder>E5</zorder>
+  <zorder>B5</zorder>
+  <zorder>H5</zorder>
+  <zorder>C5</zorder>
+  <zorder>F6</zorder>
+  <zorder>G6</zorder>
+  <zorder>A6</zorder>
+  <zorder>D6</zorder>
+  <zorder>E6</zorder>
+  <zorder>B6</zorder>
+  <zorder>H6</zorder>
+  <zorder>C6</zorder>
+  <zorder>F7</zorder>
+  <zorder>F7_2</zorder>
+  <zorder>A7</zorder>
+  <zorder>D7</zorder>
+  <zorder>E7</zorder>
+  <zorder>B7</zorder>
+  <zorder>H7</zorder>
+  <zorder>C7</zorder>
+  <zorder>F8</zorder>
+  <zorder>G8</zorder>
+  <zorder>A8</zorder>
+  <zorder>D8</zorder>
+  <zorder>E8</zorder>
+  <zorder>B8</zorder>
+  <zorder>H8</zorder>
+  <zorder>C8</zorder>
+  <zorder>F9</zorder>
+  <zorder>G9</zorder>
+  <zorder>A9</zorder>
+  <zorder>D9</zorder>
+  <zorder>E9</zorder>
+  <zorder>B9</zorder>
+  <zorder>H9</zorder>
+  <zorder>C9</zorder>
+  <zorder>F10</zorder>
+  <zorder>G10</zorder>
+  <zorder>A10</zorder>
+  <zorder>D10</zorder>
+  <zorder>E10</zorder>
+  <zorder>B10</zorder>
+  <zorder>H10</zorder>
+  <zorder>C10</zorder>
+  <zorder>F11</zorder>
+  <zorder>G11</zorder>
+  <zorder>A11</zorder>
+  <zorder>D11</zorder>
+  <zorder>E11</zorder>
+  <zorder>B11</zorder>
+  <zorder>H11</zorder>
+  <zorder>C11</zorder>
+  <zorder>E12</zorder>
+  <zorder>B12</zorder>
+  <zorder>C12</zorder>
+  <zorder>D12</zorder>
+  <zorder>A12</zorder>
+  <zorder>G12</zorder>
+  <zorder>F12</zorder>
+  <zorder>H12</zorder>
   <zorder>label_97</zorder>
   <zorder>label_98</zorder>
   <zorder>label_99</zorder>
@@ -1739,9 +1760,10 @@
   <zorder>label_116</zorder>
   <zorder>label_117</zorder>
   <zorder>label_109</zorder>
-  <zorder>pushButton</zorder>
+  <zorder>nextButton</zorder>
   <zorder>label_118</zorder>
   <zorder>label_119</zorder>
+  <zorder>clearButton</zorder>
  </widget>
  <resources/>
  <connections/>

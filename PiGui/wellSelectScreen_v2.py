@@ -26,19 +26,20 @@ class wellSelectScreen(QtGui.QWidget):
     def __init__(self):
         super(wellSelectScreen, self).__init__()
         self.initUI()
+        self.clearButton.clicked.connect(self.clearWells)
         self.show()
 
     def initUI(self):
         self.setObjectName(_fromUtf8("self"))
         self.resize(794, 430)
         self.setStyleSheet(_fromUtf8("background-color: rgb(170, 170, 255);"))
-        self.pushButton = QtGui.QPushButton(self)
-        self.pushButton.setGeometry(QtCore.QRect(610, 340, 161, 61))
+        self.nextButton = QtGui.QPushButton(self)
+        self.nextButton.setGeometry(QtCore.QRect(610, 340, 161, 61))
         font = QtGui.QFont()
         font.setPointSize(20)
-        self.pushButton.setFont(font)
-        self.pushButton.setStyleSheet(_fromUtf8("background-color: rgb(85, 255, 127);"))
-        self.pushButton.setObjectName(_fromUtf8("pushButton"))
+        self.nextButton.setFont(font)
+        self.nextButton.setStyleSheet(_fromUtf8("background-color: rgb(85, 255, 127);"))
+        self.nextButton.setObjectName(_fromUtf8("nextButton"))
         self.label_118 = QtGui.QLabel(self)
         self.label_118.setGeometry(QtCore.QRect(620, 20, 131, 51))
         font = QtGui.QFont()
@@ -51,6 +52,13 @@ class wellSelectScreen(QtGui.QWidget):
         font.setPointSize(16)
         self.label_119.setFont(font)
         self.label_119.setObjectName(_fromUtf8("label_119"))
+        self.clearButton = QtGui.QPushButton(self)
+        self.clearButton.setGeometry(QtCore.QRect(610, 270, 161, 61))
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        self.clearButton.setFont(font)
+        self.clearButton.setStyleSheet(_fromUtf8("background-color: rgb(255, 57, 43);"))
+        self.clearButton.setObjectName(_fromUtf8("clearButton"))
         self.widget = QtGui.QWidget(self)
         self.widget.setGeometry(QtCore.QRect(20, 20, 551, 381))
         self.widget.setObjectName(_fromUtf8("widget"))
@@ -680,12 +688,12 @@ class wellSelectScreen(QtGui.QWidget):
         self.H5.setScaledContents(True)
         self.H5.setObjectName(_fromUtf8("H5"))
         self.gridLayout.addWidget(self.H5, 8, 5, 1, 1)
-        self.F7_2 = QtGui.QLabel(self.widget)
-        self.F7_2.setText(_fromUtf8(""))
-        self.F7_2.setPixmap(QtGui.QPixmap(_fromUtf8("notSelectedWellLogo.svg")))
-        self.F7_2.setScaledContents(True)
-        self.F7_2.setObjectName(_fromUtf8("F7_2"))
-        self.gridLayout.addWidget(self.F7_2, 7, 7, 1, 1)
+        self.G7 = QtGui.QLabel(self.widget)
+        self.G7.setText(_fromUtf8(""))
+        self.G7.setPixmap(QtGui.QPixmap(_fromUtf8("notSelectedWellLogo.svg")))
+        self.G7.setScaledContents(True)
+        self.G7.setObjectName(_fromUtf8("G7"))
+        self.gridLayout.addWidget(self.G7, 7, 7, 1, 1)
         self.G2 = QtGui.QLabel(self.widget)
         self.G2.setText(_fromUtf8(""))
         self.G2.setPixmap(QtGui.QPixmap(_fromUtf8("notSelectedWellLogo.svg")))
@@ -820,7 +828,7 @@ class wellSelectScreen(QtGui.QWidget):
         self.H6.raise_()
         self.C6.raise_()
         self.F7.raise_()
-        self.F7_2.raise_()
+        self.G7.raise_()
         self.A7.raise_()
         self.D7.raise_()
         self.E7.raise_()
@@ -889,9 +897,10 @@ class wellSelectScreen(QtGui.QWidget):
         self.label_116.raise_()
         self.label_117.raise_()
         self.label_109.raise_()
-        self.pushButton.raise_()
+        self.nextButton.raise_()
         self.label_118.raise_()
         self.label_119.raise_()
+        self.clearButton.raise_()
 
         self.rows = ['A', 'B', 'C', 'D', 'E', 'F','G', 'H']
         self.cols = range(1,13)
@@ -930,15 +939,15 @@ class wellSelectScreen(QtGui.QWidget):
     def mouseReleaseEvent(self, event):
         if self.rubberband.isVisible():
             self.rubberband.hide()
-            selected = []
+            #selected = []
             rect = self.rubberband.geometry()
-            rect_correct = QtCore.QRect(rect.x(),rect.y(),int(str(rect.width()))-18,int(str(rect.height()))-18)
+            #rect_correct = QtCore.QRect(rect.x(),rect.y(),int(str(rect.width()))-18,int(str(rect.height()))-18)
             for child in self.findChildren(QtGui.QLabel):
                 if rect.intersects(child.geometry()):
                     if str(child.objectName()) in self.wellNames:
                         name = str(child.objectName())
                         row = name[0]
-                        column = int(name[1])-1
+                        column = int(name[1:len(name)])-1
                         if self.selectionDict[row][column] == 'OFF':
                             child.setPixmap(QtGui.QPixmap(_fromUtf8("selectedWellLogo.svg")))
                             self.selectionDict[row][column] = 'ON'
@@ -948,11 +957,21 @@ class wellSelectScreen(QtGui.QWidget):
 
         QtGui.QWidget.mouseReleaseEvent(self, event)
 
+    def clearWells(self):
+        for child in self.findChildren(QtGui.QLabel):
+            if str(child.objectName()) in self.wellNames:
+                name = str(child.objectName())
+                row = name[0]
+                column = int(name[1:len(name)]) - 1
+                child.setPixmap(QtGui.QPixmap(_fromUtf8("notSelectedWellLogo.svg")))
+                self.selectionDict[row][column] = 'OFF'
+
     def retranslateUi(self):
         self.setWindowTitle(_translate("self", "self", None))
-        self.pushButton.setText(_translate("self", "NEXT", None))
+        self.nextButton.setText(_translate("self", "NEXT", None))
         self.label_118.setText(_translate("self", "Click & Drag ", None))
         self.label_119.setText(_translate("self", "to select wells", None))
+        self.clearButton.setText(_translate("self", "Clear All", None))
         self.label_107.setText(_translate("self", "11", None))
         self.label_110.setText(_translate("self", "A", None))
         self.label_98.setText(_translate("self", "2", None))
