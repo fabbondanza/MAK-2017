@@ -9,7 +9,7 @@ from absSpecMenu import *
 from flrMenu import *
 from flrSpecMenu import *
 from inputEmail import *
-from arudino import *
+from arudinoPi import *
 from camera import *
 
 ###Includes for email sending ability of data
@@ -43,7 +43,7 @@ class KAMSpec(QtGui.QWidget):
         self.absSpecMenu.addProtocolButton.clicked.connect(lambda: self.addProtocol(2))
         self.flrMenu.addProtocolButton.clicked.connect(lambda: self.addProtocol(3))
         self.flrSpecMenu.addProtocolButton.clicked.connect(lambda: self.addProtocol(4))
-        #self.absMenu.finishButton.click.connect(self.finishProtocolSelection)
+        self.absMenu.finishButton.click.connect(self.finishProtocolSelection)
 
         self.protocolDict = {}
         self.selectedWellsDict = {}
@@ -124,7 +124,16 @@ class KAMSpec(QtGui.QWidget):
         self.wellSelect.clearWells()
         self.wellSelect.show()
 
-    def absorbanceProtocol(self, wellList, exposureTime, wavelength):
+    def finishProtocolSelection(self):
+        for plate in range(1, self.plateCount+1):
+            for protocol in range(0, len(self.protocolDict[plate])):
+                if self.protocolDict[plate][protocol].keys()[0] == 1:
+                    wellList = self.selectedWellsDict[plate]
+                    exposureTime = int(self.protocolDict[plate][protocol]['Exposure Time'])
+                    wavelength = int(self.protocolDict[plate][protocol]['Wavelength'])
+                    self.absProtocol(wellList, exposureTime, wavelength)
+
+    def absProtocol(self, wellList, exposureTime, wavelength):
         self.camera.set_exposure_time(exposureTime)
         time.sleep(1)
         self.machine._set_initial_position()
