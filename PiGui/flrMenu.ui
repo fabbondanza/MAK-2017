@@ -34,7 +34,7 @@
     <rect>
      <x>20</x>
      <y>20</y>
-     <width>491</width>
+     <width>751</width>
      <height>41</height>
     </rect>
    </property>
@@ -53,7 +53,7 @@
   <widget class="QSpinBox" name="exposureTimeSpinBox">
    <property name="geometry">
     <rect>
-     <x>260</x>
+     <x>320</x>
      <y>100</y>
      <width>111</width>
      <height>41</height>
@@ -80,7 +80,7 @@
     <rect>
      <x>20</x>
      <y>100</y>
-     <width>251</width>
+     <width>391</width>
      <height>41</height>
     </rect>
    </property>
@@ -99,7 +99,7 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>390</x>
+     <x>450</x>
      <y>100</y>
      <width>71</width>
      <height>41</height>
@@ -122,7 +122,7 @@
     <rect>
      <x>20</x>
      <y>170</y>
-     <width>311</width>
+     <width>571</width>
      <height>41</height>
     </rect>
    </property>
@@ -135,15 +135,15 @@
     </font>
    </property>
    <property name="text">
-    <string>Excitation Wavelength:</string>
+    <string>Excitation:</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>460</x>
+     <x>390</x>
      <y>170</y>
-     <width>81</width>
+     <width>131</width>
      <height>41</height>
     </rect>
    </property>
@@ -171,7 +171,7 @@
    <property name="font">
     <font>
      <family>Calibri</family>
-     <pointsize>20</pointsize>
+     <pointsize>16</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
@@ -195,7 +195,7 @@
    <property name="font">
     <font>
      <family>Calibri</family>
-     <pointsize>20</pointsize>
+     <pointsize>16</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
@@ -225,13 +225,13 @@
     </font>
    </property>
    <property name="text">
-    <string>Emission Wavelength:</string>
+    <string>Emission:</string>
    </property>
   </widget>
   <widget class="QSpinBox" name="emissionWavelengthSpinBox">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>270</x>
      <y>230</y>
      <width>111</width>
      <height>41</height>
@@ -256,7 +256,7 @@
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
-     <x>460</x>
+     <x>390</x>
      <y>230</y>
      <width>81</width>
      <height>41</height>
@@ -277,7 +277,7 @@
   <widget class="QComboBox" name="excitationWavelengthComboBox">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>270</x>
      <y>170</y>
      <width>111</width>
      <height>41</height>
@@ -310,6 +310,50 @@ selection-background-color: rgb(170, 255, 255);</string>
     </property>
    </item>
   </widget>
+  <widget class="QScrollBar" name="exposureTimeScrollBar">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>110</y>
+     <width>191</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(85, 255, 127);</string>
+   </property>
+   <property name="minimum">
+    <number>1</number>
+   </property>
+   <property name="maximum">
+    <number>6500</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QScrollBar" name="emissionScrollBar">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>230</y>
+     <width>191</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(85, 255, 127);</string>
+   </property>
+   <property name="minimum">
+    <number>1</number>
+   </property>
+   <property name="maximum">
+    <number>6500</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
   <zorder>line</zorder>
   <zorder>label</zorder>
   <zorder>label_2</zorder>
@@ -323,6 +367,8 @@ selection-background-color: rgb(170, 255, 255);</string>
   <zorder>emissionWavelengthSpinBox</zorder>
   <zorder>label_7</zorder>
   <zorder>excitationWavelengthComboBox</zorder>
+  <zorder>exposureTimeScrollBar</zorder>
+  <zorder>emissionScrollBar</zorder>
  </widget>
  <resources/>
  <connections/>
