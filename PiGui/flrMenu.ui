@@ -332,7 +332,7 @@ selection-background-color: rgb(170, 255, 255);</string>
     <enum>Qt::Horizontal</enum>
    </property>
   </widget>
-  <widget class="QScrollBar" name="emissionScrollBar">
+  <widget class="QScrollBar" name="emissionWavelengthScrollBar">
    <property name="geometry">
     <rect>
      <x>560</x>
@@ -345,10 +345,10 @@ selection-background-color: rgb(170, 255, 255);</string>
     <string notr="true">background-color: rgb(85, 255, 127);</string>
    </property>
    <property name="minimum">
-    <number>1</number>
+    <number>400</number>
    </property>
    <property name="maximum">
-    <number>6500</number>
+    <number>700</number>
    </property>
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
@@ -368,7 +368,7 @@ selection-background-color: rgb(170, 255, 255);</string>
   <zorder>label_7</zorder>
   <zorder>excitationWavelengthComboBox</zorder>
   <zorder>exposureTimeScrollBar</zorder>
-  <zorder>emissionScrollBar</zorder>
+  <zorder>emissionWavelengthScrollBar</zorder>
  </widget>
  <resources/>
  <connections/>
