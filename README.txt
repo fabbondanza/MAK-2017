@@ -14,4 +14,9 @@ Dependencies:
 
 ---- Python GUI PyQT4 ------
 (1) sudo apt-get install python-qt4 pyqt4-dev-tools qt4-designer
-(2) 
+
+
+%%%% GUI-LOGISTICS %%%%%%
+
+Screen size of GUIs: 794 x 430 pixels
+
