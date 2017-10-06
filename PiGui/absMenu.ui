@@ -53,7 +53,7 @@
   <widget class="QSpinBox" name="exposureTimeSpinBox">
    <property name="geometry">
     <rect>
-     <x>230</x>
+     <x>300</x>
      <y>100</y>
      <width>111</width>
      <height>41</height>
@@ -99,7 +99,7 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>350</x>
+     <x>480</x>
      <y>100</y>
      <width>61</width>
      <height>41</height>
@@ -141,7 +141,7 @@
   <widget class="QSpinBox" name="wavelengthSpinBox">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>260</x>
      <y>170</y>
      <width>111</width>
      <height>41</height>
@@ -166,7 +166,7 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>320</x>
+     <x>430</x>
      <y>170</y>
      <width>71</width>
      <height>41</height>
@@ -233,15 +233,15 @@
    </property>
   </widget>
   <zorder>line</zorder>
-  <zorder>label</zorder>
-  <zorder>label_2</zorder>
   <zorder>label_3</zorder>
-  <zorder>label_4</zorder>
   <zorder>wavelengthSpinBox</zorder>
   <zorder>label_5</zorder>
   <zorder>finishButton</zorder>
   <zorder>addProtocolButton</zorder>
   <zorder>exposureTimeSpinBox</zorder>
+  <zorder>label</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label_4</zorder>
  </widget>
  <resources/>
  <connections/>
