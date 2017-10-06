@@ -43,7 +43,7 @@ class KAMSpec(QtGui.QWidget):
         self.absSpecMenu.addProtocolButton.clicked.connect(lambda: self.addProtocol(2))
         self.flrMenu.addProtocolButton.clicked.connect(lambda: self.addProtocol(3))
         self.flrSpecMenu.addProtocolButton.clicked.connect(lambda: self.addProtocol(4))
-        self.absMenu.finishButton.click.connect(self.finishProtocolSelection)
+        self.absMenu.finishButton.clicked.connect(self.finishProtocolSelection)
 
         self.protocolDict = {}
         self.selectedWellsDict = {}
