@@ -154,7 +154,10 @@ class absMenu(QtGui.QWidget):
         QtCore.QMetaObject.connectSlotsByName(self)
 
     def retranslateUi(self):
-        self.setWindowTitle(_translate("self", "self", None))
+        self.setWindowTitle('KAM-Spec 2017')
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap('KAM-Spec Logo LtoH.svg'), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.setWindowIcon(icon)
         self.label.setText(_translate("self", "Absorbance Settings ", None))
         self.label_2.setText(_translate("self", "Exposure Time:", None))
         self.label_3.setText(_translate("self", "(ms)", None))
