@@ -18,7 +18,7 @@ class MotorMove(object):
         #     warnings.warn('Multiple sers found - using the first')
         # print ser_ports[0]
         # self.ser = serial.Serial(ser_ports[0], 9600)
-        self.ser = serial.Serial('/dev/ttyAMC1', 9600)
+        self.ser = serial.Serial('/dev/ttyAMC0', 9600)
         time.sleep(5)
         if self.ser is None:
             print 'Device not found'
