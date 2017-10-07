@@ -17,7 +17,8 @@ class MotorMove(object):
         # if len(ser_ports) > 1:
         #     warnings.warn('Multiple sers found - using the first')
         # print ser_ports[0]
-        self.ser = serial.Serial('/dev/ttyACM0', 9600)
+        # self.ser = serial.Serial(ser_ports[0], 9600)
+        self.ser = serial.Serial('/dev/ttyAMC0', 9600)
         time.sleep(5)
         if self.ser is None:
             print 'Device not found'
@@ -70,9 +71,13 @@ class MotorMove(object):
         currentX, currentY = self._get_current_position()
         if rowsToMove < 0:
             newY = currentY-(abs(rowsToMove*wellDistanceY))
+            if newY < 0:
+                newY = 0
             y_done = 1
         elif rowsToMove > 0:
             newY = currentY + (abs(rowsToMove*wellDistanceY))
+            if newY < 0:
+                newY = 0
             y_done = 1
         else:
             newY = currentY

@@ -1,9 +1,9 @@
-import numpy as np
-import matplotlib.pyplot as pl
-from camera import *
+c = []
 
-c = LineCamera()
+c.append('a')
 
-f = c.get_frame()
-data= f
-print data
+c.append('b')
+
+c = ['d'] + c
+
+print c

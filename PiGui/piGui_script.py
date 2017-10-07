@@ -1,6 +1,7 @@
 from PyQt4 import QtGui
 from PyQt4 import QtCore
 import time
+import csv
 from introScreen import *
 from wellSelectScreen_v2 import *
 from selectProtocolScreen import *
@@ -43,7 +44,10 @@ class KAMSpec(QtGui.QWidget):
         self.absSpecMenu.addProtocolButton.clicked.connect(lambda: self.addProtocol(2))
         self.flrMenu.addProtocolButton.clicked.connect(lambda: self.addProtocol(3))
         self.flrSpecMenu.addProtocolButton.clicked.connect(lambda: self.addProtocol(4))
-        self.absMenu.finishButton.clicked.connect(self.finishProtocolSelection)
+        self.absMenu.finishButton.clicked.connect(lambda: self.finishProtocolSelection(1))
+        self.absSpecMenu.finishButton.clicked.connect(lambda: self.finishProtocolSelection((2)))
+        self.flrMenu.finishButton.clicked.connect(lambda: self.finishProtocolSelection(3))
+        self.flrSpecMenu.finishButton.clicked.connect(lambda:self.finishProtocolSelection(4))
 
         self.protocolDict = {}
         self.selectedWellsDict = {}
@@ -124,38 +128,115 @@ class KAMSpec(QtGui.QWidget):
         self.wellSelect.clearWells()
         self.wellSelect.show()
 
-    def finishProtocolSelection(self):
+    def finishProtocolSelection(self,type):
+        self.protocolCount += 1
+        if type == 1:
+            self.absMenu.hide()
+            self.protocolDict[self.plateCount].append({type: {'Exposure Time': int(self.absMenu.exposureTimeSpinBox.value()), 'Wavelength': int(self.absMenu.wavelengthSpinBox.value())}})
+            self.protocolSelect.show()
+        elif type == 2:
+            self.absSpecMenu.hide()
+            self.protocolDict[self.plateCount].append({type: {'Exposure Time': int(self.absSpecMenu.exposureTimeSpinBox.value()), 'Start Wavelength': int(self.absSpecMenu.startWavelengthSpinBox.value()), 'Stop Wavelength': int(self.absSpecMenu.stopWavelengthSpinBox.value()) }})
+            self.protocolSelect.show()
+        elif type == 3:
+            self.flrMenu.hide()
+            self.protocolDict[self.plateCount].append({type: {'Exposure Time': int(self.flrMenu.exposureTimeSpinBox.value()), 'Excitation': str(self.flrMenu.excitationWavelengthComboBox.currentText()), 'Emission': int(self.flrMenu.emissionWavelengthSpinBox.value())}})
+            self.protocolSelect.show()
+        elif type == 4:
+            self.flrSpecMenu.hide()
+            self.protocolDict[self.plateCount].append({type: {'Exposure Time': int(self.flrSpecMenu.exposureTimeSpinBox.value()), 'Excitation': str(self.flrSpecMenu.excitationWavelengthComboBox.currentText()), 'Start Wavelength': int(self.flrSpecMenu.startWavelengthSpinBox.value()), 'Stop Wavelength': int(self.flrSpecMenu.stopWavelengthSpinBox.value())}})
+            self.protocolSelect.show()
+        elif type == 5:
+            self.flrSpecMenu.hide()
+            self.protocolSelect.show()
+
         for plate in range(1, self.plateCount+1):
+            csvFileName = 'Plate_'+str(plate)+'_'+time.strftime('%d%m%Y')+'.csv'
+            with open(csvFileName, 'wb') as csvfile:
+                spamwriter = csv.writer(csvfile, delimiter=',',
+                                        quotechar='|', quoting=csv.QUOTE_MINIMAL)
+                spamwriter.writerow(['KAM-Spec 2017'])
+                spamwriter.writerow(['Date:', time.strftime('%m/%d/%Y')])
+                spamwriter.writerow(['Time:', time.strftime('%H:%M:%S')])
+                spamwriter.writerow([' '])
+                spamwriter.writerow([' '])
+                spamwriter.writerow([' '])
+                spamwriter.writerow([' '])
+                csvfile.close()
             for protocol in range(0, len(self.protocolDict[plate])):
                 if self.protocolDict[plate][protocol].keys()[0] == 1:
                     wellList = self.selectedWellsDict[plate]
-                    exposureTime = int(self.protocolDict[plate][protocol]['Exposure Time'])
-                    wavelength = int(self.protocolDict[plate][protocol]['Wavelength'])
-                    self.absProtocol(wellList, exposureTime, wavelength)
+                    exposureTime = int(self.protocolDict[plate][protocol][1]['Exposure Time'])
+                    wavelength = int(self.protocolDict[plate][protocol][1]['Wavelength'])
+                    self.absProtocol(wellList, exposureTime, wavelength,csvFileName)
+            self.sendDataEmail(csvFileName)
 
-    def absProtocol(self, wellList, exposureTime, wavelength):
+    def absProtocol(self, wellList, exposureTime, wavelength, csvFileName):
+        with open(csvFileName, 'ab') as csvfile:
+            spamwriter = csv.writer(csvfile, delimiter=',',
+                                    quotechar='|', quoting=csv.QUOTE_MINIMAL)
+            spamwriter.writerow(['Absorbance'])
+            spamwriter.writerow([' ']+['Exposure Time:'] + [str(exposureTime)+' ms'])
+            spamwriter.writerow([' ']+['Wavelength:']+[str(wavelength)+' nm'])
+            spamwriter.writerow(' ')
+            csvfile.close()
         self.camera.set_exposure_time(exposureTime)
         time.sleep(1)
         self.machine._set_initial_position()
         time.sleep(2)
         self.toReadNum = self.machine._convert_labels_to_numericals(wellList)
         print self.toReadNum
+        self.dataDict = {}
+        for i in range(0, len(self.toReadNum)):
+            self.dataDict[int(self.toReadNum[i][0])] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        print self.dataDict
+
         for i in range(0,len(self.toReadNum)):
             self.machine._move_to_new_position(self.toReadNum[i])
             self.machine._toggle_led('W')
+            time.sleep(2)
             absData = self.camera.get_frame()
-            print absData[wavelength]
+            self.dataDict[int(self.toReadNum[i][0])][int(self.toReadNum[i][2:len(self.toReadNum[i])+1])] = absData[1][1]
             self.machine._toggle_led('W')
             time.sleep(2)
 
+            self.columnList = []
+            for key in sorted(self.dataDict.keys()):
+                for column in range(0,len(self.dataDict[key])):
+                    if self.dataDict[key][column] != 0:
+                        if column not in self.columnList:
+                            self.columnList.append(column)
+            sortedColumnList = sorted(self.columnList)
+            csvColumnList = [' '] + sortedColumnList
+        with open(csvFileName, 'ab') as csvfile:
+            spamwriter = csv.writer(csvfile, delimiter=',',
+                                    quotechar='|', quoting=csv.QUOTE_MINIMAL)
+            spamwriter.writerow(csvColumnList)
+            for key in sorted(self.dataDict.keys()):
+                row = []
+                letters = ['A','B','C','D','E','F','G','H']
+
+                for column in sortedColumnList:
+                    if self.dataDict[key][column] != 0:
+                        row.append(self.dataDict[key][column])
+                    else:
+                        row.append(' ')
+                row = [letters[key-1]] + row
+                spamwriter.writerow(row)
+            spamwriter.writerow(' ')
+            spamwriter.writerow(' ')
+            csvfile.close()
 
 
-    def sendDataEmail(self):
+
+
+
+    def sendDataEmail(self,filename):
         inputter = InputEmail()
         inputter.exec_()
         emailfrom = "kamspec2017l@gmail.com"
         emailto = str(inputter.text.text())
-        fileToSend = "hi.csv"
+        fileToSend = filename
         username = "kamspec2017@gmail.com"
         password = "pennigem"
 
