@@ -7,7 +7,6 @@ from arudino import *
 import csv
 
 c = LineCamera()
-m = MotorMove()
 print('Firmware version', c.get_firmware_ver())
 print('Device version', c.get_device_info())
 c.set_work_mode(WorkMode.NORMAL)
