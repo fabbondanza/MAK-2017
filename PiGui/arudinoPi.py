@@ -7,18 +7,18 @@ import serial.tools.list_ports
 
 class MotorMove(object):
     def __init__(self, parent=None):
-        # ser_ports = [
-        #     p.device
-        #     for p in serial.tools.list_ports.comports()
-        #     if 'Arduino' in p.description
-        # ]
-        # if not ser_ports:
-        #     raise IOError("No ser found")
-        # if len(ser_ports) > 1:
-        #     warnings.warn('Multiple sers found - using the first')
-        # print ser_ports[0]
-        # self.ser = serial.Serial(ser_ports[0], 9600)
-        self.ser = serial.Serial('/dev/ttyACM0', 9600)
+        ser_ports = [
+            p.device
+            for p in serial.tools.list_ports.comports()
+            if 'Arduino' in p.description
+        ]
+        if not ser_ports:
+            self.ser = serial.Serial('/dev/ttyACM0', 9600)
+            #raise IOError("No ser found")
+        else:
+            self.ser = serial.Serial(ser_ports[0], 9600)
+        if len(ser_ports) > 1:
+            warnings.warn('Multiple sers found - using the first')
         time.sleep(5)
         if self.ser is None:
             print 'Device not found'

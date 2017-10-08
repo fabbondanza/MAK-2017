@@ -7,10 +7,11 @@ from arudino import *
 import csv
 
 c = LineCamera()
+m = MotorMove()
 print('Firmware version', c.get_firmware_ver())
 print('Device version', c.get_device_info())
 c.set_work_mode(WorkMode.NORMAL)
-c.set_exposure_time(16)
+c.set_exposure_time(5)
 
 def read_frame():
     try: frame = c.get_frame()
@@ -47,7 +48,7 @@ def update():
 
 read_frame()
 i = 0
-m._toggle_led('R')
+m._toggle_led('W')
 timer = fig.canvas.new_timer(interval=100)
 timer.add_callback(update)
 timer.start()
