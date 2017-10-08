@@ -85,12 +85,6 @@ class measurementScreen(QtGui.QWidget):
         self.gridLayoutWidget.setStyleSheet(_fromUtf8("background-color: rgb(255, 255, 255);"))
         self.figure = plt.figure(figsize=(1,1))
         self.canvas = FigureCanvas(self.figure)
-        # plt.cla()
-        # ax = self.figure.add_subplot(111)
-        # x = [0, .2, .5, .7]
-        # y = [0, .2, .5, .7]
-        # ax.plot(x,y,'r.-')
-        # self.canvas.draw()
         self.gridLayout_2.addWidget(self.canvas, 1,0,10,10)
 
         self.retranslateUi()

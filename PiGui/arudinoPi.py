@@ -22,6 +22,16 @@ class MotorMove(object):
         time.sleep(5)
         if self.ser is None:
             print 'Device not found'
+    def _set_opening_position(self):
+        print 'Moving to opening position...'
+        self.ser.write('M1023,1023')
+        motorStatus = 0
+        while motorStatus == 0:
+            status = self.ser.readline()
+            print status
+            if status[0] == 'D':
+                motorStatus = 1
+        print 'Insert Plate'
 
     def _set_initial_position(self):
         print 'Moving to initial position...'

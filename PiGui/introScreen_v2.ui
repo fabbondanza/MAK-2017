@@ -213,7 +213,7 @@
     <string>START</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="startButton_2">
+  <widget class="QPushButton" name="calibrateButton">
    <property name="enabled">
     <bool>true</bool>
    </property>
@@ -253,7 +253,7 @@
     </size>
    </property>
   </widget>
-  <widget class="QPushButton" name="startButton_3">
+  <widget class="QPushButton" name="plateButton">
    <property name="enabled">
     <bool>true</bool>
    </property>
@@ -289,8 +289,8 @@ background-color: rgb(170, 170, 255);</string>
   <zorder>label_2</zorder>
   <zorder>label_3</zorder>
   <zorder>startButton</zorder>
-  <zorder>startButton_2</zorder>
-  <zorder>startButton_3</zorder>
+  <zorder>calibrateButton</zorder>
+  <zorder>plateButton</zorder>
  </widget>
  <resources/>
  <connections/>

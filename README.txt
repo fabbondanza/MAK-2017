@@ -11,6 +11,10 @@ Dependencies:
 	(2) matplotlib
 		--Instructions--
 			(a)  sudo apt-get install python-matplotlib
+	
+	(3) zip 
+		--Instructions--
+			(a) sudo apt-get install zip unzip
 
 ---- Python GUI PyQT4 ------
 (1) sudo apt-get install python-qt4 pyqt4-dev-tools qt4-designer
