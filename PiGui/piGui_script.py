@@ -418,7 +418,6 @@ class cameraInitialization(QtCore.QThread):
         self.camera = camera
         self.exposureTime = exposureTime
 
-
     def __del__(self):
         self.wait()
 

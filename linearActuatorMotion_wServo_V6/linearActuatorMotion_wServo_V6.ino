@@ -1,3 +1,4 @@
+#include <PID_v1.h>
 #define LEDw A2
 #define LEDb A3
 #define LEDg A4
@@ -40,6 +41,10 @@ char servoStr1 = 0;
 char servoStr2 = 0;
 int servoAngle = -1; // Keeps track of what angle servo motor should move to.
 String serialString = "";
+double Setpoint1, Input1, Output1;
+double aggKp=4, aggKi=0.2, aggKd=1;
+double consKp=1, consKi=0.05, consKd=0.25;
+PID myPID(&Input1, &Output1,  &Setpoint1, aggKp, aggKi, aggKd, DIRECT);
 void setup() {
   //Attach arduino to servo motor
   //Initialize Serial for input/output
@@ -78,13 +83,24 @@ void setup() {
   //Serial.println(potVal_1);
   //Serial.print("Current Y: ");
   //Serial.println(potVal_2);  
+  Input1 = potVal_1;
+  myPID.SetOutputLimits(1, 50);
+  myPID.SetMode(AUTOMATIC);
+  //myPID_b.SetMode(AUTOMATIC);
 }
 
 void loop() {
   //Keep measuring the positions of the motors
   potVal_1 = analogRead(MotorPot_1);
   potVal_2 = analogRead(MotorPot_2);
-
+  Input1 = potVal_1;
+  double gap = abs(Setpoint1-Input1);
+  if(gap < 10){
+    myPID.SetTunings(consKp, consKi, consKd);
+  }
+  else{
+    myPID.SetTunings(aggKp, aggKi, aggKd);
+  }
   if (Serial.available() > 0) {
     positionInput = Serial.read();
     if (positionInput == 'M'){
@@ -110,6 +126,8 @@ void loop() {
     }
   }
   if ((positionX >= 0) && (positionY >= 0) && (positionRecord == 3)) { //Only runs if X & Y Positions were successfully read
+      Setpoint1 = positionX;
+      //myPID_b.Compute();
       //Case 1 -- Motor X moves IN, Motor Y moves IN
       if ((positionX < potVal_1) && (positionY < potVal_2)) {
         stopCheck_1 = 1; // Marks the direction Motor 1 is moving (IN)
@@ -209,6 +227,8 @@ void loop() {
     Serial.println('D');
     motorReset();
     }
+  myPID.Compute();
+  analogWrite(MotorEnabler_1, Output1);
   delay(500);
 }
   
@@ -222,10 +242,10 @@ void motorProtocol() {
   //Serial.print("Y:");
   //Serial.println(positionYstr);
 
-  positionX = positionXstr.toInt();
+  positionX = positionXstr.toInt()/1.0;
   positionY = positionYstr.toInt();
   positionRecord = 3;
-
+  Setpoint1 = float(positionX);
 }
 
 void servoProtocol() {
