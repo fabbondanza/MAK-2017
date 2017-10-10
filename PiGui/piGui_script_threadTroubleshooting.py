@@ -495,7 +495,7 @@ class measureProtocol(QtCore.QThread):
 
     def stop(self):
         self.terminate()
-        
+
     def run(self):
         if self.type == 1:
             for i in range(0,len(self.toReadNum)):
@@ -693,7 +693,7 @@ class executeProtocol(QtCore.QThread):
         self.measureThread.start()
 
     def addPlot(self, x,y,i):
-        self.measureThread.stop()
+        # self.measureThread.stop()
         print 'addPlot'
         #self.emit(QtCore.SIGNAL("addCurve(PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)"),x,y,i, self.protocol)
         if i == self.lengthMeasurements-1:
