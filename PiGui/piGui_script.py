@@ -255,8 +255,8 @@ class KAMSpec(QtGui.QWidget):
                                                 csvFileName, self.camera, self.machine, self.measurementMenu,
                                                 self.lengthMeasurements,self.slope,self.intercept)
             self.connect(self.abs_protocol, QtCore.SIGNAL("updateCurrentProtocol(QString)"), self.updateCurrentProtocol)
-            self.connect(self.abs_protocol, QtCore.SIGNAL("addCurve(PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)"),
-                         self.addCurve)
+            # self.connect(self.abs_protocol, QtCore.SIGNAL("addCurve(PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)"),
+            #             self.addCurve)
             self.connect(self.abs_protocol, QtCore.SIGNAL("statusPrint(QString)"), self.statusPrint)
             self.connect(self.abs_protocol, QtCore.SIGNAL("checkBox(QString)"), self.checkBox)
             self.abs_protocol.start()
@@ -682,7 +682,7 @@ class executeProtocol(QtCore.QThread):
 
     def addPlot(self, x,y,i):
         print 'addPlot'
-        self.emit(QtCore.SIGNAL("addCurve(PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)"),x,y,i, self.protocol)
+        #self.emit(QtCore.SIGNAL("addCurve(PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)"),x,y,i, self.protocol)
         if i == self.lengthMeasurements-1:
             self.emit(QtCore.SIGNAL("checkBox(QString)"), "Check")
             self.emit(QtCore.SIGNAL("statusPrint(QString)"), "Done Protocol")
