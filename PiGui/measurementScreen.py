@@ -78,13 +78,19 @@ class measurementScreen(QtGui.QWidget):
         self.gridLayout = QtGui.QGridLayout(self.gridLayoutWidget)
         self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
         self.gridLayoutWidget_2 = QtGui.QWidget(self)
-        self.gridLayoutWidget_2.setGeometry(QtCore.QRect(280, 60, 511, 361))
+        self.gridLayoutWidget_2.setGeometry(QtCore.QRect(280, 60, 400, 200))
+        #self.gridLayoutWidget_2.setGeometry(QtCore.QRect(280, 60, 511, 361))
         self.gridLayoutWidget_2.setObjectName(_fromUtf8("gridLayoutWidget_2"))
         self.gridLayout_2 = QtGui.QGridLayout(self.gridLayoutWidget_2)
         self.gridLayout_2.setObjectName(_fromUtf8("gridLayout_2"))
         self.gridLayoutWidget.setStyleSheet(_fromUtf8("background-color: rgb(255, 255, 255);"))
         self.figure = plt.figure(figsize=(1,1))
+        x = [1, 2, 3]
+        y = [1, 2, 3]
+        self.ax = self.figure.add_subplot(111)
+        self.ax.plot(x,y)
         self.canvas = FigureCanvas(self.figure)
+        self.canvas.draw()
         self.gridLayout_2.addWidget(self.canvas, 1,0,10,10)
 
         self.retranslateUi()
