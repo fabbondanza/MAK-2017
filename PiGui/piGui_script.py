@@ -209,11 +209,11 @@ class KAMSpec(QtGui.QWidget):
                     self.protocolCheckBox.setText('Flourescent Intensity')
                 elif self.protocolDict[plate][protocol].keys()[0] == 4:
                     self.protocolCheckBox.setText('Flourescence Spectrum')
-                self.measurementMenu.gridLayout.addWidget(self.protocolCheckBox,self.ypos,2, 1, 4)
+                self.measurementMenu.gridLayout.addWidget(self.protocolCheckBox, self.ypos,2, 1, 4)
 
 
 
-        self.individualPlateRun(self.plate)
+        #self.individualPlateRun(self.plate)
 
     def individualPlateRun(self, plate):
         self.csvFileName = self.folder+'\Plate_'+str(self.plate)+'_'+time.strftime('%d%m%Y')+'.csv'
