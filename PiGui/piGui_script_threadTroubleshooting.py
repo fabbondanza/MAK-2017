@@ -213,7 +213,7 @@ class KAMSpec(QtGui.QWidget):
 
 
 
-        #self.individualPlateRun(self.plate)
+        self.individualPlateRun(self.plate)
 
     def individualPlateRun(self, plate):
         self.csvFileName = self.folder+'\Plate_'+str(self.plate)+'_'+time.strftime('%d%m%Y')+'.csv'
