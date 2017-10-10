@@ -493,6 +493,9 @@ class measureProtocol(QtCore.QThread):
     def __del__(self):
         self.wait()
 
+    def stop(self):
+        self.terminate()
+        
     def run(self):
         if self.type == 1:
             for i in range(0,len(self.toReadNum)):
@@ -667,7 +670,6 @@ class executeProtocol(QtCore.QThread):
         # print self.dataDict
     def cameraReady(self):
         self.cameraStart.stop()
-
         if self.type == 1:
             self.emit(QtCore.SIGNAL("updateCurrentProtocol(QString)"), 'Plate '+ str(self.plate)+'- Absorbance...')
         elif self.type == 2:
@@ -691,6 +693,7 @@ class executeProtocol(QtCore.QThread):
         self.measureThread.start()
 
     def addPlot(self, x,y,i):
+        self.measureThread.stop()
         print 'addPlot'
         #self.emit(QtCore.SIGNAL("addCurve(PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)"),x,y,i, self.protocol)
         if i == self.lengthMeasurements-1:

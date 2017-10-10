@@ -58,8 +58,8 @@
       <file leaf-file-name="piGui_script_threadTroubleshooting.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PiGui/piGui_script_threadTroubleshooting.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="694" column="9" lean-forward="false" selection-start-line="694" selection-start-column="9" selection-end-line="694" selection-end-column="9" />
+            <state relative-caret-position="466">
+              <caret line="497" column="8" lean-forward="false" selection-start-line="497" selection-start-column="8" selection-end-line="497" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -128,13 +128,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>selectProtocolScreen</find>
       <find>scroll</find>
       <find>measurePro</find>
       <find>plotSignal</find>
       <find>update</find>
       <find>measureProt</find>
-      <find>measureProtocol</find>
       <find>machineInit</find>
       <find>runProtocol</find>
       <find>signalList</find>
@@ -158,6 +156,8 @@
       <find>cameraReady</find>
       <find>machineInitialization</find>
       <find>addCurve</find>
+      <find>measureThread</find>
+      <find>measureProtocol</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -226,7 +226,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="292" />
     <option name="width" value="798" />
     <option name="height" value="713" />
@@ -436,7 +436,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.190625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -847,8 +847,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PiGui/piGui_script_threadTroubleshooting.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="694" column="9" lean-forward="false" selection-start-line="694" selection-start-column="9" selection-end-line="694" selection-end-column="9" />
+        <state relative-caret-position="466">
+          <caret line="497" column="8" lean-forward="false" selection-start-line="497" selection-start-column="8" selection-end-line="497" selection-end-column="8" />
           <folding />
         </state>
       </provider>
