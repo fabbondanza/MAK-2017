@@ -296,6 +296,7 @@ class KAMSpec(QtGui.QWidget):
                 self.emailSend = sendDataEmail(self.folderName, self.folder)
                 self.connect(self.emailSend, QtCore.SIGNAL('finished()'), self.reset)
                 self.emailSend.start()
+
     def initializeCalibration(self):
         self.calibrate_data = {}
         self.camera.set_work_mode(WorkMode.NORMAL)
@@ -421,6 +422,9 @@ class cameraInitialization(QtCore.QThread):
     def __del__(self):
         self.wait()
 
+    def stop(self):
+        self.terminate()
+
     def run(self):
         print 'Initializing Camera'
         self.camera.set_exposure_time(self.exposureTime)
@@ -454,6 +458,9 @@ class machineInitialization(QtCore.QThread):
 
     def __del__(self):
         self.wait()
+
+    def stop(self):
+        self.terminate()
 
     def run(self):
         self.machine._set_initial_position()
@@ -659,6 +666,8 @@ class executeProtocol(QtCore.QThread):
         #     self.dataDict[int(self.toReadNum[i][0])] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         # print self.dataDict
     def cameraReady(self):
+        self.cameraStart.stop()
+
         if self.type == 1:
             self.emit(QtCore.SIGNAL("updateCurrentProtocol(QString)"), 'Plate '+ str(self.plate)+'- Absorbance...')
         elif self.type == 2:
@@ -670,11 +679,12 @@ class executeProtocol(QtCore.QThread):
 
         self.protocolStart = machineInitialization(self.machine,self.wellList, self.csvFileName, self.camera, self.measurementScreen)
         self.connect(self.protocolStart, QtCore.SIGNAL("runProtocol(PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)"), self.runProtocol)
-        #self.protocolStart.start()
+        self.protocolStart.start()
         print 'Camera Ready'
 
     def runProtocol(self, machine, toRead, dictionary, filename, camera, graph):
         print 'runProtocol'
+        self.protocolStart.stop()
         self.wellsToRead = toRead
         self.measureThread = measureProtocol(machine, toRead, dictionary, filename, camera, graph, self.type, self.slope, self.intercept)
         self.connect(self.measureThread, QtCore.SIGNAL("addPlot(PyQt_PyObject,PyQt_PyObject, PyQt_PyObject)"), self.addPlot)

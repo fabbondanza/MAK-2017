@@ -58,8 +58,8 @@
       <file leaf-file-name="piGui_script_threadTroubleshooting.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PiGui/piGui_script_threadTroubleshooting.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="215" column="8" lean-forward="false" selection-start-line="215" selection-start-column="8" selection-end-line="215" selection-end-column="8" />
+            <state relative-caret-position="64">
+              <caret line="681" column="8" lean-forward="false" selection-start-line="681" selection-start-column="8" selection-end-line="681" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -128,9 +128,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>label</find>
-      <find>pixm</find>
-      <find>F7_2</find>
       <find>selectProtocolScreen</find>
       <find>scroll</find>
       <find>measurePro</find>
@@ -158,6 +155,9 @@
       <find>execute</find>
       <find>.start</find>
       <find>.start()</find>
+      <find>initiali</find>
+      <find>cameraReady</find>
+      <find>machineInitialization</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -847,8 +847,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PiGui/piGui_script_threadTroubleshooting.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="215" column="8" lean-forward="false" selection-start-line="215" selection-start-column="8" selection-end-line="215" selection-end-column="8" />
+        <state relative-caret-position="64">
+          <caret line="681" column="8" lean-forward="false" selection-start-line="681" selection-start-column="8" selection-end-line="681" selection-end-column="8" />
           <folding />
         </state>
       </provider>
