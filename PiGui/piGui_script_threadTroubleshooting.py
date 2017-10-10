@@ -133,6 +133,7 @@ class KAMSpec(QtGui.QWidget):
 
     def addProtocol(self, type):
         self.protocolCount[self.plateCount-1] += 1
+
         if type == 1:
             self.absMenu.hide()
             self.protocolDict[self.plateCount].append({type: {'Exposure Time': int(self.absMenu.exposureTimeSpinBox.value()), 'Wavelength': int(self.absMenu.wavelengthSpinBox.value())}})
@@ -167,6 +168,7 @@ class KAMSpec(QtGui.QWidget):
             self.absMenu.hide()
             self.protocolDict[self.plateCount].append({type: {'Exposure Time': int(self.absMenu.exposureTimeSpinBox.value()), 'Wavelength': int(self.absMenu.wavelengthSpinBox.value())}})
             self.measurementMenu.show()
+            self.type = 1
         elif type == 2:
             self.absSpecMenu.hide()
             self.protocolDict[self.plateCount].append({type: {'Exposure Time': int(self.absSpecMenu.exposureTimeSpinBox.value()), 'Start Wavelength': int(self.absSpecMenu.startWavelengthSpinBox.value()), 'Stop Wavelength': int(self.absSpecMenu.stopWavelengthSpinBox.value()) }})
