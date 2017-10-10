@@ -259,7 +259,45 @@ class KAMSpec(QtGui.QWidget):
             #             self.addCurve)
             self.connect(self.abs_protocol, QtCore.SIGNAL("statusPrint(QString)"), self.statusPrint)
             self.connect(self.abs_protocol, QtCore.SIGNAL("checkBox(QString)"), self.checkBox)
+            self.connect(self.abs_protocol, QtCore.SIGNAL("cameraReady(PyQt_PyObject)"), self.cameraStart)
             self.abs_protocol.start()
+
+
+    def cameraStart(self, exposureTime):
+        self.cameraStart = cameraInitialization(self.camera, exposureTime)
+        self.connect(self.cameraStart, QtCore.SIGNAL("finished()"), self.cameraReady)
+        self.cameraStart.start()
+
+    def cameraReady(self):
+        if self.type == 1:
+            self.emit(QtCore.SIGNAL("updateCurrentProtocol(QString)"), 'Plate '+ str(self.plate)+'- Absorbance...')
+        elif self.type == 2:
+            self.emit(QtCore.SIGNAL("updateCurrentProtocol(QString)"), 'Plate ' + str(self.plate) + '- Absorbance Spectrum...')
+        elif self.type == 3:
+            self.emit(QtCore.SIGNAL("updateCurrentProtocol(QString)"), 'Plate ' + str(self.plate) + '- Flourescent Intensity...')
+        elif self.type == 4:
+            self.emit(QtCore.SIGNAL("updateCurrentProtocol(QString)"), 'Plate ' + str(self.plate) + '- Flourescence Spectrum...')
+
+        self.protocolStart = machineInitialization(self.machine,self.wellList, self.csvFileName, self.camera, self.measurementScreen)
+        self.connect(self.protocolStart, QtCore.SIGNAL("runProtocol(PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)"), self.runProtocol)
+        self.protocolStart.start()
+        print 'Camera Ready'
+
+    def runProtocol(self, machine, toRead, dictionary, filename, camera, graph):
+        print 'runProtocol'
+        self.protocolStart.stop()
+        self.wellsToRead = toRead
+        self.measureThread = measureProtocol(machine, toRead, dictionary, filename, camera, graph, self.type, self.slope, self.intercept)
+        self.connect(self.measureThread, QtCore.SIGNAL("addPlot(PyQt_PyObject,PyQt_PyObject, PyQt_PyObject)"), self.addPlot)
+        self.measureThread.start()
+
+    def addPlot(self, x,y,i):
+        # self.measureThread.stop()
+        print 'addPlot'
+        self.emit(QtCore.SIGNAL("addCurve(PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)"),x,y,i, self.protocol)
+        if i == self.lengthMeasurements-1:
+            self.emit(QtCore.SIGNAL("checkBox(QString)"), "Check")
+            self.emit(QtCore.SIGNAL("statusPrint(QString)"), "Done Protocol")
 
     def checkBox(self, string):
         print 'Checked'
@@ -638,25 +676,22 @@ class executeProtocol(QtCore.QThread):
             spamwriter.writerow([' ']+['Wavelength:']+[str(wavelength)+' nm'])
             spamwriter.writerow(' ')
             csvfile.close()
+        self.emit(QtCore.SIGNAL('cameraReady(PyQt_PyObject)'), exposureTime)
 
-        self.cameraStart = cameraInitialization(self.camera, exposureTime)
-        self.connect(self.cameraStart, QtCore.SIGNAL("finished()"), self.cameraReady)
-        self.cameraStart.start()
-
-    def absSpecProtocol(self, wellList, exposureTime, startWavelength, stopWavelength, csvFileName):
-        with open(csvFileName, 'ab') as csvfile:
-            spamwriter = csv.writer(csvfile, delimiter=',',
-                                    quotechar='|', quoting=csv.QUOTE_MINIMAL)
-            spamwriter.writerow(['Absorbance Spectra'])
-            spamwriter.writerow([' ']+['Exposure Time:'] + [str(exposureTime)+' ms'])
-            spamwriter.writerow([' ']+['Start Wavelength:']+[str(startWavelength)+' nm'])
-            spamwriter.writerow([' ']+['Stop Wavelength:']+[str(stopWavelength)+' nm'])
-            spamwriter.writerow(' ')
-            csvfile.close()
-
-        self.cameraStart = cameraInitialization(self.camera, exposureTime)
-        self.connect(self.cameraStart, QtCore.SIGNAL("finished()"), self.cameraReady)
-        self.cameraStart.start()
+    # def absSpecProtocol(self, wellList, exposureTime, startWavelength, stopWavelength, csvFileName):
+    #     with open(csvFileName, 'ab') as csvfile:
+    #         spamwriter = csv.writer(csvfile, delimiter=',',
+    #                                 quotechar='|', quoting=csv.QUOTE_MINIMAL)
+    #         spamwriter.writerow(['Absorbance Spectra'])
+    #         spamwriter.writerow([' ']+['Exposure Time:'] + [str(exposureTime)+' ms'])
+    #         spamwriter.writerow([' ']+['Start Wavelength:']+[str(startWavelength)+' nm'])
+    #         spamwriter.writerow([' ']+['Stop Wavelength:']+[str(stopWavelength)+' nm'])
+    #         spamwriter.writerow(' ')
+    #         csvfile.close()
+    #
+    #     self.cameraStart = cameraInitialization(self.camera, exposureTime)
+    #     self.connect(self.cameraStart, QtCore.SIGNAL("finished()"), self.cameraReady)
+    #     self.cameraStart.start()
         # self.sleep(2)
         # self.camera.set_exposure_time(exposureTime)
         # time.sleep(1)
@@ -668,37 +703,37 @@ class executeProtocol(QtCore.QThread):
         # for i in range(0, len(self.toReadNum)):
         #     self.dataDict[int(self.toReadNum[i][0])] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         # print self.dataDict
-    def cameraReady(self):
-        self.cameraStart.stop()
-        if self.type == 1:
-            self.emit(QtCore.SIGNAL("updateCurrentProtocol(QString)"), 'Plate '+ str(self.plate)+'- Absorbance...')
-        elif self.type == 2:
-            self.emit(QtCore.SIGNAL("updateCurrentProtocol(QString)"), 'Plate ' + str(self.plate) + '- Absorbance Spectrum...')
-        elif self.type == 3:
-            self.emit(QtCore.SIGNAL("updateCurrentProtocol(QString)"), 'Plate ' + str(self.plate) + '- Flourescent Intensity...')
-        elif self.type == 4:
-            self.emit(QtCore.SIGNAL("updateCurrentProtocol(QString)"), 'Plate ' + str(self.plate) + '- Flourescence Spectrum...')
+    # def cameraReady(self):
+    #     self.cameraStart.stop()
+    #     if self.type == 1:
+    #         self.emit(QtCore.SIGNAL("updateCurrentProtocol(QString)"), 'Plate '+ str(self.plate)+'- Absorbance...')
+    #     elif self.type == 2:
+    #         self.emit(QtCore.SIGNAL("updateCurrentProtocol(QString)"), 'Plate ' + str(self.plate) + '- Absorbance Spectrum...')
+    #     elif self.type == 3:
+    #         self.emit(QtCore.SIGNAL("updateCurrentProtocol(QString)"), 'Plate ' + str(self.plate) + '- Flourescent Intensity...')
+    #     elif self.type == 4:
+    #         self.emit(QtCore.SIGNAL("updateCurrentProtocol(QString)"), 'Plate ' + str(self.plate) + '- Flourescence Spectrum...')
+    #
+    #     self.protocolStart = machineInitialization(self.machine,self.wellList, self.csvFileName, self.camera, self.measurementScreen)
+    #     self.connect(self.protocolStart, QtCore.SIGNAL("runProtocol(PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)"), self.runProtocol)
+    #     self.protocolStart.start()
+    #     print 'Camera Ready'
 
-        self.protocolStart = machineInitialization(self.machine,self.wellList, self.csvFileName, self.camera, self.measurementScreen)
-        self.connect(self.protocolStart, QtCore.SIGNAL("runProtocol(PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)"), self.runProtocol)
-        self.protocolStart.start()
-        print 'Camera Ready'
+    # def runProtocol(self, machine, toRead, dictionary, filename, camera, graph):
+    #     print 'runProtocol'
+    #     self.protocolStart.stop()
+    #     self.wellsToRead = toRead
+    #     self.measureThread = measureProtocol(machine, toRead, dictionary, filename, camera, graph, self.type, self.slope, self.intercept)
+    #     self.connect(self.measureThread, QtCore.SIGNAL("addPlot(PyQt_PyObject,PyQt_PyObject, PyQt_PyObject)"), self.addPlot)
+    #     self.measureThread.start()
 
-    def runProtocol(self, machine, toRead, dictionary, filename, camera, graph):
-        print 'runProtocol'
-        self.protocolStart.stop()
-        self.wellsToRead = toRead
-        self.measureThread = measureProtocol(machine, toRead, dictionary, filename, camera, graph, self.type, self.slope, self.intercept)
-        self.connect(self.measureThread, QtCore.SIGNAL("addPlot(PyQt_PyObject,PyQt_PyObject, PyQt_PyObject)"), self.addPlot)
-        self.measureThread.start()
-
-    def addPlot(self, x,y,i):
-        # self.measureThread.stop()
-        print 'addPlot'
-        #self.emit(QtCore.SIGNAL("addCurve(PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)"),x,y,i, self.protocol)
-        if i == self.lengthMeasurements-1:
-            self.emit(QtCore.SIGNAL("checkBox(QString)"), "Check")
-            self.emit(QtCore.SIGNAL("statusPrint(QString)"), "Done Protocol")
+    # def addPlot(self, x,y,i):
+    #     # self.measureThread.stop()
+    #     print 'addPlot'
+    #     #self.emit(QtCore.SIGNAL("addCurve(PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)"),x,y,i, self.protocol)
+    #     if i == self.lengthMeasurements-1:
+    #         self.emit(QtCore.SIGNAL("checkBox(QString)"), "Check")
+    #         self.emit(QtCore.SIGNAL("statusPrint(QString)"), "Done Protocol")
 
 
     # @pyqtSlot(dict)

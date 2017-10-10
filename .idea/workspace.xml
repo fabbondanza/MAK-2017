@@ -28,6 +28,7 @@
     <SUITE FILE_PATH="coverage/MAK_2017$testScroll.coverage" NAME="testScroll Coverage Results" MODIFIED="1504391217853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI/Obselete" />
     <SUITE FILE_PATH="coverage/MAK_2017$wellPlate_Widg_CD.coverage" NAME="wellPlate_Widg_CD Coverage Results" MODIFIED="1504394744317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
     <SUITE FILE_PATH="coverage/MAK_2017$abcdrawTest.coverage" NAME="abcdrawTest Coverage Results" MODIFIED="1507163970749" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MainGUI Scripts" />
+    <SUITE FILE_PATH="coverage/MAK_2017$piGui_script_threadTroubleshooting.coverage" NAME="piGui_script_threadTroubleshooting Coverage Results" MODIFIED="1507599948677" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PiGui" />
     <SUITE FILE_PATH="coverage/MAK_2017$introScreen.coverage" NAME="introScreen Coverage Results" MODIFIED="1507231321952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PiGui" />
     <SUITE FILE_PATH="coverage/MAK_2017$camera.coverage" NAME="camera Coverage Results" MODIFIED="1505167964709" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAK_2017$test_scroll_2.coverage" NAME="test_scroll_2 Coverage Results" MODIFIED="1503517786078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
@@ -58,8 +59,8 @@
       <file leaf-file-name="piGui_script_threadTroubleshooting.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PiGui/piGui_script_threadTroubleshooting.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="696" column="8" lean-forward="false" selection-start-line="696" selection-start-column="8" selection-end-line="696" selection-end-column="8" />
+            <state relative-caret-position="228">
+              <caret line="249" column="72" lean-forward="true" selection-start-line="249" selection-start-column="72" selection-end-line="249" selection-end-column="72" />
               <folding />
             </state>
           </provider>
@@ -128,13 +129,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>scroll</find>
       <find>measurePro</find>
       <find>plotSignal</find>
       <find>update</find>
       <find>measureProt</find>
       <find>machineInit</find>
-      <find>runProtocol</find>
       <find>signalList</find>
       <find>QtCore.SIGNAL(&quot;addPlot(PyQt_PyObject,PyQt_PyObject, PyQt_PyObject&quot;)</find>
       <find>widget</find>
@@ -153,11 +152,13 @@
       <find>.start</find>
       <find>.start()</find>
       <find>initiali</find>
-      <find>cameraReady</find>
       <find>machineInitialization</find>
       <find>addCurve</find>
       <find>measureThread</find>
       <find>measureProtocol</find>
+      <find>cameraReady</find>
+      <find>runProtocol</find>
+      <find>sendDataEmail</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -311,7 +312,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.piGui_script">
+  <component name="RunManager" selected="Python.piGui_script_threadTroubleshooting">
     <configuration name="ccd_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -348,24 +349,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="emailTest" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/PiGui" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="MAK-2017" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PiGui/emailTest.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
     <configuration name="piGui_script" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -380,6 +363,24 @@
       <module name="MAK-2017" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PiGui/piGui_script.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="piGui_script_threadTroubleshooting" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/PiGui" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="MAK-2017" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PiGui/piGui_script_threadTroubleshooting.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -404,18 +405,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.piGui_script" />
-      <item index="1" class="java.lang.String" itemvalue="Python.emailTest" />
-      <item index="2" class="java.lang.String" itemvalue="Python.csvtest" />
-      <item index="3" class="java.lang.String" itemvalue="Python.randomTest" />
-      <item index="4" class="java.lang.String" itemvalue="Python.ccd_test" />
+      <item index="1" class="java.lang.String" itemvalue="Python.csvtest" />
+      <item index="2" class="java.lang.String" itemvalue="Python.randomTest" />
+      <item index="3" class="java.lang.String" itemvalue="Python.ccd_test" />
+      <item index="4" class="java.lang.String" itemvalue="Python.piGui_script_threadTroubleshooting" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.piGui_script" />
-        <item index="1" class="java.lang.String" itemvalue="Python.randomTest" />
-        <item index="2" class="java.lang.String" itemvalue="Python.ccd_test" />
-        <item index="3" class="java.lang.String" itemvalue="Python.csvtest" />
-        <item index="4" class="java.lang.String" itemvalue="Python.emailTest" />
+        <item index="0" class="java.lang.String" itemvalue="Python.piGui_script_threadTroubleshooting" />
+        <item index="1" class="java.lang.String" itemvalue="Python.piGui_script" />
+        <item index="2" class="java.lang.String" itemvalue="Python.randomTest" />
+        <item index="3" class="java.lang.String" itemvalue="Python.ccd_test" />
+        <item index="4" class="java.lang.String" itemvalue="Python.csvtest" />
       </list>
     </recent_temporary>
   </component>
@@ -445,7 +446,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3774574" sideWeight="0.4975" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3774574" sideWeight="0.4975" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -847,8 +848,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PiGui/piGui_script_threadTroubleshooting.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="696" column="8" lean-forward="false" selection-start-line="696" selection-start-column="8" selection-end-line="696" selection-end-column="8" />
+        <state relative-caret-position="228">
+          <caret line="249" column="72" lean-forward="true" selection-start-line="249" selection-start-column="72" selection-end-line="249" selection-end-column="72" />
           <folding />
         </state>
       </provider>
