@@ -692,7 +692,7 @@ class executeProtocol(QtCore.QThread):
 
     def addPlot(self, x,y,i):
         print 'addPlot'
-        #self.emit(QtCore.SIGNAL("addCurve(PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)"),x,y,i, self.protocol)
+        self.emit(QtCore.SIGNAL("addCurve(PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)"),x,y,i, self.protocol)
         if i == self.lengthMeasurements-1:
             self.emit(QtCore.SIGNAL("checkBox(QString)"), "Check")
             self.emit(QtCore.SIGNAL("statusPrint(QString)"), "Done Protocol")
