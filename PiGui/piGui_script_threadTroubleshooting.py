@@ -534,6 +534,11 @@ class measureProtocol(QtCore.QThread):
     def stop(self):
         self.terminate()
 
+    def read_frame(self):
+        for i in range(0,4):
+            frame = self.camera.get_frame()
+        return frame.image
+
     def run(self):
         print 'Starting'
         print self.type
@@ -543,7 +548,7 @@ class measureProtocol(QtCore.QThread):
                 print "Moving"
                 self.machine._toggle_led('W')
                 time.sleep(2)
-                absData = self.camera.get_frame()
+                absData = self.read_frame()
                 if self.slope == 0:
                     x = range(1, len(absData[1]) + 1)
                 else:
