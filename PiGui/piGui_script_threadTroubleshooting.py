@@ -257,20 +257,23 @@ class KAMSpec(QtGui.QWidget):
                                                 csvFileName, self.camera, self.machine, self.measurementMenu,
                                                 self.lengthMeasurements,self.slope,self.intercept)
             self.connect(self.abs_protocol, QtCore.SIGNAL("updateCurrentProtocol(QString)"), self.updateCurrentProtocol)
-            # self.connect(self.abs_protocol, QtCore.SIGNAL("addCurve(PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)"),
-            #             self.addCurve)
             self.connect(self.abs_protocol, QtCore.SIGNAL("statusPrint(QString)"), self.statusPrint)
             self.connect(self.abs_protocol, QtCore.SIGNAL("checkBox(QString)"), self.checkBox)
-            self.connect(self.abs_protocol, QtCore.SIGNAL("cameraReady(PyQt_PyObject)"), self.cameraStart)
+            self.connect(self.abs_protocol, QtCore.SIGNAL("cameraReady(PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)"), self.cameraStarter)
             self.abs_protocol.start()
 
 
-    def cameraStart(self, exposureTime):
+    def cameraStarter(self, exposureTime, wellList, wavelength):
+        self.exposureTime = exposureTime
+        self.wellList = wellList
+        self.wavelength = wavelength
         self.cameraStart = cameraInitialization(self.camera, exposureTime)
         self.connect(self.cameraStart, QtCore.SIGNAL("finished()"), self.cameraReady)
         self.cameraStart.start()
 
     def cameraReady(self):
+        self.cameraStart.stop()
+
         if self.type == 1:
             self.emit(QtCore.SIGNAL("updateCurrentProtocol(QString)"), 'Plate '+ str(self.plate)+'- Absorbance...')
         elif self.type == 2:
@@ -279,8 +282,7 @@ class KAMSpec(QtGui.QWidget):
             self.emit(QtCore.SIGNAL("updateCurrentProtocol(QString)"), 'Plate ' + str(self.plate) + '- Flourescent Intensity...')
         elif self.type == 4:
             self.emit(QtCore.SIGNAL("updateCurrentProtocol(QString)"), 'Plate ' + str(self.plate) + '- Flourescence Spectrum...')
-
-        self.protocolStart = machineInitialization(self.machine,self.wellList, self.csvFileName, self.camera, self.measurementScreen)
+        self.protocolStart = machineInitialization(self.machine,self.wellList, self.csvFileName, self.camera, self.measurementMenu)
         self.connect(self.protocolStart, QtCore.SIGNAL("runProtocol(PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)"), self.runProtocol)
         self.protocolStart.start()
         print 'Camera Ready'
@@ -294,15 +296,14 @@ class KAMSpec(QtGui.QWidget):
         self.measureThread.start()
 
     def addPlot(self, x,y,i):
-        # self.measureThread.stop()
         print 'addPlot'
-        self.emit(QtCore.SIGNAL("addCurve(PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)"),x,y,i, self.protocol)
+        self.addCurve(x,y,i, self.protocol)
         if i == self.lengthMeasurements-1:
-            self.emit(QtCore.SIGNAL("checkBox(QString)"), "Check")
-            self.emit(QtCore.SIGNAL("statusPrint(QString)"), "Done Protocol")
+            self.checkBox()
+            self.statusPrint()
 
-    def checkBox(self, string):
-        print 'Checked'
+
+    def checkBox(self):
         for child in self.measurementMenu.findChildren(QtGui.QCheckBox):
             objName = str(child.objectName())
             splitName = objName.split('_')
@@ -314,8 +315,7 @@ class KAMSpec(QtGui.QWidget):
                     if protocolNumb == self.protocol+1:
                         child.toggle()
 
-    def statusPrint(self, string):
-        print string
+    def statusPrint(self):
         self.protocol += 1
         if self.protocol <= self.protocolCount[self.plate-1]-1:
             self.individualProtocolRun(self.plate, self.protocol, self.csvFileName)
@@ -333,9 +333,9 @@ class KAMSpec(QtGui.QWidget):
                 self.individualPlateRun(self.plate)
             else:
                 print 'Done All Plates'
-                self.emailSend = sendDataEmail(self.folderName, self.folder)
-                self.connect(self.emailSend, QtCore.SIGNAL('finished()'), self.reset)
-                self.emailSend.start()
+                # self.emailSend = sendDataEmail(self.folderName, self.folder)
+                # self.connect(self.emailSend, QtCore.SIGNAL('finished()'), self.reset)
+                # self.emailSend.start()
 
     def initializeCalibration(self):
         self.calibrate_data = {}
@@ -434,7 +434,7 @@ class KAMSpec(QtGui.QWidget):
 
     def updateCurrentProtocol(self, protocolString):
         self.measurementMenu.measurementLabel.setText(protocolString)
-
+        self.abs_protocol.stop()
     def addCurve(self, x, y, i, protocol):
         print x
         print y
@@ -516,8 +516,6 @@ class machineInitialization(QtCore.QThread):
 
 
 class measureProtocol(QtCore.QThread):
-    plotSignal = QtCore.pyqtSignal(list,np.ndarray,int, object)
-
     def __init__(self, machine, toRead, dictionary, csvFileName, camera, graph, type, slope, intercept):
         QtCore.QThread.__init__(self)
         self.machine = machine
@@ -537,9 +535,12 @@ class measureProtocol(QtCore.QThread):
         self.terminate()
 
     def run(self):
+        print 'Starting'
+        print self.type
         if self.type == 1:
             for i in range(0,len(self.toReadNum)):
                 self.machine._move_to_new_position(self.toReadNum[i])
+                print "Moving"
                 self.machine._toggle_led('W')
                 time.sleep(2)
                 absData = self.camera.get_frame()
@@ -647,6 +648,9 @@ class executeProtocol(QtCore.QThread):
     def __del__(self):
         self.wait()
 
+    def stop(self):
+        self.terminate()
+
     def run(self):
         self.running = True
         count = 0
@@ -678,7 +682,8 @@ class executeProtocol(QtCore.QThread):
             spamwriter.writerow([' ']+['Wavelength:']+[str(wavelength)+' nm'])
             spamwriter.writerow(' ')
             csvfile.close()
-        self.emit(QtCore.SIGNAL('cameraReady(PyQt_PyObject)'), exposureTime)
+        self.emit(QtCore.SIGNAL('cameraReady(PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)'), exposureTime, self.wellList, self.wavelength)
+        self.running = False
 
     # def absSpecProtocol(self, wellList, exposureTime, startWavelength, stopWavelength, csvFileName):
     #     with open(csvFileName, 'ab') as csvfile:
