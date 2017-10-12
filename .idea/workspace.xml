@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e1529667-ee9d-49b3-8d49-43f3442f2034" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PiGui/piGui_script_threadTroubleshooting.py" afterPath="$PROJECT_DIR$/PiGui/piGui_script_threadTroubleshooting.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Rho30uM.csv" afterPath="$PROJECT_DIR$/Rho30uM.csv" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,7 +28,7 @@
     <SUITE FILE_PATH="coverage/MAK_2017$testScroll.coverage" NAME="testScroll Coverage Results" MODIFIED="1504391217853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI/Obselete" />
     <SUITE FILE_PATH="coverage/MAK_2017$wellPlate_Widg_CD.coverage" NAME="wellPlate_Widg_CD Coverage Results" MODIFIED="1504394744317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
     <SUITE FILE_PATH="coverage/MAK_2017$abcdrawTest.coverage" NAME="abcdrawTest Coverage Results" MODIFIED="1507163970749" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MainGUI Scripts" />
-    <SUITE FILE_PATH="coverage/MAK_2017$piGui_script_threadTroubleshooting.coverage" NAME="piGui_script_threadTroubleshooting Coverage Results" MODIFIED="1507773479507" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PiGui" />
+    <SUITE FILE_PATH="coverage/MAK_2017$piGui_script_threadTroubleshooting.coverage" NAME="piGui_script_threadTroubleshooting Coverage Results" MODIFIED="1507775986421" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PiGui" />
     <SUITE FILE_PATH="coverage/MAK_2017$introScreen.coverage" NAME="introScreen Coverage Results" MODIFIED="1507231321952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PiGui" />
     <SUITE FILE_PATH="coverage/MAK_2017$camera.coverage" NAME="camera Coverage Results" MODIFIED="1505167964709" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAK_2017$test_scroll_2.coverage" NAME="test_scroll_2 Coverage Results" MODIFIED="1503517786078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
@@ -57,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="piGui_script_threadTroubleshooting.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="piGui_script_threadTroubleshooting.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PiGui/piGui_script_threadTroubleshooting.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="543" column="23" lean-forward="true" selection-start-line="543" selection-start-column="23" selection-end-line="543" selection-end-column="23" />
+            <state relative-caret-position="296">
+              <caret line="550" column="43" lean-forward="true" selection-start-line="550" selection-start-column="43" selection-end-line="550" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -97,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="arudinoPi.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="arudinoPi.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PiGui/arudinoPi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+            <state relative-caret-position="340">
+              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -111,7 +110,7 @@
         <entry file="file://$PROJECT_DIR$/ccd_test.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="32">
-              <caret line="2" column="18" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+              <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -227,8 +226,8 @@
         <option value="$PROJECT_DIR$/PiGui/introScreen_v2.py" />
         <option value="$PROJECT_DIR$/PiGui/piGui_script.py" />
         <option value="$PROJECT_DIR$/PiGui/measurementScreen.py" />
-        <option value="$PROJECT_DIR$/PiGui/arudinoPi.py" />
         <option value="$PROJECT_DIR$/PiGui/piGui_script_threadTroubleshooting.py" />
+        <option value="$PROJECT_DIR$/PiGui/arudinoPi.py" />
       </list>
     </option>
   </component>
@@ -323,7 +322,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.ccd_test">
+  <component name="RunManager" selected="Python.piGui_script_threadTroubleshooting">
     <configuration name="ccd_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -423,8 +422,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.ccd_test" />
-        <item index="1" class="java.lang.String" itemvalue="Python.piGui_script_threadTroubleshooting" />
+        <item index="0" class="java.lang.String" itemvalue="Python.piGui_script_threadTroubleshooting" />
+        <item index="1" class="java.lang.String" itemvalue="Python.ccd_test" />
         <item index="2" class="java.lang.String" itemvalue="Python.piGui_script" />
         <item index="3" class="java.lang.String" itemvalue="Python.randomTest" />
         <item index="4" class="java.lang.String" itemvalue="Python.csvtest" />
@@ -835,15 +834,7 @@
     <entry file="file://$PROJECT_DIR$/ccd_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
-          <caret line="2" column="18" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PiGui/arudinoPi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+          <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
           <folding />
         </state>
       </provider>
@@ -860,8 +851,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PiGui/piGui_script_threadTroubleshooting.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="543" column="23" lean-forward="true" selection-start-line="543" selection-start-column="23" selection-end-line="543" selection-end-column="23" />
+        <state relative-caret-position="296">
+          <caret line="550" column="43" lean-forward="true" selection-start-line="550" selection-start-column="43" selection-end-line="550" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PiGui/arudinoPi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="54" />
           <folding />
         </state>
       </provider>

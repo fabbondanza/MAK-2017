@@ -535,7 +535,7 @@ class measureProtocol(QtCore.QThread):
         self.terminate()
 
     def read_frame(self):
-        for i in range(0,4):
+        for i in range(0,10):
             frame = self.camera.get_frame()
         return frame.image
 
@@ -550,14 +550,14 @@ class measureProtocol(QtCore.QThread):
                 time.sleep(2)
                 absData = self.read_frame()
                 if self.slope == 0:
-                    x = range(1, len(absData[1]) + 1)
+                    x = range(1, len(absData) + 1)
                 else:
-                    x = range(1, len(absData[1]) + 1)
+                    x = range(1, len(absData) + 1)
                     for j in x:
                         x[j-1] = self.slope*j + self.intercept
-                y = absData[1]
+                y = absData
                 self.emit(QtCore.SIGNAL("addPlot(PyQt_PyObject,PyQt_PyObject, PyQt_PyObject)"), x, y, i)
-                self.dataDict[int(self.toReadNum[i][0])][int(self.toReadNum[i][2:len(self.toReadNum[i])+1])] = absData[1][1]
+                # self.dataDict[int(self.toReadNum[i][0])][int(self.toReadNum[i][2:len(self.toReadNum[i])+1])] = absData[1][1]
                 self.machine._toggle_led('W')
                 time.sleep(2)
 
