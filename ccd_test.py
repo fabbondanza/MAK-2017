@@ -7,11 +7,11 @@ from arudino import *
 import csv
 
 c = LineCamera()
-m = MotorMove()
+# m = MotorMove()
 print('Firmware version', c.get_firmware_ver())
 print('Device version', c.get_device_info())
 c.set_work_mode(WorkMode.NORMAL)
-c.set_exposure_time(5)
+c.set_exposure_time(1)
 
 def read_frame():
     try: frame = c.get_frame()
@@ -25,6 +25,7 @@ fig = pl.figure()
 ax = fig.add_subplot(111)
 curve, = ax.plot([], [])
 ax.set_ylim(-10, 0xffff+10)
+ax.set_ylim(-10, 10000)
 ax.set_xlim(0, 3648)
 ax.axvline(x=1824, color='r')
 
@@ -48,7 +49,7 @@ def update():
 
 read_frame()
 i = 0
-m._toggle_led('W')
+# m._toggle_led('B')
 timer = fig.canvas.new_timer(interval=100)
 timer.add_callback(update)
 timer.start()

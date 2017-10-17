@@ -275,9 +275,9 @@ class KAMSpec(QtGui.QWidget):
         self.cameraStart.stop()
 
         if self.type == 1:
-            self.emit(QtCore.SIGNAL("updateCurrentProtocol(QString)"), 'Plate '+ str(self.plate)+'- Absorbance...')
+            self.updateCurrentProtocol('Plate '+ str(self.plate)+'- Absorbance...')
         elif self.type == 2:
-            self.emit(QtCore.SIGNAL("updateCurrentProtocol(QString)"), 'Plate ' + str(self.plate) + '- Absorbance Spectrum...')
+            self.updateCurrentProtocol('Plate ' + str(self.plate) + '- Absorbance Spectrum  ...')
         elif self.type == 3:
             self.emit(QtCore.SIGNAL("updateCurrentProtocol(QString)"), 'Plate ' + str(self.plate) + '- Flourescent Intensity...')
         elif self.type == 4:
@@ -291,7 +291,7 @@ class KAMSpec(QtGui.QWidget):
         print 'runProtocol'
         self.protocolStart.stop()
         self.wellsToRead = toRead
-        self.measureThread = measureProtocol(machine, toRead, dictionary, filename, camera, graph, self.type, self.slope, self.intercept)
+        self.measureThread = measureProtocol(machine, toRead, dictionary, filename, camera, graph, self.type, self.slope, self.intercept, self.wavelength)
         self.connect(self.measureThread, QtCore.SIGNAL("addPlot(PyQt_PyObject,PyQt_PyObject, PyQt_PyObject)"), self.addPlot)
         self.measureThread.start()
 
@@ -333,17 +333,20 @@ class KAMSpec(QtGui.QWidget):
                 self.individualPlateRun(self.plate)
             else:
                 print 'Done All Plates'
-                # self.emailSend = sendDataEmail(self.folderName, self.folder)
-                # self.connect(self.emailSend, QtCore.SIGNAL('finished()'), self.reset)
-                # self.emailSend.start()
+                plt.cla()
+                self.emailSend = sendDataEmail(self.folderName, self.folder)
+                self.connect(self.emailSend, QtCore.SIGNAL('finished()'), self.reset)
+                self.emailSend.start()
 
     def initializeCalibration(self):
         self.calibrate_data = {}
         self.camera.set_work_mode(WorkMode.NORMAL)
         time.sleep(1)
-        for i in range(0,4):
-            leds = ['B','G','Y','R']
-            self.exposureTime = 100
+        #for i in range(0,4):
+        for i in range(0,3):
+            leds = ['B','Y','R']
+            #leds = ['B','G','Y','R']
+            self.exposureTime = 1
             self.camera.set_exposure_time(self.exposureTime)
             time.sleep(1)
             # self.machine._set_led_in_position(letter)
@@ -375,22 +378,28 @@ class KAMSpec(QtGui.QWidget):
                     counter = 1
                     print 'Done'
 
-            smooth_data = self.savitzky_golay(data, 51, 2)
+            smooth_data = self.savitzky_golay(data, 21, 2)
             self.calibrate_data[leds[i]] = list(np.where(smooth_data == np.max(smooth_data)))[0][0]
+            print self.calibrate_data[leds[i]]
             self.machine._toggle_led(leds[i])
             time.sleep(2)
 
+        # self.led_wavelengths = {
+        # 'B': [468], 'G': [565], 'Y': [585], 'R': [635]
+        # }
         self.led_wavelengths = {
-        'B': [468], 'G': [565], 'Y': [585], 'R': [635]
+        'B': [468], 'Y': [585], 'R': [635]
         }
-        self.regressionEquation = np.polyfit([self.calibrate_data['B'],self.calibrate_data['G'], self.calibrate_data['Y'], self.calibrate_data['R']],[self.led_wavelengths['B'], self.led_wavelengths['G'], self.led_wavelengths['Y'], self.led_wavelengths['R']],1)
+        self.regressionEquation = np.polyfit([self.calibrate_data['B'], self.calibrate_data['Y'], self.calibrate_data['R']],[self.led_wavelengths['B'], self.led_wavelengths['Y'], self.led_wavelengths['R']],1)
+
+        #self.regressionEquation = np.polyfit([self.calibrate_data['B'],self.calibrate_data['G'], self.calibrate_data['Y'], self.calibrate_data['R']],[self.led_wavelengths['B'], self.led_wavelengths['G'], self.led_wavelengths['Y'], self.led_wavelengths['R']],1)
         print self.regressionEquation
         self.slope = self.regressionEquation[0][0]
         self.intercept = self.regressionEquation[1][0]
         self.calibrate = True
 
     def read_frame(self):
-        for i in range(0,4):
+        for i in range(0,10):
             frame = self.camera.get_frame()
         return frame.image
 
@@ -431,10 +440,12 @@ class KAMSpec(QtGui.QWidget):
         self.intro.startButton.clicked.connect(self.startWellSelect)
         self.intro.plateButton.clicked.connect(self.movePlateOut)
         self.intro.calibrateButton.clicked.connect(self.initializeCalibration)
+        for child in self.measurementMenu.gridLayout.findChildren(QtGui.QCheckBox):
+            self.measurementMenu.gridLayout.removeWidget(child)
 
     def updateCurrentProtocol(self, protocolString):
         self.measurementMenu.measurementLabel.setText(protocolString)
-        self.abs_protocol.stop()
+        # self.abs_protocol.stop()
     def addCurve(self, x, y, i, protocol):
         print x
         print y
@@ -450,6 +461,7 @@ class KAMSpec(QtGui.QWidget):
         self.measurementMenu.canvas.draw()
         if well == self.lengthMeasurements:
             self.measurementMenu.figure.savefig(self.folder+'\Plate'+str(self.plate)+'Protocol'+str(protocol)+'.png')
+
 
 
 
@@ -516,7 +528,7 @@ class machineInitialization(QtCore.QThread):
 
 
 class measureProtocol(QtCore.QThread):
-    def __init__(self, machine, toRead, dictionary, csvFileName, camera, graph, type, slope, intercept):
+    def __init__(self, machine, toRead, dictionary, csvFileName, camera, graph, type, slope, intercept, wavelength):
         QtCore.QThread.__init__(self)
         self.machine = machine
         self.toReadNum = toRead
@@ -527,6 +539,7 @@ class measureProtocol(QtCore.QThread):
         self.type = type
         self.slope = slope
         self.intercept = intercept
+        self.wavelength = wavelength
 
     def __del__(self):
         self.wait()
@@ -551,13 +564,20 @@ class measureProtocol(QtCore.QThread):
                 absData = self.read_frame()
                 if self.slope == 0:
                     x = range(1, len(absData) + 1)
+                    self.wavelengthIndex = 1500
                 else:
+                    minList = []
                     x = range(1, len(absData) + 1)
                     for j in x:
                         x[j-1] = self.slope*j + self.intercept
+                    for k in range(0, len(x)):
+                        minList.append(abs(x[k] - self.wavelength))
+                    for l in range(0, len(minList)):
+                        if minList[l] == np.min(minList):
+                            self.wavelengthIndex = l
                 y = absData
                 self.emit(QtCore.SIGNAL("addPlot(PyQt_PyObject,PyQt_PyObject, PyQt_PyObject)"), x, y, i)
-                # self.dataDict[int(self.toReadNum[i][0])][int(self.toReadNum[i][2:len(self.toReadNum[i])+1])] = absData[1][1]
+                self.dataDict[int(self.toReadNum[i][0])][int(self.toReadNum[i][2:len(self.toReadNum[i])+1])] = absData[self.wavelengthIndex]
                 self.machine._toggle_led('W')
                 time.sleep(2)
 
@@ -630,7 +650,6 @@ class measureProtocol(QtCore.QThread):
                 csvfile.close()
 
         self.sleep(2)
-
 
 
 class executeProtocol(QtCore.QThread):

@@ -16,6 +16,8 @@ from camera import *
 import win32com.client
 import time
 import matplotlib.pyplot as pl
+import numpy as np
+from math import factorial
 
 class KAMSpec(QtGui.QWidget):
     def __init__(self):
@@ -545,9 +547,6 @@ class KAMSpec(QtGui.QWidget):
            W.H. Press, S.A. Teukolsky, W.T. Vetterling, B.P. Flannery
            Cambridge University Press ISBN-13: 9780521880688
         """
-        import numpy as np
-        from math import factorial
-
         try:
             window_size = np.abs(np.int(window_size))
             order = np.abs(np.int(order))

@@ -1,4 +1,3 @@
-#include <PID_v1.h>
 #define LEDw A2
 #define LEDb A3
 #define LEDg A4
@@ -41,10 +40,6 @@ char servoStr1 = 0;
 char servoStr2 = 0;
 int servoAngle = -1; // Keeps track of what angle servo motor should move to.
 String serialString = "";
-double Setpoint1, Input1, Output1;
-double aggKp=4, aggKi=0.2, aggKd=1;
-double consKp=1, consKi=0.05, consKd=0.25;
-PID myPID(&Input1, &Output1,  &Setpoint1, aggKp, aggKi, aggKd, DIRECT);
 void setup() {
   //Attach arduino to servo motor
   //Initialize Serial for input/output
@@ -83,24 +78,13 @@ void setup() {
   //Serial.println(potVal_1);
   //Serial.print("Current Y: ");
   //Serial.println(potVal_2);  
-  Input1 = potVal_1;
-  myPID.SetOutputLimits(1, 50);
-  myPID.SetMode(AUTOMATIC);
-  //myPID_b.SetMode(AUTOMATIC);
 }
 
 void loop() {
   //Keep measuring the positions of the motors
   potVal_1 = analogRead(MotorPot_1);
   potVal_2 = analogRead(MotorPot_2);
-  Input1 = potVal_1;
-  double gap = abs(Setpoint1-Input1);
-  if(gap < 10){
-    myPID.SetTunings(consKp, consKi, consKd);
-  }
-  else{
-    myPID.SetTunings(aggKp, aggKi, aggKd);
-  }
+
   if (Serial.available() > 0) {
     positionInput = Serial.read();
     if (positionInput == 'M'){
@@ -125,9 +109,33 @@ void loop() {
       servoPulseStop(servo, angle);
     }
   }
+  if (positionRecord >= 3){
+      if (abs(positionX - potVal_1) >= 100){
+          analogWrite(MotorEnabler_1, 50);
+          Serial.println(50); 
+      }
+      else if (abs(positionX - potVal_1) < 100 && abs(positionX - potVal_1) >= 75){
+          analogWrite(MotorEnabler_1, 40);
+          Serial.println(40); 
+      }
+      else if (abs(positionX - potVal_1) < 75 && abs(positionX - potVal_1) >= 50){
+          analogWrite(MotorEnabler_1, 30);
+          Serial.println(30); 
+      }
+      else if (abs(positionX - potVal_1) < 50 && abs(positionX - potVal_1) >= 25){
+          analogWrite(MotorEnabler_1, 15);
+          Serial.println(15); 
+      }
+      else if (abs(positionX - potVal_1) < 25 && abs(positionX - potVal_1) >= 10){
+          analogWrite(MotorEnabler_1, 10);
+          Serial.println(10); 
+      }
+      else if (abs(positionX - potVal_1) <= 10){
+          analogWrite(MotorEnabler_1, 5);
+          Serial.println(5); 
+      }
+  }   
   if ((positionX >= 0) && (positionY >= 0) && (positionRecord == 3)) { //Only runs if X & Y Positions were successfully read
-      Setpoint1 = positionX;
-      //myPID_b.Compute();
       //Case 1 -- Motor X moves IN, Motor Y moves IN
       if ((positionX < potVal_1) && (positionY < potVal_2)) {
         stopCheck_1 = 1; // Marks the direction Motor 1 is moving (IN)
@@ -221,15 +229,39 @@ void loop() {
       motorStatus_2 = 1; //Runs if motor 1 is moving IN, stops motor at desired position 
     }
   }
+    if (positionRecord >= 3){
+      if (abs(positionX - potVal_1) >= 100){
+          analogWrite(MotorEnabler_1, 50);
+          Serial.println(50); 
+      }
+      else if (abs(positionX - potVal_1) < 100 && abs(positionX - potVal_1) >= 75){
+          analogWrite(MotorEnabler_1, 45);
+          Serial.println(45); 
+      }
+      else if (abs(positionX - potVal_1) < 75 && abs(positionX - potVal_1) >= 50){
+          analogWrite(MotorEnabler_1, 40);
+          Serial.println(40); 
+      }
+      else if (abs(positionX - potVal_1) < 50 && abs(positionX - potVal_1) >= 25){
+          analogWrite(MotorEnabler_1, 35);
+          Serial.println(35); 
+      }
+      else if (abs(positionX - potVal_1) < 25 && abs(positionX - potVal_1) >= 10){
+          analogWrite(MotorEnabler_1, 30);
+          Serial.println(30); 
+      }
+      else if (abs(positionX - potVal_1) <= 10){
+          analogWrite(MotorEnabler_1, 20);
+          Serial.println(20); 
+      }
+  }   
   // Runs once  both motors reached desired positions 
   // Resets specific values so that a new position can be entered
   if ((motorStatus_1 == 1) && (motorStatus_2 == 1)){
     Serial.println('D');
     motorReset();
     }
-  myPID.Compute();
-  analogWrite(MotorEnabler_1, Output1);
-  delay(500);
+  delay(100);
 }
   
 void motorProtocol() {
@@ -242,10 +274,10 @@ void motorProtocol() {
   //Serial.print("Y:");
   //Serial.println(positionYstr);
 
-  positionX = positionXstr.toInt()/1.0;
+  positionX = positionXstr.toInt();
   positionY = positionYstr.toInt();
   positionRecord = 3;
-  Setpoint1 = float(positionX);
+
 }
 
 void servoProtocol() {
