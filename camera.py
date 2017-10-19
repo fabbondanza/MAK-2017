@@ -6,7 +6,6 @@ from collections import namedtuple
 # endpoints*
 cmd_out = 0x01
 cmd_in  = 0x81
-data_in = 0x82
 
 class WorkMode:
     NORMAL = 0x0
