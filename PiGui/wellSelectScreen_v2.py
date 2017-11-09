@@ -32,7 +32,7 @@ class wellSelectScreen(QtGui.QWidget):
     def initUI(self):
         self.setObjectName(_fromUtf8("self"))
         self.resize(794, 430)
-        self.setStyleSheet(_fromUtf8("background-color: rgb(170, 170, 255);"))
+        self.setStyleSheet(_fromUtf8("background-color: rgb(255, 255, 255);"))
         self.nextButton = QtGui.QPushButton(self)
         self.nextButton.setGeometry(QtCore.QRect(610, 340, 161, 61))
         font = QtGui.QFont()
@@ -981,9 +981,9 @@ class wellSelectScreen(QtGui.QWidget):
                 self.selectionDict[row][column] = 'OFF'
 
     def retranslateUi(self):
-        self.setWindowTitle('KAM-Spec 2017')
+        self.setWindowTitle('KAM-Spec 2017: Well Select')
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap('KAM-Spec Logo LtoH.svg'), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap('kamSpecLogo.svg'), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.setWindowIcon(icon)
         #self.setWindowTitle(_translate("self", "self", None))
         self.nextButton.setText(_translate("self", "NEXT", None))

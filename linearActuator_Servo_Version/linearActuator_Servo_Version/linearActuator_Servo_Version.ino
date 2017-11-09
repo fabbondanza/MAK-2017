@@ -1,4 +1,4 @@
-#include <Servo.h> 
+#include <Servo.h>
 
 #define MotorX (8)
 #define MotorY (9)
@@ -20,50 +20,48 @@ String positionXstr = ""; //Holds the pieced together string represetning the de
 String positionYstr = ""; //Holds the pieced together string represetning the desired Y position, based off of serialString
 char positionInput = 0; //Holds the character read from the Serial
 
- 
-void setup() 
-{ 
+
+void setup()
+{
   myServoX.attach(MotorX);
   myServoY.attach(MotorY);
   myServoLED.attach(MotorLED);
+  pinMode(A2, OUTPUT);
+  pinMode(A3, OUTPUT);
   Serial.begin(9600);
-} 
-  
- 
-void loop() 
-{ 
-    if (Serial.available() > 0) { // Checks if any input has been made into the Serial
-      positionInput = Serial.read(); // If input made, it is assigned to positionInput. NOTE: this is only the first character that gets read.
-      if (positionInput == 'M'){
-        serialString = Serial.readString();
-        motorProtocol();
-      }
-      else if (positionInput == 'S'){
-        serialString = Serial.readString();
-        servoProtocol();
-      }
-      else if (positionInput == 'L'){
-        serialString = Serial.readString();
-        LEDProtocol();
-      }
-      else if (positionInput == 'X'){
-        //getCurrentX();
-      }
-      else if (positionInput == 'Y'){
-        //getCurrentY();
-      }
-      else if (positionInput == 'Z'){
-        //servoPulseStop(servo, angle);
-      }
-    }
+}
 
-    if ((positionX > 0) && (positionY >0)){
-      SetStrokePerc((float)positionX, 0);
-      SetStrokePerc((float)positionY, 1);
-      delay(1000);
-      Serial.println('D');
-      motorReset(); 
-    }   
+
+void loop()
+{
+//  digitalWrite(A2, HIGH);
+//  //      SetStrokePerc(50,1);
+//  //      delay(1000);
+//  //      SetStrokePerc(75,1);
+//  //      delay(1000);
+  if (Serial.available() > 0) { // Checks if any input has been made into the Serial
+    positionInput = Serial.read(); // If input made, it is assigned to positionInput. NOTE: this is only the first character that gets read.
+    if (positionInput == 'M') {
+      serialString = Serial.readString();
+      motorProtocol();
+    }
+    else if (positionInput == 'S') {
+      serialString = Serial.readString();
+      servoProtocol();
+    }
+    else if (positionInput == 'L') {
+      serialString = Serial.readString();
+      LEDProtocol();
+    }
+  }
+
+  if ((positionX > 0) && (positionY > 0)) {
+    SetStrokePerc((float)positionX, 0);
+    SetStrokePerc((float)positionY, 1);
+    delay(1000);
+    Serial.println('D');
+    motorReset();
+  }
 }
 
 // Functoin: motorProtocol(void)
@@ -71,33 +69,40 @@ void loop()
 //      positionXstr - is the string that is read in from the Serial, and contains percentage for only X motor
 //      positionYstr - is the string that is read in from the Serial, and contains percentage for only Y motor
 //      Proper Input method of String:
-//            If the desired X & Y positions are 70mm & 20mm respectively, the input into the serial would be 
+//            If the desired X & Y positions are 70mm & 20mm respectively, the input into the serial would be
 //                        M50,7
 //              Here 50, represents 50% of stroke length which is 70mm, and 7 represents 7% which is 20mm, the ',' is necessary in order for program to be able to split X & Y positions
 
 void motorProtocol() {
   int splitIndex = serialString.indexOf(',');
   int len = serialString.length();
-  positionXstr += serialString.substring(0,splitIndex);
-  positionYstr = serialString.substring(splitIndex+1,len);
+  positionXstr += serialString.substring(0, splitIndex);
+  positionYstr = serialString.substring(splitIndex + 1, len);
   positionX = positionXstr.toInt();
   positionY = positionYstr.toInt();
 }
 
+// Function: ServoProtocol(void)
+// Description -- Moves DC Servo Motor to specified angle for LED position
+//          30deg -> Blue LED
+//          60deg -> Green LED
+//          90deg -> Yellow LED
+//          120deg -> Red LED
+//          150deg -> White LED
 void servoProtocol() {
-  if (serialString == "B"){
+  if (serialString == "B") {
     angle = 30;
   }
-  else if (serialString == "G"){
+  else if (serialString == "G") {
     angle = 60;
   }
-  else if (serialString == "Y"){
+  else if (serialString == "Y") {
     angle = 90;
   }
-  else if (serialString == "R"){
+  else if (serialString == "R") {
     angle = 120;
   }
-  else if (serialString == "W"){
+  else if (serialString == "W") {
     angle = 150;
   }
   myServoLED.write(angle);
@@ -105,9 +110,9 @@ void servoProtocol() {
 }
 
 // Functoin: motorReset(void)
-// Description -- Resets variables relevant to motor controls, so that new positions can be read. 
+// Description -- Resets variables relevant to motor controls, so that new positions can be read.
 //
-void motorReset(){
+void motorReset() {
   positionInput = 0;
   positionXstr = "";
   positionX = 0;
@@ -115,21 +120,21 @@ void motorReset(){
   positionY = 0;
 }
 
-// Functoin: SetStrokePerc(float) 
+// Functoin: SetStrokePerc(float)
 // Description -- Maps microseconds that linear actuator is on to position
 //      float strokePercentage - input
-//            This is the percent of the full strokelength that user wants to extend 
-void SetStrokePerc(float strokePercentage,int motor)
+//            This is the percent of the full strokelength that user wants to extend
+void SetStrokePerc(float strokePercentage, int motor)
 {
   if ( strokePercentage >= 1.0 && strokePercentage <= 99.0 )
   {
     int usec = 1000 + strokePercentage * ( 2000 - 1000 ) / 100.0 ;
-    if (motor == 0){
+    if (motor == 0) {
       myServoX.writeMicroseconds( usec );
-      }
-    else if (motor == 1){
+    }
+    else if (motor == 1) {
       myServoY.writeMicroseconds( usec );
-      }
+    }
   }
 }
 
@@ -140,47 +145,47 @@ void SetStrokePerc(float strokePercentage,int motor)
 //          LEDg -> Green LED
 //          LEDw -> White LED
 //          LEDy -> Yellow LEDb
-void LEDProtocol(){
-  if ((serialString == "B") && (digitalRead(LEDb)==LOW)){
-    digitalWrite(LEDb,!digitalRead(LEDb));
-    digitalWrite(LEDr,LOW);
-    digitalWrite(LEDw,LOW);
-    digitalWrite(LEDg,LOW);
-    digitalWrite(LEDy,LOW);
+void LEDProtocol() {
+  if ((serialString == "B") && (digitalRead(LEDb) == LOW)) {
+    digitalWrite(LEDb, !digitalRead(LEDb));
+    digitalWrite(LEDr, LOW);
+    digitalWrite(LEDw, LOW);
+    digitalWrite(LEDg, LOW);
+    digitalWrite(LEDy, LOW);
   }
-  else if ((serialString == "G")&& (digitalRead(LEDg)==LOW)){
-    digitalWrite(LEDg,!digitalRead(LEDg));
-    digitalWrite(LEDr,LOW);
-    digitalWrite(LEDw,LOW);
-    digitalWrite(LEDb,LOW);
-    digitalWrite(LEDy,LOW);    
+  else if ((serialString == "G") && (digitalRead(LEDg) == LOW)) {
+    digitalWrite(LEDg, !digitalRead(LEDg));
+    digitalWrite(LEDr, LOW);
+    digitalWrite(LEDw, LOW);
+    digitalWrite(LEDb, LOW);
+    digitalWrite(LEDy, LOW);
   }
-  else if ((serialString == "R")&& (digitalRead(LEDr)==LOW)){
-    digitalWrite(LEDr,!digitalRead(LEDr));
-    digitalWrite(LEDb,LOW);
-    digitalWrite(LEDw,LOW);
-    digitalWrite(LEDg,LOW);
-    digitalWrite(LEDy,LOW);
+  else if ((serialString == "R") && (digitalRead(LEDr) == LOW)) {
+    digitalWrite(LEDr, !digitalRead(LEDr));
+    digitalWrite(LEDb, LOW);
+    digitalWrite(LEDw, LOW);
+    digitalWrite(LEDg, LOW);
+    digitalWrite(LEDy, LOW);
   }
-  else if ((serialString == "Y")&& (digitalRead(LEDy)==LOW)){
+  else if ((serialString == "Y") && (digitalRead(LEDy) == LOW)) {
     digitalWrite(LEDy, !digitalRead(LEDy));
-    digitalWrite(LEDr,LOW);
-    digitalWrite(LEDw,LOW);
-    digitalWrite(LEDg,LOW);
-    digitalWrite(LEDb,LOW);
+    digitalWrite(LEDr, LOW);
+    digitalWrite(LEDw, LOW);
+    digitalWrite(LEDg, LOW);
+    digitalWrite(LEDb, LOW);
   }
-  else if ((serialString == "W")&& (digitalRead(LEDw)==LOW)){
+  else if ((serialString == "W") && (digitalRead(LEDw) == LOW)) {
     digitalWrite(LEDw, !digitalRead(LEDw));
-    digitalWrite(LEDr,LOW);
-    digitalWrite(LEDb,LOW);
-    digitalWrite(LEDg,LOW);
-    digitalWrite(LEDy,LOW);
+    digitalWrite(LEDr, LOW);
+    digitalWrite(LEDb, LOW);
+    digitalWrite(LEDg, LOW);
+    digitalWrite(LEDy, LOW);
   }
   else {
     digitalWrite(LEDw, LOW);
-    digitalWrite(LEDr,LOW);
-    digitalWrite(LEDb,LOW);
-    digitalWrite(LEDg,LOW);
-    digitalWrite(LEDy,LOW);
+    digitalWrite(LEDr, LOW);
+    digitalWrite(LEDb, LOW);
+    digitalWrite(LEDg, LOW);
+    digitalWrite(LEDy, LOW);
   }
 }

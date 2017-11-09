@@ -4,7 +4,7 @@
 [r_pks_wavelength r_locs_wavelength r_w_wavelength r_proms_wavelength] = findpeaks(red_smooth, wavelength);
 %[f_pks_wavelength f_locs_wavelength f_w_wavelength f_proms_wavelength] = findpeaks(flour_smooth, wavelength);
 
-data_wavelength_v2 = [468;565;585;635];
+data_wavelength_v2 = [467;525;585;635];
 
 data_wavelength_v2(1,2) = b_locs_wavelength(find(b_proms_wavelength==max(b_proms_wavelength)));
 data_wavelength_v2(2,2) = g_locs_wavelength(find(g_proms_wavelength==max(g_proms_wavelength)));

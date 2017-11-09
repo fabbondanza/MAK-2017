@@ -1,31 +1,32 @@
 %% Intialize necessary variables
-x_pixel = 0:639;
+x_pixel = 1:3647;
 x_pixel = x_pixel';
 
 %% Calibration of wavelengths & pixel mapping
 
-calibration_data = xlsread('Calibration_Analysis.xlsx');
-red_spec = calibration_data(:,4);
-yellow_spec = calibration_data(:,3);
-green_spec = calibration_data(:,2);
-blue_spec = calibration_data(:,1);
+calibration_data = xlsread('CalibrationAnalysis.xlsx');
+red_spec = calibration_data(2:end,3);
+yellow_spec = calibration_data(2:end,2);
+%green_spec = calibration_data(:,2);
+blue_spec = calibration_data(2:end,1);
 
-wavelength = (x_pixel+1087.3)./2.4791;
+wavelength = -0.0798.*(x_pixel) + 688.35;
 red_smooth = smooth(red_spec,50);
 yellow_smooth = smooth(yellow_spec,50);
-green_smooth = smooth(green_spec,50);
+%green_smooth = smooth(green_spec,50);
 blue_smooth = smooth(blue_spec,50);
 
 
 figure();
 plot(wavelength, red_smooth, 'r');
 hold on
-plot(wavelength, green_smooth,'g');
+%plot(wavelength, green_smooth,'g');
 plot(wavelength, yellow_smooth,'y');
 plot(wavelength, blue_smooth,'b');
 xlabel('Wavelength (nm)');
 ylabel('Pixel Intensity');
-legend('Red','Green','Yellow','Blue'); 
+legend('Red','Yellow','Blue'); 
+%legend('Red','Green','Yellow','Blue'); 
 set(gcf,'color','w');
 
 %% Flourescein Dynamic Range Analysis with Variale Concentrations

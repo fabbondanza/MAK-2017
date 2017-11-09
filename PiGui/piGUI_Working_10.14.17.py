@@ -644,7 +644,7 @@ class measureProtocol(QtCore.QThread):
                         else:
                             row.append(' ')
                     row = [letters[key-1]] + row
-                    spamwriter.writerow(row)
+                    spamwriter.writerow(zip(row))
                 spamwriter.writerow(' ')
                 spamwriter.writerow(' ')
                 csvfile.close()

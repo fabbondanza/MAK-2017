@@ -3,9 +3,11 @@ import numpy as np
 import usb.core
 import usb.util
 from collections import namedtuple
-# endpoints*
+
+# endpoints
 cmd_out = 0x01
 cmd_in  = 0x81
+data_in = 0x82
 
 class WorkMode:
     NORMAL = 0x0
@@ -14,7 +16,7 @@ class WorkMode:
 class CameraError (RuntimeError):
     pass
 
-frame = namedtuple('Frame', ['dark','image','timestamp','exposure'])
+Frame = namedtuple('Frame', ['dark','image','timestamp','exposure'])
 device_info = struct.Struct('B14s14s14s')
 
 class LineCamera (object):
@@ -44,15 +46,15 @@ class LineCamera (object):
             raise RuntimeError('Command write failed: ')
 
     def _read_cmd(self, data_length):
-        a = self.dev.read(cmd_in, data_length+2, 0)
-        if len(a) != data_length+2:
+        a = self.dev.read(cmd_in, data_length + 2, 0)
+        if len(a) != data_length + 2:
             raise RuntimeError('Command read failed')
         (result, length) = a[0:2]
         if result != 0x01:
             raise CameraError()
         data = a[2:]
         return data
-            
+
     def get_firmware_ver(self):
         """
         Fetches information about the camera's firmware version. Returns a tuple of,
