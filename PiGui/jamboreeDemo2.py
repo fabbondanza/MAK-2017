@@ -588,7 +588,7 @@ class KAMSpec(QtGui.QWidget):
                 self.curveCalib.set_data(x, self.dataCalib)
                 self.calibrationMenu.figure.canvas.draw()
         else:
-            timerCalib.close()
+            timerCalib.cancel()
             timerCalib.join()
 
 class cameraInitialization(QtCore.QThread):

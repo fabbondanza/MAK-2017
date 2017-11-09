@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1529667-ee9d-49b3-8d49-43f3442f2034" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PiGui/jamboreeDemo2.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PiGui/jamboreeDemo.py" afterPath="$PROJECT_DIR$/PiGui/jamboreeDemo.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PiGui/jamboreeDemo2.py" afterPath="$PROJECT_DIR$/PiGui/jamboreeDemo2.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -96,9 +95,11 @@
       <file leaf-file-name="jamboreeDemo2.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PiGui/jamboreeDemo2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="398">
+              <caret line="590" column="31" lean-forward="false" selection-start-line="590" selection-start-column="31" selection-end-line="590" selection-end-column="31" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -218,7 +219,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/MainGUI Scripts/shakeMenu.py" />
         <option value="$PROJECT_DIR$/MainGUI Scripts/optionsMenu.py" />
         <option value="$PROJECT_DIR$/Python_GUI/testExport.py" />
         <option value="$PROJECT_DIR$/MainGUI Scripts/absSpecMenu.py" />
@@ -269,6 +269,7 @@
         <option value="$PROJECT_DIR$/PiGui/wellSelectScreen_v2.py" />
         <option value="$PROJECT_DIR$/PiGui/arudinoPi_demos.py" />
         <option value="$PROJECT_DIR$/PiGui/jamboreeDemo.py" />
+        <option value="$PROJECT_DIR$/PiGui/jamboreeDemo2.py" />
       </list>
     </option>
   </component>
@@ -515,7 +516,7 @@
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="9" />
+      <option name="time" value="10" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -888,9 +889,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PiGui/jamboreeDemo2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="398">
+          <caret line="590" column="31" lean-forward="false" selection-start-line="590" selection-start-column="31" selection-end-line="590" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
