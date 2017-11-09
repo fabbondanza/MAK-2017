@@ -87,7 +87,7 @@ class KAMSpec(QtGui.QWidget):
         self.rowList = []
 
     def movePlateOut(self):
-        print 'plateOut'
+        # print 'plateOut'
         self.plateInsert = plateInsertionProtocol(self.machine)
         self.connect(self.plateInsert, QtCore.SIGNAL('finished()'), self.popOutMessage1)
         self.plateInsert.start()
@@ -262,7 +262,7 @@ class KAMSpec(QtGui.QWidget):
         if self.protocolDict[plate][protocol].keys()[0] == 1:
             self.lengthMeasurements = len(self.selectedWellsDict[plate])
             exposureTime = int(self.protocolDict[plate][protocol][1]['Exposure Time'])
-            print exposureTime
+            # print exposureTime
             wavelength = int(self.protocolDict[plate][protocol][1]['Wavelength'])
             self.abs_protocol = executeProtocol(1, self.selectedWellsDict, self.protocolDict, plate, protocol,
                                                 csvFileName, self.camera, self.machine, self.measurementMenu,
@@ -296,10 +296,10 @@ class KAMSpec(QtGui.QWidget):
         self.protocolStart = machineInitialization(self.machine,self.wellList, self.csvFileName, self.camera, self.measurementMenu)
         self.connect(self.protocolStart, QtCore.SIGNAL("runProtocol(PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)"), self.runProtocol)
         self.protocolStart.start()
-        print 'Camera Ready'
+        # print 'Camera Ready'
 
     def runProtocol(self, machine, toRead, dictionary, filename, camera, graph):
-        print 'runProtocol'
+        # print 'runProtocol'
         self.protocolStart.stop()
         self.wellsToRead = toRead
         self.measureThread = measureProtocol(machine, toRead, dictionary, filename, camera, graph, self.type, self.slope, self.intercept, self.wavelength)
@@ -307,7 +307,7 @@ class KAMSpec(QtGui.QWidget):
         self.measureThread.start()
 
     def addPlot(self, x,y,i, dictionary, toRead):
-        print 'addPlot'
+        # print 'addPlot'
         self.addCurve(x,y,i, self.protocol,dictionary, toRead)
         if i == self.lengthMeasurements-1:
             self.checkBox()
@@ -319,7 +319,7 @@ class KAMSpec(QtGui.QWidget):
             objName = str(child.objectName())
             splitName = objName.split('_')
             if len(splitName) > 2:
-                print splitName
+                # print splitName
                 plateNumb = int(splitName[1])
                 protocolNumb = int(splitName[3])
                 if plateNumb == self.plate:
@@ -331,7 +331,7 @@ class KAMSpec(QtGui.QWidget):
         if self.protocol <= self.protocolCount[self.plate-1]-1:
             self.individualProtocolRun(self.plate, self.protocol, self.csvFileName)
         else:
-            print 'Done All Protocols for Plate #'+str(self.plate)
+            # print 'Done All Protocols for Plate #'+str(self.plate)
             for child in self.measurementMenu.findChildren(QtGui.QCheckBox):
                 objName = str(child.objectName())
                 splitName = objName.split('_')
@@ -343,7 +343,7 @@ class KAMSpec(QtGui.QWidget):
             if self.plate <= self.plateCount:
                 self.individualPlateRun(self.plate)
             else:
-                print 'Done All Plates'
+                # print 'Done All Plates'
                 plt.cla()
                 self.emailSend = sendDataEmail(self.folderName, self.folder)
                 self.connect(self.emailSend, QtCore.SIGNAL('finished()'), self.reset)
@@ -381,7 +381,7 @@ class KAMSpec(QtGui.QWidget):
 
     def getMaxCalib(self, led):
         maxCalib = np.max(self.dataCalib)
-        print maxCalib
+        # print maxCalib
         smooth_data = self.savitzky_golay(self.dataCalib, 21, 2)
         self.calibrate_data[led] = list(np.where(smooth_data == np.max(smooth_data)))[0][0]
         if len(self.calibrate_data) == 3:
@@ -393,7 +393,7 @@ class KAMSpec(QtGui.QWidget):
         }
 
         self.regressionEquation = np.polyfit([self.calibrate_data['B'], self.calibrate_data['Y'], self.calibrate_data['R']],[self.led_wavelengths['B'], self.led_wavelengths['Y'], self.led_wavelengths['R']],1)
-        print self.regressionEquation
+        # print self.regressionEquation
         self.slope = self.regressionEquation[0][0]
         self.intercept = self.regressionEquation[1][0]
         self.setCalibration()
@@ -505,6 +505,9 @@ class KAMSpec(QtGui.QWidget):
 
 
     def reset(self):
+        global timerMeasure
+        timerMeasure.stop()
+        timerMeasure.join()
         self.wellSelect.hide()
         self.protocolSelect.hide()
         self.absMenu.hide()
@@ -528,8 +531,9 @@ class KAMSpec(QtGui.QWidget):
         # self.abs_protocol.stop()
 
     def addCurve(self, x, y, i, protocol, dictionary, toRead):
-        print x
-        print y
+        global timerMeasure
+        # print x
+        # print y
         well = i+1
         self.dataDict = dictionary
         self.toReadNum = toRead
@@ -540,10 +544,10 @@ class KAMSpec(QtGui.QWidget):
             self.ax.set_xlim(np.min(self.x), np.max(self.x))
             self.curve, = self.ax.plot([], [])
             self.read_frame()
-            timer = self.measurementMenu.figure.canvas.new_timer(interval=100)
-            timer.add_callback(self.update)
+            timerMeasure = self.measurementMenu.figure.canvas.new_timer(interval=100)
+            timerMeasure.add_callback(self.update)
             # self.ax.plot(x, y, label = str(self.selectedWellsDict[self.plate][i]))
-            timer.start()
+            timerMeasure.start()
             thisManager = get_current_fig_manager()
             thisManager.window.SetPosition((511, 361))
             plt.show()
@@ -600,7 +604,7 @@ class cameraInitialization(QtCore.QThread):
         self.terminate()
 
     def run(self):
-        print 'Initializing Camera'
+        # print 'Initializing Camera'
         self.camera.set_exposure_time(self.exposureTime)
         # self.emit(QtCore.SIGNAL("finished()"), self.cameraReady)
         self.sleep(2)
@@ -609,7 +613,7 @@ class plateInsertionProtocol(QtCore.QThread):
     def __init__(self, machine):
         QtCore.QThread.__init__(self)
         self.machine = machine
-        print 'Moving plate/holder to slot'
+        # print 'Moving plate/holder to slot'
 
     def __del__(self):
         self.wait()
@@ -628,7 +632,7 @@ class machineInitialization(QtCore.QThread):
         self.csvFileName = csvFileName
         self.camera = camera
         self.measurementScreen = graph
-        print 'Initializing Machine'
+        # print 'Initializing Machine'
 
         self.wellPositions = [
             [[5.5, 47], [11.5, 47], [18, 47], [24.5, 47], [31, 47], [37.5, 47], [44, 47], [50.5, 47], [57, 47],
@@ -658,7 +662,7 @@ class machineInitialization(QtCore.QThread):
         self.machine._set_initial_position()
         self.toReadNum = []
         time.sleep(2)
-        print self.wellList
+        # print self.wellList
         for well in self.wellList:
             rowString = "ABCDEFGH"
             for l in range(0, len(rowString)):
@@ -673,7 +677,7 @@ class machineInitialization(QtCore.QThread):
             self.wellY = self.wellPositions[yindex][xindex][1]
             self.wellPosition = 'M' + str(self.wellX) + ',' + str(self.wellY)
             self.toReadNum.append([well, self.wellPosition])
-        print self.toReadNum
+        # print self.toReadNum
         self.dataDict = {}
         for i in range(0, len(self.toReadNum)):
              self.dataDict[self.toReadNum[i][0][0]] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -719,7 +723,7 @@ class measureCalibration(QtCore.QThread):
         self.machine._toggle_led('Y')
         time.sleep(2)
 
-        self.exposureTime = 20
+        self.exposureTime = 5
         self.camera.set_exposure_time(self.exposureTime)
         time.sleep(2)
         self.machine._toggle_led('R')
@@ -761,14 +765,14 @@ class measureProtocol(QtCore.QThread):
         return frame.image
 
     def run(self):
-        print 'Starting'
+        # print 'Starting'
 
-        print self.type
+        # print self.type
         if self.type == 1:
             rowList = []
             for i in range(0,len(self.toReadNum)):
                 self.machine._set_new_position(self.toReadNum[i][0],self.toReadNum[i][1])
-                print "Moving"
+                # print "Moving"
                 self.machine._toggle_led('W')
                 time.sleep(2)
                 absData = self.read_frame()
