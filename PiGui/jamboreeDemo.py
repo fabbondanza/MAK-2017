@@ -405,8 +405,8 @@ class KAMSpec(QtGui.QWidget):
         for j in self.x:
             self.x[j] = self.slope * j + self.intercept
 
-        self.calibrationMenu.destroy()
         self.intro.show()
+        self.calibrationMenu.deleteLater()
 
     def savitzky_golay(self, y, window_size, order, deriv=0, rate=1):
         try:
