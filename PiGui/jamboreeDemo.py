@@ -356,6 +356,7 @@ class KAMSpec(QtGui.QWidget):
             elapsed = time.time() - start
 
     def initializeCalibration(self):
+        global timerCalib
         self.intro.hide()
         self.calibrationMenu.show()
         self.calibrate_data = {}
@@ -369,10 +370,10 @@ class KAMSpec(QtGui.QWidget):
         self.axC.set_xlim(0, 3648)
         self.curveCalib, = self.axC.plot([], [])
         self.read_frame()
-        self.timer = self.calibrationMenu.figure.canvas.new_timer(interval=100)
-        self.timer.add_callback(self.updateCalibrate)
+        timerCalib = self.calibrationMenu.figure.canvas.new_timer(interval=100)
+        timerCalib.add_callback(self.updateCalibrate)
         # self.ax.plot(x, y, label = str(self.selectedWellsDict[self.plate][i]))
-        self.timer.start()
+        timerCalib.start()
         thisManager = get_current_fig_manager()
         thisManager.window.SetPosition((751, 361))
         plt.show()
@@ -573,6 +574,7 @@ class KAMSpec(QtGui.QWidget):
             self.measurementMenu.figure.canvas.draw()
 
     def updateCalibrate(self):
+        global timerCalib
         if self.calibrationComplete == False:
             self.dataCalib = self.read_frame()
             if self.dataCalib is None:
@@ -582,8 +584,8 @@ class KAMSpec(QtGui.QWidget):
                 self.curveCalib.set_data(x, self.dataCalib)
                 self.calibrationMenu.figure.canvas.draw()
         else:
-            self.timer.close()
-            self.timer.join()
+            timerCalib.close()
+            timerCalib.join()
 
 class cameraInitialization(QtCore.QThread):
     def __init__(self,camera, exposureTime):

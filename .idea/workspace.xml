@@ -83,8 +83,8 @@
       <file leaf-file-name="jamboreeDemo.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PiGui/jamboreeDemo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="374" column="13" lean-forward="false" selection-start-line="374" selection-start-column="13" selection-end-line="374" selection-end-column="13" />
+            <state relative-caret-position="112">
+              <caret line="360" column="35" lean-forward="true" selection-start-line="360" selection-start-column="35" selection-end-line="360" selection-end-column="35" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -169,8 +169,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>self.toReadNum</find>
-      <find>measureThread</find>
       <find>addPlot</find>
       <find>self.rowList</find>
       <find>Form</find>
@@ -199,6 +197,8 @@
       <find>timer</find>
       <find>destroy</find>
       <find>delete</find>
+      <find>self.timer</find>
+      <find>timerCalib</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -874,8 +874,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PiGui/jamboreeDemo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="374" column="13" lean-forward="false" selection-start-line="374" selection-start-column="13" selection-end-line="374" selection-end-column="13" />
+        <state relative-caret-position="112">
+          <caret line="360" column="35" lean-forward="true" selection-start-line="360" selection-start-column="35" selection-end-line="360" selection-end-column="35" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
