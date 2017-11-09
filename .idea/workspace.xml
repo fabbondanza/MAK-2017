@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1529667-ee9d-49b3-8d49-43f3442f2034" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PiGui/jamboreeDemo2.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PiGui/jamboreeDemo.py" afterPath="$PROJECT_DIR$/PiGui/jamboreeDemo.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -80,14 +81,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jamboreeDemo.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="jamboreeDemo.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PiGui/jamboreeDemo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="962" column="16" lean-forward="false" selection-start-line="962" selection-start-column="10" selection-end-line="962" selection-end-column="16" />
+            <state relative-caret-position="330">
+              <caret line="596" column="28" lean-forward="true" selection-start-line="596" selection-start-column="28" selection-end-line="596" selection-end-column="28" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jamboreeDemo2.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/PiGui/jamboreeDemo2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -193,12 +204,12 @@
       <find>destroy</find>
       <find>delete</find>
       <find>self.timer</find>
-      <find>timerCalib</find>
-      <find>timer</find>
       <find>reset</find>
       <find>timerMeasure</find>
       <find>print</find>
       <find>print</find>
+      <find>timer</find>
+      <find>timerCalib</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -509,13 +520,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/MainGUI Scripts/regressionTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="38" column="102" lean-forward="false" selection-start-line="38" selection-start-column="102" selection-end-line="38" selection-end-column="102" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MainGUI Scripts/testMessingAround.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -800,16 +804,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PiGui/EL222_Photocycle_Demo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="109" column="27" lean-forward="false" selection-start-line="109" selection-start-column="27" selection-end-line="109" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PiGui/piGUI_Working_10.14.17.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-27">
@@ -872,13 +866,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PiGui/jamboreeDemo.py">
+    <entry file="file://$PROJECT_DIR$/PiGui/EL222_Photocycle_Demo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="962" column="16" lean-forward="false" selection-start-line="962" selection-start-column="10" selection-end-line="962" selection-end-column="16" />
+        <state relative-caret-position="221">
+          <caret line="109" column="27" lean-forward="false" selection-start-line="109" selection-start-column="27" selection-end-line="109" selection-end-column="27" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PiGui/jamboreeDemo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="596" column="28" lean-forward="true" selection-start-line="596" selection-start-column="28" selection-end-line="596" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PiGui/jamboreeDemo2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
