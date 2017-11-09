@@ -356,7 +356,6 @@ class KAMSpec(QtGui.QWidget):
             elapsed = time.time() - start
 
     def initializeCalibration(self):
-        global timerCalib
         self.intro.hide()
         self.calibrationMenu.show()
         self.calibrate_data = {}
@@ -377,6 +376,9 @@ class KAMSpec(QtGui.QWidget):
         thisManager = get_current_fig_manager()
         thisManager.window.SetPosition((751, 361))
         plt.show()
+        while self.calibrationComplete == False:
+            print 'Calibrating'
+        timerCalib.stop()
 
 
     def getMaxCalib(self, led):
@@ -578,7 +580,6 @@ class KAMSpec(QtGui.QWidget):
             self.measurementMenu.figure.canvas.draw()
 
     def updateCalibrate(self):
-        global timerCalib
         if self.calibrationComplete == False:
             self.dataCalib = self.read_frame()
             if self.dataCalib is None:
@@ -587,9 +588,6 @@ class KAMSpec(QtGui.QWidget):
                 x = np.arange(len(self.dataCalib))
                 self.curveCalib.set_data(x, self.dataCalib)
                 self.calibrationMenu.figure.canvas.draw()
-        else:
-            timerCalib.cancel()
-            timerCalib.join()
 
 class cameraInitialization(QtCore.QThread):
     def __init__(self,camera, exposureTime):
