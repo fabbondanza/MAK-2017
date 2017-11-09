@@ -507,9 +507,6 @@ class KAMSpec(QtGui.QWidget):
 
 
     def reset(self):
-        global timerMeasure
-        timerMeasure.stop()
-        timerMeasure.join()
         self.wellSelect.hide()
         self.protocolSelect.hide()
         self.absMenu.hide()
@@ -533,7 +530,6 @@ class KAMSpec(QtGui.QWidget):
         # self.abs_protocol.stop()
 
     def addCurve(self, x, y, i, protocol, dictionary, toRead):
-        global timerMeasure
         # print x
         # print y
         well = i+1
@@ -566,6 +562,7 @@ class KAMSpec(QtGui.QWidget):
                 spamwriter.writerow(' ')
                 csvfile.close()
             time.sleep(2)
+            timerMeasure.stop()
             self.reset()
         # self.measurementMenu.figure.savefig(self.folder+'\Plate'+str(self.plate)+'Protocol'+str(protocol)+'Well'+self.wellsToRead[i]+'.png')
 
