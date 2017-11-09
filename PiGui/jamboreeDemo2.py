@@ -758,9 +758,14 @@ class measureProtocol(QtCore.QThread):
         self.terminate()
 
     def read_frame(self):
-        for i in range(0,10):
+        try:
             frame = self.camera.get_frame()
-        return frame.image
+        except:
+            return None
+        if frame is not None:
+            return frame.image  # - np.mean(frame.dark)
+        else:
+            return None
 
     def run(self):
         # print 'Starting'
