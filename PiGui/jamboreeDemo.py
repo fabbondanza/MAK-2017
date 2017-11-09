@@ -369,10 +369,10 @@ class KAMSpec(QtGui.QWidget):
         self.axC.set_xlim(0, 3648)
         self.curveCalib, = self.axC.plot([], [])
         self.read_frame()
-        timer = self.calibrationMenu.figure.canvas.new_timer(interval=100)
-        timer.add_callback(self.updateCalibrate)
+        self.timer = self.calibrationMenu.figure.canvas.new_timer(interval=100)
+        self.timer.add_callback(self.updateCalibrate)
         # self.ax.plot(x, y, label = str(self.selectedWellsDict[self.plate][i]))
-        timer.start()
+        self.timer.start()
         thisManager = get_current_fig_manager()
         thisManager.window.SetPosition((751, 361))
         plt.show()
@@ -396,6 +396,7 @@ class KAMSpec(QtGui.QWidget):
         self.slope = self.regressionEquation[0][0]
         self.intercept = self.regressionEquation[1][0]
         self.setCalibration()
+        self.timer.cancel()
 
 
 
