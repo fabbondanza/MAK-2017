@@ -696,7 +696,7 @@ class measureCalibration(QtCore.QThread):
         self.camera.set_work_mode(WorkMode.NORMAL)
         time.sleep(1)
 
-        self.exposureTime = 400
+        self.exposureTime = 20
         self.camera.set_exposure_time(self.exposureTime)
         self.machine._toggle_led('B')
         time.sleep(2)
@@ -704,7 +704,7 @@ class measureCalibration(QtCore.QThread):
         self.machine._toggle_led('B')
         time.sleep(2)
 
-        self.exposureTime = 10000
+        self.exposureTime = 20
         self.camera.set_exposure_time(self.exposureTime)
         time.sleep(2)
         self.machine._toggle_led('Y')
@@ -713,7 +713,7 @@ class measureCalibration(QtCore.QThread):
         self.machine._toggle_led('Y')
         time.sleep(2)
 
-        self.exposureTime = 35
+        self.exposureTime = 20
         self.camera.set_exposure_time(self.exposureTime)
         time.sleep(2)
         self.machine._toggle_led('R')
