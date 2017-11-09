@@ -2,33 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1529667-ee9d-49b3-8d49-43f3442f2034" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PiGui/Demos/arudinoPiServo.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PiGui/Demos/pdawn_demo.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PiGui/Demos/testCSV.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PiGui/EL222_Photocycle_Demo.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PiGui/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PiGui/arudinoPi_demos.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PiGui/jamboreeDemo.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PiGui/lav_demo.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PiGui/mightex.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PiGui/qs_demo.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PiGui/testSHen.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PiGui/wellMovingDemo.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Rho30uM.csv" afterPath="$PROJECT_DIR$/Rho30uM.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PiGui/arudinoPi.py" afterPath="$PROJECT_DIR$/PiGui/arudinoPi.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PiGui/introScreen_v2.py" afterPath="$PROJECT_DIR$/PiGui/introScreen_v2.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PiGui/introScreen_v2.ui" afterPath="$PROJECT_DIR$/PiGui/introScreen_v2.ui" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PiGui/measurementScreen.py" afterPath="$PROJECT_DIR$/PiGui/measurementScreen.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PiGui/piGUI_Working_10.14.17.py" afterPath="$PROJECT_DIR$/PiGui/piGUI_Working_10.14.17.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PiGui/wellSelectScreen_v2.py" afterPath="$PROJECT_DIR$/PiGui/wellSelectScreen_v2.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Spectral Analysis Code/linearity_check.m" afterPath="$PROJECT_DIR$/Spectral Analysis Code/linearity_check.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Spectral Analysis Code/spectra_analysis.m" afterPath="$PROJECT_DIR$/Spectral Analysis Code/spectra_analysis.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Spectral Analysis Code/spectra_peak_find.m" afterPath="$PROJECT_DIR$/Spectral Analysis Code/spectra_peak_find.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/camera.py" afterPath="$PROJECT_DIR$/camera.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ccd_test.py" afterPath="$PROJECT_DIR$/ccd_test.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/linearActuator_Servo_Version/linearActuator_Servo_Version/linearActuator_Servo_Version.ino" afterPath="$PROJECT_DIR$/linearActuator_Servo_Version/linearActuator_Servo_Version/linearActuator_Servo_Version.ino" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mightex.py" afterPath="$PROJECT_DIR$/mightex.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PiGui/arudinoPi_demos.py" afterPath="$PROJECT_DIR$/PiGui/arudinoPi_demos.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -118,7 +92,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="calibrationScreen.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="calibrationScreen.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PiGui/calibrationScreen.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="229">
@@ -174,11 +148,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="arudinoPi_demos.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="arudinoPi_demos.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PiGui/arudinoPi_demos.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="35" column="21" lean-forward="false" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
+            <state relative-caret-position="357">
+              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -276,7 +250,6 @@
         <option value="$PROJECT_DIR$/PiGui/EL222_Photocycle_Demo.py" />
         <option value="$PROJECT_DIR$/PiGui/wellMovingDemo.py" />
         <option value="$PROJECT_DIR$/PiGui/introScreen_v2.py" />
-        <option value="$PROJECT_DIR$/PiGui/arudinoPi_demos.py" />
         <option value="$PROJECT_DIR$/PiGui/testSHen.py" />
         <option value="$PROJECT_DIR$/PiGui/piGUI_Working_10.14.17.py" />
         <option value="$PROJECT_DIR$/ccd_test.py" />
@@ -284,6 +257,7 @@
         <option value="$PROJECT_DIR$/PiGui/calibrationScreen.py" />
         <option value="$PROJECT_DIR$/PiGui/measurementScreen.py" />
         <option value="$PROJECT_DIR$/PiGui/wellSelectScreen_v2.py" />
+        <option value="$PROJECT_DIR$/PiGui/arudinoPi_demos.py" />
       </list>
     </option>
   </component>
@@ -806,14 +780,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PiGui/arudinoPi_demos.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="35" column="21" lean-forward="false" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PiGui/testSHen.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -905,6 +871,14 @@
           <folding>
             <element signature="e#206#237#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PiGui/arudinoPi_demos.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
