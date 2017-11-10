@@ -17,7 +17,7 @@ from wellSelectScreen_v2 import *
 from selectProtocolScreen_v2 import *
 from absMenu import *
 from absSpecMenu import *
-from flrMenu import *
+from flrMenu_v2 import *
 from flrSpecMenu import *
 from measurementScreen import *
 from calibrationScreen import *
@@ -56,11 +56,11 @@ class KAMSpec(QtGui.QWidget):
         ### Connecting Absorbance Menu Settings buttons to functions
         self.absMenu.addProtocolButton.clicked.connect(lambda: self.addProtocol(1))
         # self.absSpecMenu.addProtocolButton.clicked.connect(lambda: self.addProtocol(2))
-        self.flrMenu.addProtocolButton.clicked.connect(lambda: self.addProtocol(3))
+        self.flrMenu.addProtocolButton.clicked.connect(lambda: self.addProtocol(2))
         # self.flrSpecMenu.addProtocolButton.clicked.connect(lambda: self.addProtocol(4))
         self.absMenu.finishButton.clicked.connect(lambda: self.finishProtocolSelection(1))
         # self.absSpecMenu.finishButton.clicked.connect(lambda: self.finishProtocolSelection((2)))
-        self.flrMenu.finishButton.clicked.connect(lambda: self.finishProtocolSelection(3))
+        self.flrMenu.finishButton.clicked.connect(lambda: self.finishProtocolSelection(2))
         # self.flrSpecMenu.finishButton.clicked.connect(lambda:self.finishProtocolSelection(4))
 
         self.protocolDict = {}
@@ -150,19 +150,8 @@ class KAMSpec(QtGui.QWidget):
             self.protocolDict[self.plateCount].append({type: {'Exposure Time': int(self.absMenu.exposureTimeSpinBox.value()), 'Wavelength': int(self.absMenu.wavelengthSpinBox.value())}})
             self.protocolSelect.show()
         elif type == 2:
-            self.absSpecMenu.hide()
-            self.protocolDict[self.plateCount].append({type: {'Exposure Time': int(self.absSpecMenu.exposureTimeSpinBox.value()), 'Start Wavelength': int(self.absSpecMenu.startWavelengthSpinBox.value()), 'Stop Wavelength': int(self.absSpecMenu.stopWavelengthSpinBox.value()) }})
-            self.protocolSelect.show()
-        elif type == 3:
             self.flrMenu.hide()
-            self.protocolDict[self.plateCount].append({type: {'Exposure Time': int(self.flrMenu.exposureTimeSpinBox.value()), 'Excitation': str(self.flrMenu.excitationWavelengthComboBox.currentText()), 'Emission': int(self.flrMenu.emissionWavelengthSpinBox.value())}})
-            self.protocolSelect.show()
-        elif type == 4:
-            self.flrSpecMenu.hide()
-            self.protocolDict[self.plateCount].append({type: {'Exposure Time': int(self.flrSpecMenu.exposureTimeSpinBox.value()), 'Excitation': str(self.flrSpecMenu.excitationWavelengthComboBox.currentText()), 'Start Wavelength': int(self.flrSpecMenu.startWavelengthSpinBox.value()), 'Stop Wavelength': int(self.flrSpecMenu.stopWavelengthSpinBox.value())}})
-            self.protocolSelect.show()
-        elif type == 5:
-            self.flrSpecMenu.hide()
+            self.protocolDict[self.plateCount].append({type: {'Exposure Time': int(self.flrMenu.exposureTimeSpinBox.value()), 'Excitation': str(self.flrMenu.excitationWavelengthComboBox.currentText())}})
             self.protocolSelect.show()
 
     def addPlate(self):
@@ -181,25 +170,12 @@ class KAMSpec(QtGui.QWidget):
             self.measurementMenu.show()
             self.type = 1
         elif type == 2:
-            self.absSpecMenu.hide()
-            self.protocolDict[self.plateCount].append({type: {'Exposure Time': int(self.absSpecMenu.exposureTimeSpinBox.value()), 'Start Wavelength': int(self.absSpecMenu.startWavelengthSpinBox.value()), 'Stop Wavelength': int(self.absSpecMenu.stopWavelengthSpinBox.value()) }})
-            self.measurementMenu.show()
-
-        elif type == 3:
             self.flrMenu.hide()
-            self.protocolDict[self.plateCount].append({type: {'Exposure Time': int(self.flrMenu.exposureTimeSpinBox.value()), 'Excitation': str(self.flrMenu.excitationWavelengthComboBox.currentText()), 'Emission': int(self.flrMenu.emissionWavelengthSpinBox.value())}})
-            self.measurementMenu.show()
-
-        elif type == 4:
-            self.flrSpecMenu.hide()
-            self.protocolDict[self.plateCount].append({type: {'Exposure Time': int(self.flrSpecMenu.exposureTimeSpinBox.value()), 'Excitation': str(self.flrSpecMenu.excitationWavelengthComboBox.currentText()), 'Start Wavelength': int(self.flrSpecMenu.startWavelengthSpinBox.value()), 'Stop Wavelength': int(self.flrSpecMenu.stopWavelengthSpinBox.value())}})
-            self.measurementMenu.show()
-
-        elif type == 5:
-            self.flrSpecMenu.hide()
+            self.protocolDict[self.plateCount].append({type: {'Exposure Time': int(self.flrMenu.exposureTimeSpinBox.value()), 'Excitation': str(self.flrMenu.excitationWavelengthComboBox.currentText())}})
             self.measurementMenu.show()
 
         self.plate = 1
+        self.measurementCheck = 0
         self.ypos = 0
         self.folderName =  time.strftime('%m_%d_%Y') + '_KAMSpec_Data_'+ time.strftime('%H_%M_%S')
         self.folder = 'Results\ ' + self.folderName
@@ -217,14 +193,12 @@ class KAMSpec(QtGui.QWidget):
                 if self.protocolDict[plate][protocol].keys()[0] == 1:
                     self.protocolCheckBox.setText('Absorbance')
                 elif self.protocolDict[plate][protocol].keys()[0] == 2:
-                    self.protocolCheckBox.setText('Absorbance Spectrum')
-                elif self.protocolDict[plate][protocol].keys()[0] == 3:
                     self.protocolCheckBox.setText('Flourescent Intensity')
-                elif self.protocolDict[plate][protocol].keys()[0] == 4:
-                    self.protocolCheckBox.setText('Flourescence Spectrum')
+                # elif self.protocolDict[plate][protocol].keys()[0] == 3:
+                #     self.protocolCheckBox.setText('Flourescent Intensity')
+                # elif self.protocolDict[plate][protocol].keys()[0] == 4:
+                #     self.protocolCheckBox.setText('Flourescence Spectrum')
                 self.measurementMenu.gridLayout.addWidget(self.protocolCheckBox, self.ypos,2, 1, 4)
-
-
 
         self.individualPlateRun(self.plate)
 
@@ -244,22 +218,10 @@ class KAMSpec(QtGui.QWidget):
             self.protocol = 0
             self.lengthMeasurements = len(self.selectedWellsDict[self.plate])
             self.individualProtocolRun(self.plate,self.protocol, self.csvFileName)
-            # for protocol in range(0, len(self.protocolDict[plate])):
-            #     if self.protocolDict[plate][protocol].keys()[0] == 1:
-            #         self.lengthMeasurements = len(self.selectedWellsDict[plate])
-            #         exposureTime = int(self.protocolDict[plate][protocol][1]['Exposure Time'])
-            #         wavelength = int(self.protocolDict[plate][protocol][1]['Wavelength'])
-            #         self.abs_protocol = executeProtocol(1,self.selectedWellsDict, self.protocolDict, plate, protocol,csvFileName, self.camera, self.machine, self.measurementMenu, self.lengthMeasurements)
-            #         self.connect(self.abs_protocol, QtCore.SIGNAL("updateCurrentProtocol(QString)"), self.updateCurrentProtocol)
-            #         self.connect(self.abs_protocol, QtCore.SIGNAL("addCurve(PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)"), self.addCurve)
-            #         self.connect(self.abs_protocol, QtCore.SIGNAL("finished()"), self.statusPrint)
-            #         self.abs_protocol.start()
-
-                        #self.absProtocol(wellList, exposureTime, wavelength,csvFileName)
-        #     #self.sendDataEmail(csvFileName)
 
     def individualProtocolRun(self, plate, protocol, csvFileName):
         if self.protocolDict[plate][protocol].keys()[0] == 1:
+            self.type = 1
             self.lengthMeasurements = len(self.selectedWellsDict[plate])
             exposureTime = int(self.protocolDict[plate][protocol][1]['Exposure Time'])
             # print exposureTime
@@ -272,12 +234,27 @@ class KAMSpec(QtGui.QWidget):
             self.connect(self.abs_protocol, QtCore.SIGNAL("checkBox(QString)"), self.checkBox)
             self.connect(self.abs_protocol, QtCore.SIGNAL("cameraReady(PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)"), self.cameraStarter)
             self.abs_protocol.start()
+        elif self.protocolDict[plate][protocol].keys()[0] == 2:
+            self.type = 2
+            self.lengthMeasurements = len(self.selectedWellsDict[plate])
+            # exposureTime = int(self.protocolDict[plate][protocol][1]['Exposure Time'])
+            # # print exposureTime
+            # wavelength = int(self.protocolDict[plate][protocol][1]['Wavelength'])
+            self.flr_protocol = executeProtocol(2, self.selectedWellsDict, self.protocolDict, plate, protocol,
+                                                csvFileName, self.camera, self.machine, self.measurementMenu,
+                                                self.lengthMeasurements,self.slope,self.intercept)
+            self.connect(self.flr_protocol, QtCore.SIGNAL("updateCurrentProtocol(QString)"), self.updateCurrentProtocol)
+            self.connect(self.flr_protocol, QtCore.SIGNAL("statusPrint(QString)"), self.statusPrint)
+            self.connect(self.flr_protocol, QtCore.SIGNAL("checkBox(QString)"), self.checkBox)
+            self.connect(self.flr_protocol, QtCore.SIGNAL("cameraReady(PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)"), self.cameraStarter)
+            self.flr_protocol.start()
 
 
-    def cameraStarter(self, exposureTime, wellList, wavelength):
+    def cameraStarter(self, exposureTime, wellList, waveOrled):
         self.exposureTime = exposureTime
         self.wellList = wellList
-        self.wavelength = wavelength
+        self.wavelength = waveOrled
+        self.excitationLED = waveOrled
         self.cameraStart = cameraInitialization(self.camera, exposureTime)
         self.connect(self.cameraStart, QtCore.SIGNAL("finished()"), self.cameraReady)
         self.cameraStart.start()
@@ -288,11 +265,7 @@ class KAMSpec(QtGui.QWidget):
         if self.type == 1:
             self.updateCurrentProtocol('Plate '+ str(self.plate)+'- Absorbance...')
         elif self.type == 2:
-            self.updateCurrentProtocol('Plate ' + str(self.plate) + '- Absorbance Spectrum  ...')
-        elif self.type == 3:
             self.emit(QtCore.SIGNAL("updateCurrentProtocol(QString)"), 'Plate ' + str(self.plate) + '- Flourescent Intensity...')
-        elif self.type == 4:
-            self.emit(QtCore.SIGNAL("updateCurrentProtocol(QString)"), 'Plate ' + str(self.plate) + '- Flourescence Spectrum...')
         self.protocolStart = machineInitialization(self.machine,self.wellList, self.csvFileName, self.camera, self.measurementMenu)
         self.connect(self.protocolStart, QtCore.SIGNAL("runProtocol(PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)"), self.runProtocol)
         self.protocolStart.start()
@@ -302,7 +275,7 @@ class KAMSpec(QtGui.QWidget):
         # print 'runProtocol'
         self.protocolStart.stop()
         self.wellsToRead = toRead
-        self.measureThread = measureProtocol(machine, toRead, dictionary, filename, camera, graph, self.type, self.slope, self.intercept, self.wavelength)
+        self.measureThread = measureProtocol(machine, toRead, dictionary, filename, camera, graph, self.type, self.slope, self.intercept, self.wavelength, self.excitationLED)
         self.connect(self.measureThread, QtCore.SIGNAL("addPlot(PyQt_PyObject,PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)"), self.addPlot)
         self.measureThread.start()
 
@@ -345,8 +318,9 @@ class KAMSpec(QtGui.QWidget):
             else:
                 # print 'Done All Plates'
                 plt.cla()
-                self.emailSend = sendDataEmail(self.folderName, self.folder)
-                self.connect(self.emailSend, QtCore.SIGNAL('finished()'), self.reset)
+                self.reset()
+                # self.emailSend = sendDataEmail(self.folderName, self.folder)
+                # self.connect(self.emailSend, QtCore.SIGNAL('finished()'), self.reset)
                 # self.emailSend.start()
     def stopwatch(self, seconds):
         start = time.time()
@@ -401,7 +375,6 @@ class KAMSpec(QtGui.QWidget):
         self.setCalibration()
 
 
-
     def setCalibration(self):
         self.calibrationComplete = True
         self.x = range(0, 3648)
@@ -433,61 +406,6 @@ class KAMSpec(QtGui.QWidget):
         y = np.concatenate((firstvals, y, lastvals))
         return np.convolve(m[::-1], y, mode='valid')
 
-        # self.camera.set_exposure_time(self.exposureTime)
-        # self.read_frame()
-        # self.stopwatch(5)
-        # self.machine._toggle_led('B')
-        # self.stopwatch(10)
-        # data = self.read_frame()
-        # time.sleep(1)
-        # max = np.max(data)
-        # print max
-        # smooth_data = self.savitzky_golay(data, 21, 2)
-        # self.calibrate_data['B'] = list(np.where(smooth_data == np.max(smooth_data)))[0][0]
-        # print self.calibrate_data['B']
-        # self.machine._toggle_led('B')
-        # time.sleep(2)
-        #
-        # self.exposureTime = 10000
-        # self.camera.set_exposure_time(self.exposureTime)
-        # self.stopwatch(5)
-        # self.machine._toggle_led('Y')
-        # self.stopwatch(10)
-        # data = self.read_frame()
-        # time.sleep(2)
-        # max = np.max(data)
-        # print max
-        # smooth_data = self.savitzky_golay(data, 21, 2)
-        # self.calibrate_data['Y'] = list(np.where(smooth_data == np.max(smooth_data)))[0][0]
-        # print self.calibrate_data['Y']
-        # self.machine._toggle_led('Y')
-        # time.sleep(2)
-        #
-        # self.exposureTime = 35
-        # self.camera.set_exposure_time(self.exposureTime)
-        # self.stopwatch(5)
-        # self.machine._toggle_led('R')
-        # self.stopwatch(10)
-        # data = self.read_frame()
-        # time.sleep(2)
-        # max = np.max(data)
-        # print max
-        # smooth_data = self.savitzky_golay(data, 21, 2)
-        # self.calibrate_data['R'] = list(np.where(smooth_data == np.max(smooth_data)))[0][0]
-        # print self.calibrate_data['R']
-        # self.machine._toggle_led('R')
-        # time.sleep(2)
-        #
-        # self.led_wavelengths = {
-        # 'B': [468], 'Y': [585], 'R': [635]
-        # }
-        # self.regressionEquation = np.polyfit([self.calibrate_data['B'], self.calibrate_data['Y'], self.calibrate_data['R']],[self.led_wavelengths['B'], self.led_wavelengths['Y'], self.led_wavelengths['R']],1)
-        #
-        # #self.regressionEquation = np.polyfit([self.calibrate_data['B'],self.calibrate_data['G'], self.calibrate_data['Y'], self.calibrate_data['R']],[self.led_wavelengths['B'], self.led_wavelengths['G'], self.led_wavelengths['Y'], self.led_wavelengths['R']],1)
-        # print self.regressionEquation
-        # self.slope = self.regressionEquation[0][0]
-        # self.intercept = self.regressionEquation[1][0]
-        # self.calibrate = True
 
     def read_frame2(self):
         for i in range(0,10):
@@ -537,6 +455,7 @@ class KAMSpec(QtGui.QWidget):
         self.toReadNum = toRead
         if i == 0:
             plt.cla()
+            self.measurementMenu.figure.clear()
             self.ax = self.measurementMenu.figure.add_subplot(111)
             self.ax.set_ylim(-10, 0xffff + 10)
             self.ax.set_xlim(np.min(self.x), np.max(self.x))
@@ -562,7 +481,7 @@ class KAMSpec(QtGui.QWidget):
                 spamwriter.writerow(' ')
                 csvfile.close()
             # timerMeasure.stop()
-            self.reset()
+            # self.reset()
         # self.measurementMenu.figure.savefig(self.folder+'\Plate'+str(self.plate)+'Protocol'+str(protocol)+'Well'+self.wellsToRead[i]+'.png')
 
 
@@ -734,7 +653,7 @@ class measureCalibration(QtCore.QThread):
             elapsed = time.time() - start
 
 class measureProtocol(QtCore.QThread):
-    def __init__(self, machine, toRead, dictionary, csvFileName, camera, graph, type, slope, intercept, wavelength):
+    def __init__(self, machine, toRead, dictionary, csvFileName, camera, graph, type, slope, intercept, wavelength, led):
         QtCore.QThread.__init__(self)
         self.machine = machine
         self.toReadNum = toRead
@@ -746,6 +665,7 @@ class measureProtocol(QtCore.QThread):
         self.slope = slope
         self.intercept = intercept
         self.wavelength = wavelength
+        self.excitationLED = led
 
     def __del__(self):
         self.wait()
@@ -783,71 +703,49 @@ class measureProtocol(QtCore.QThread):
                     x = range(1, len(absData) + 1)
                     for j in x:
                         x[j-1] = self.slope*j + self.intercept
-                    for k in range(0, len(x)):
-                        minList.append(abs(x[k] - self.wavelength))
-                    for l in range(0, len(minList)):
-                        if minList[l] == np.min(minList):
-                            self.wavelengthIndex = l
+                    # for k in range(0, len(x)):
+                    #     minList.append(abs(x[k] - self.wavelength))
+                    # for l in range(0, len(minList)):
+                    #     if minList[l] == np.min(minList):
+                    #         self.wavelengthIndex = l
                 y = absData
                 self.emit(QtCore.SIGNAL("addPlot(PyQt_PyObject,PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)"), x, y, i, self.dataDict, self.toReadNum)
                 self.machine._toggle_led('W')
                 time.sleep(2)
 
-
-                # self.columnList = []
-                # for key in sorted(self.dataDict.keys()):
-                #     for column in range(0,len(self.dataDict[key])):
-                #         if self.dataDict[key][column] != 0:
-                #             if column not in self.columnList:
-                #                 self.columnList.append(column)
-                # sortedColumnList = sorted(self.columnList)
-                # print sortedColumnList
-                # csvColumnList = [' '] + sortedColumnList
         elif self.type == 2:
-            for i in range(0,len(self.toReadNum)):
-                self.machine._move_to_new_position(self.toReadNum[i])
-                self.machine._toggle_led('W')
+            if self.excitationLED == 'Blue':
+                ledOn = 'b'
+            elif self.excitationLED == 'Green':
+                ledOn = 'g'
+            elif self.excitationLED == 'Yellow':
+                ledOn = 'y'
+            rowList = []
+            for i in range(0, len(self.toReadNum)):
+                self.machine._set_new_position(self.toReadNum[i][0], self.toReadNum[i][1])
+                print "Moving"
+                self.machine._toggle_led(ledOn)
                 time.sleep(2)
-                # absData = self.camera.get_frame()
-                # x = range(1,len(absData[1])+1)
-                # y = absData[1]
-                self.emit(QtCore.SIGNAL("addPlot(PyQt_PyObject,PyQt_PyObject, PyQt_PyObject)"), x, y, i)
-                ### TO-DO:
-                ### Need to add CSV formatting for SPECTRUM data. This will change format of self.dataDict
-
-                self.dataDict[int(self.toReadNum[i][0])][int(self.toReadNum[i][2:len(self.toReadNum[i])+1])] = self.data
-                self.machine._toggle_led('W')
+                absData = self.read_frame()
+                if self.slope == 0:
+                    x = range(1, len(absData) + 1)
+                    self.wavelengthIndex = 1500
+                else:
+                    minList = []
+                    x = range(1, len(absData) + 1)
+                    for j in x:
+                        x[j - 1] = self.slope * j + self.intercept
+                    # for k in range(0, len(x)):
+                    #     minList.append(abs(x[k] - self.wavelength))
+                    # for l in range(0, len(minList)):
+                    #     if minList[l] == np.min(minList):
+                    #         self.wavelengthIndex = l
+                y = absData
+                self.emit(QtCore.SIGNAL(
+                    "addPlot(PyQt_PyObject,PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)"), x, y,
+                          i, self.dataDict, self.toReadNum)
+                self.machine._toggle_led(ledOn)
                 time.sleep(2)
-
-
-
-                self.columnList = []
-                for key in sorted(self.dataDict.keys()):
-                    for column in range(0,len(self.dataDict[key])):
-                        if self.dataDict[key][column] != 0:
-                            if column not in self.columnList:
-                                self.columnList.append(column)
-                sortedColumnList = sorted(self.columnList)
-                csvColumnList = [' '] + sortedColumnList
-            with open(self.csvFileName, 'ab') as csvfile:
-                spamwriter = csv.writer(csvfile, delimiter=',',
-                                        quotechar='|', quoting=csv.QUOTE_MINIMAL)
-                spamwriter.writerow(csvColumnList)
-                for key in sorted(self.dataDict.keys()):
-                    row = []
-                    letters = ['A','B','C','D','E','F','G','H']
-
-                    for column in sortedColumnList:
-                        if self.dataDict[key][column] != 0:
-                            row.append(self.dataDict[key][column])
-                        else:
-                            row.append(' ')
-                    row = [letters[key-1]] + row
-                    spamwriter.writerow(zip(row))
-                spamwriter.writerow(' ')
-                spamwriter.writerow(' ')
-                csvfile.close()
-
         self.sleep(2)
 
 
@@ -887,10 +785,9 @@ class executeProtocol(QtCore.QThread):
                     self.absProtocol(self.wellList, self.exposureTime, self.wavelength, self.csvFileName)
                 elif self.type == 2:
                     self.wellList =self.selectedWellsDict[self.plate]
-                    self.exposureTime = int(self.protocolDict[self.plate][self.protocol][1]['Exposure Time'])
-                    self.startWavelength = int(self.protocolDict[self.plate][self.protocol][1]['Start Wavelength'])
-                    self.stopWavelength = int(self.protocolDict[self.plate][self.protocol][1]['Stop Wavelength'])
-                    self.absSpecProtocol(self.wellList, self.exposureTime, self.startWavelength, self.stopWavelength, self.csvFileName)
+                    self.exposureTime = int(self.protocolDict[self.plate][self.protocol][2]['Exposure Time'])
+                    self.excitationLED = self.protocolDict[self.plate][self.protocol][2]['Excitation']
+                    self.flrProtocol(self.wellList, self.exposureTime, self.excitationLED, self.csvFileName)
             else:
                 continue
 
@@ -908,108 +805,17 @@ class executeProtocol(QtCore.QThread):
         self.emit(QtCore.SIGNAL('cameraReady(PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)'), exposureTime, self.wellList, self.wavelength)
         self.running = False
 
-    # def absSpecProtocol(self, wellList, exposureTime, startWavelength, stopWavelength, csvFileName):
-    #     with open(csvFileName, 'ab') as csvfile:
-    #         spamwriter = csv.writer(csvfile, delimiter=',',
-    #                                 quotechar='|', quoting=csv.QUOTE_MINIMAL)
-    #         spamwriter.writerow(['Absorbance Spectra'])
-    #         spamwriter.writerow([' ']+['Exposure Time:'] + [str(exposureTime)+' ms'])
-    #         spamwriter.writerow([' ']+['Start Wavelength:']+[str(startWavelength)+' nm'])
-    #         spamwriter.writerow([' ']+['Stop Wavelength:']+[str(stopWavelength)+' nm'])
-    #         spamwriter.writerow(' ')
-    #         csvfile.close()
-    #
-    #     self.cameraStart = cameraInitialization(self.camera, exposureTime)
-    #     self.connect(self.cameraStart, QtCore.SIGNAL("finished()"), self.cameraReady)
-    #     self.cameraStart.start()
-        # self.sleep(2)
-        # self.camera.set_exposure_time(exposureTime)
-        # time.sleep(1)
-        # self.machine._set_initial_position()
-        # time.sleep(2)
-        # self.toReadNum = self.machine._convert_labels_to_numericals(wellList)
-        # print self.toReadNum
-        # self.dataDict = {}
-        # for i in range(0, len(self.toReadNum)):
-        #     self.dataDict[int(self.toReadNum[i][0])] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        # print self.dataDict
-    # def cameraReady(self):
-    #     self.cameraStart.stop()
-    #     if self.type == 1:
-    #         self.emit(QtCore.SIGNAL("updateCurrentProtocol(QString)"), 'Plate '+ str(self.plate)+'- Absorbance...')
-    #     elif self.type == 2:
-    #         self.emit(QtCore.SIGNAL("updateCurrentProtocol(QString)"), 'Plate ' + str(self.plate) + '- Absorbance Spectrum...')
-    #     elif self.type == 3:
-    #         self.emit(QtCore.SIGNAL("updateCurrentProtocol(QString)"), 'Plate ' + str(self.plate) + '- Flourescent Intensity...')
-    #     elif self.type == 4:
-    #         self.emit(QtCore.SIGNAL("updateCurrentProtocol(QString)"), 'Plate ' + str(self.plate) + '- Flourescence Spectrum...')
-    #
-    #     self.protocolStart = machineInitialization(self.machine,self.wellList, self.csvFileName, self.camera, self.measurementScreen)
-    #     self.connect(self.protocolStart, QtCore.SIGNAL("runProtocol(PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)"), self.runProtocol)
-    #     self.protocolStart.start()
-    #     print 'Camera Ready'
-
-    # def runProtocol(self, machine, toRead, dictionary, filename, camera, graph):
-    #     print 'runProtocol'
-    #     self.protocolStart.stop()
-    #     self.wellsToRead = toRead
-    #     self.measureThread = measureProtocol(machine, toRead, dictionary, filename, camera, graph, self.type, self.slope, self.intercept)
-    #     self.connect(self.measureThread, QtCore.SIGNAL("addPlot(PyQt_PyObject,PyQt_PyObject, PyQt_PyObject)"), self.addPlot)
-    #     self.measureThread.start()
-
-    # def addPlot(self, x,y,i):
-    #     # self.measureThread.stop()
-    #     print 'addPlot'
-    #     #self.emit(QtCore.SIGNAL("addCurve(PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)"),x,y,i, self.protocol)
-    #     if i == self.lengthMeasurements-1:
-    #         self.emit(QtCore.SIGNAL("checkBox(QString)"), "Check")
-    #         self.emit(QtCore.SIGNAL("statusPrint(QString)"), "Done Protocol")
-
-
-    # @pyqtSlot(dict)
-    # def runProtocol(self, machine, toRead, dictionary, filename, camera, graph):
-    #     measureThread = measureProtocol(machine, toRead, dictionary, filename, camera, graph)
-    #     measureThread.plotSignal.connect(self.addPlot)
-    #     measureThread.start()
-
-
-
-
-    # for i in range(0,len(self.toReadNum)):
-    #     self.machine._move_to_new_position(self.toReadNum[i])
-    #     self.machine._toggle_led('W')
-    #     time.sleep(2)
-    #     absData = self.camera.get_frame()
-    #     self.dataDict[int(self.toReadNum[i][0])][int(self.toReadNum[i][2:len(self.toReadNum[i])+1])] = absData[1][1]
-    #     self.machine._toggle_led('W')
-    #     time.sleep(2)
-    #
-    #     self.columnList = []
-    #     for key in sorted(self.dataDict.keys()):
-    #         for column in range(0,len(self.dataDict[key])):
-    #             if self.dataDict[key][column] != 0:
-    #                 if column not in self.columnList:
-    #                     self.columnList.append(column)
-    #     sortedColumnList = sorted(self.columnList)
-    #     csvColumnList = [' '] + sortedColumnList
-    # with open(csvFileName, 'ab') as csvfile:
-    #     spamwriter = csv.writer(csvfile, delimiter=',',
-    #                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
-    #     spamwriter.writerow(csvColumnList)
-    #     for key in sorted(self.dataDict.keys()):
-    #         row = []
-    #         letters = ['A','B','C','D','E','F','G','H']
-    #
-    #         for column in sortedColumnList:
-    #             if self.dataDict[key][column] != 0:
-    #                 row.append(self.dataDict[key][column])
-    #             else:
-    #                 row.append(' ')
-    #         row = [letters[key-1]] + row
-    #         spamwriter.writerow(row)
-    #     spamwriter.writerow(' ')
-    #     spamwriter.writerow(' ')
-    #     csvfile.close()
+    def flrProtocol(self, wellList, exposureTime, led, csvFileName):
+        with open(csvFileName, 'ab') as csvfile:
+            spamwriter = csv.writer(csvfile, delimiter=',',
+                                    quotechar='|', quoting=csv.QUOTE_MINIMAL)
+            spamwriter.writerow(['Fluorescence'])
+            spamwriter.writerow([' ']+['Exposure Time:'] + [str(exposureTime)+' ms'])
+            spamwriter.writerow([' ']+['LED:']+[led])
+            spamwriter.writerow(' ')
+            csvfile.close()
+        self.emit(QtCore.SIGNAL('cameraReady(PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)'), exposureTime, self.wellList, self.excitationLED)
+        self.running = False
 
 class sendDataEmail(QtCore.QThread):
     def __init__(self, folderName, folderDirectory):
