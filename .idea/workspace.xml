@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1529667-ee9d-49b3-8d49-43f3442f2034" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EL222_test_functionality.csv" afterPath="$PROJECT_DIR$/EL222_test_functionality.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PiGui/arudinoPi_demos.py" afterPath="$PROJECT_DIR$/PiGui/arudinoPi_demos.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PiGui/jamboreeDemo2_laptop.py" afterPath="$PROJECT_DIR$/PiGui/jamboreeDemo2_laptop.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ccd_test.py" afterPath="$PROJECT_DIR$/ccd_test.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -86,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jamboreeDemo2_laptop.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="jamboreeDemo2_laptop.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PiGui/jamboreeDemo2_laptop.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-129">
-              <caret line="463" column="83" lean-forward="false" selection-start-line="463" selection-start-column="83" selection-end-line="463" selection-end-column="83" />
+            <state relative-caret-position="228">
+              <caret line="345" column="78" lean-forward="false" selection-start-line="345" selection-start-column="78" selection-end-line="345" selection-end-column="78" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -164,11 +161,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="arudinoPi_demos.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="arudinoPi_demos.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PiGui/arudinoPi_demos.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="23" column="54" lean-forward="true" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
+            <state relative-caret-position="228">
+              <caret line="35" column="11" lean-forward="false" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -272,8 +269,8 @@
         <option value="$PROJECT_DIR$/PiGui/jamboreeDemo2.py" />
         <option value="$PROJECT_DIR$/PiGui/flrMenu.py" />
         <option value="$PROJECT_DIR$/PiGui/flrMenu_v2.py" />
-        <option value="$PROJECT_DIR$/PiGui/jamboreeDemo2_laptop.py" />
         <option value="$PROJECT_DIR$/PiGui/arudinoPi_demos.py" />
+        <option value="$PROJECT_DIR$/PiGui/jamboreeDemo2_laptop.py" />
       </list>
     </option>
   </component>
@@ -872,21 +869,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PiGui/jamboreeDemo2_laptop.py">
+    <entry file="file://$PROJECT_DIR$/PiGui/arudinoPi_demos.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-129">
-          <caret line="463" column="83" lean-forward="false" selection-start-line="463" selection-start-column="83" selection-end-line="463" selection-end-column="83" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="228">
+          <caret line="35" column="11" lean-forward="false" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PiGui/arudinoPi_demos.py">
+    <entry file="file://$PROJECT_DIR$/PiGui/jamboreeDemo2_laptop.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="23" column="54" lean-forward="true" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
-          <folding />
+        <state relative-caret-position="228">
+          <caret line="345" column="78" lean-forward="false" selection-start-line="345" selection-start-column="78" selection-end-line="345" selection-end-column="78" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

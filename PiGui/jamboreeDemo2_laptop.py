@@ -343,7 +343,7 @@ class KAMSpec(QtGui.QWidget):
         self.axC.set_xlim(0, 3648)
         self.curveCalib, = self.axC.plot([], [])
         self.read_frame()
-        timerCalib = self.calibrationMenu.figure.canvas.new_timer(interval=1000)
+        timerCalib = self.calibrationMenu.figure.canvas.new_timer(interval=250)
         timerCalib.add_callback(self.updateCalibrate)
         # self.ax.plot(x, y, label = str(self.selectedWellsDict[self.plate][i]))
         timerCalib.start()
