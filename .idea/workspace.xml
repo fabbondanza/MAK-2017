@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1529667-ee9d-49b3-8d49-43f3442f2034" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PiGui/jamboreeDemo2.py" afterPath="$PROJECT_DIR$/PiGui/jamboreeDemo2.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EL222_test_functionality.csv" afterPath="$PROJECT_DIR$/EL222_test_functionality.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PiGui/arudinoPi_demos.py" afterPath="$PROJECT_DIR$/PiGui/arudinoPi_demos.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PiGui/jamboreeDemo2_laptop.py" afterPath="$PROJECT_DIR$/PiGui/jamboreeDemo2_laptop.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ccd_test.py" afterPath="$PROJECT_DIR$/ccd_test.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,6 +22,7 @@
     <SUITE FILE_PATH="coverage/MAK_2017$rewrite_test.coverage" NAME="rewrite_test Coverage Results" MODIFIED="1503428292190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
     <SUITE FILE_PATH="coverage/MAK_2017$testExport.coverage" NAME="testExport Coverage Results" MODIFIED="1504895041634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
     <SUITE FILE_PATH="coverage/MAK_2017$testSHen.coverage" NAME="testSHen Coverage Results" MODIFIED="1510214636224" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PiGui" />
+    <SUITE FILE_PATH="coverage/MAK_2017$jamboreeDemo2.coverage" NAME="jamboreeDemo2 Coverage Results" MODIFIED="1510293744459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PiGui" />
     <SUITE FILE_PATH="coverage/MAK_2017$protocolFunctionality_V2.coverage" NAME="protocolFunctionality_V2 Coverage Results" MODIFIED="1504886178042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
     <SUITE FILE_PATH="coverage/MAK_2017$wellSelectScreen.coverage" NAME="wellSelectScreen Coverage Results" MODIFIED="1507235292586" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PiGui" />
     <SUITE FILE_PATH="coverage/MAK_2017$main_gui_V1.coverage" NAME="main_gui_V1 Coverage Results" MODIFIED="1504886463641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
@@ -34,6 +39,7 @@
     <SUITE FILE_PATH="coverage/MAK_2017$testScroll.coverage" NAME="testScroll Coverage Results" MODIFIED="1504391217853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI/Obselete" />
     <SUITE FILE_PATH="coverage/MAK_2017$wellPlate_Widg_CD.coverage" NAME="wellPlate_Widg_CD Coverage Results" MODIFIED="1504394744317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
     <SUITE FILE_PATH="coverage/MAK_2017$abcdrawTest.coverage" NAME="abcdrawTest Coverage Results" MODIFIED="1507163970749" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MainGUI Scripts" />
+    <SUITE FILE_PATH="coverage/MAK_2017$jamboreeDemo2_laptop.coverage" NAME="jamboreeDemo2_laptop Coverage Results" MODIFIED="1510300720713" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PiGui" />
     <SUITE FILE_PATH="coverage/MAK_2017$EL222_Photocycle_Demo.coverage" NAME="EL222_Photocycle_Demo Coverage Results" MODIFIED="1510063888590" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PiGui" />
     <SUITE FILE_PATH="coverage/MAK_2017$piGui_script_threadTroubleshooting.coverage" NAME="piGui_script_threadTroubleshooting Coverage Results" MODIFIED="1507998504010" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PiGui" />
     <SUITE FILE_PATH="coverage/MAK_2017$introScreen.coverage" NAME="introScreen Coverage Results" MODIFIED="1507231321952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PiGui" />
@@ -51,40 +57,16 @@
     <SUITE FILE_PATH="coverage/MAK_2017$testMessingAround.coverage" NAME="testMessingAround Coverage Results" MODIFIED="1505258975098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MainGUI Scripts" />
     <SUITE FILE_PATH="coverage/MAK_2017$regressionTest.coverage" NAME="regressionTest Coverage Results" MODIFIED="1505236204260" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MainGUI Scripts" />
     <SUITE FILE_PATH="coverage/MAK_2017$piGUI_Working_10_14_17.coverage" NAME="piGUI_Working_10.14.17 Coverage Results" MODIFIED="1510205914787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PiGui" />
-    <SUITE FILE_PATH="coverage/MAK_2017$ccd_test.coverage" NAME="ccd_test Coverage Results" MODIFIED="1510222745855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAK_2017$ccd_test.coverage" NAME="ccd_test Coverage Results" MODIFIED="1510294577699" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAK_2017$protocol_click_drag_check.coverage" NAME="protocol_click_drag_check Coverage Results" MODIFIED="1504922193977" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python_GUI" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="wellMovingDemo.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PiGui/wellMovingDemo.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="97" column="46" lean-forward="false" selection-start-line="97" selection-start-column="33" selection-end-line="97" selection-end-column="46" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EL222_Photocycle_Demo.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PiGui/EL222_Photocycle_Demo.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="109" column="27" lean-forward="false" selection-start-line="109" selection-start-column="27" selection-end-line="109" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="jamboreeDemo.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PiGui/jamboreeDemo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="596" column="28" lean-forward="true" selection-start-line="596" selection-start-column="28" selection-end-line="596" selection-end-column="28" />
+            <state relative-caret-position="9537">
+              <caret line="596" column="28" lean-forward="false" selection-start-line="596" selection-start-column="28" selection-end-line="596" selection-end-column="28" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -92,14 +74,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jamboreeDemo2.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="jamboreeDemo2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PiGui/jamboreeDemo2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="711" column="28" lean-forward="true" selection-start-line="711" selection-start-column="28" selection-end-line="711" selection-end-column="30" />
+            <state relative-caret-position="13906">
+              <caret line="853" column="21" lean-forward="false" selection-start-line="853" selection-start-column="6" selection-end-line="853" selection-end-column="21" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jamboreeDemo2_laptop.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PiGui/jamboreeDemo2_laptop.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-129">
+              <caret line="463" column="83" lean-forward="false" selection-start-line="463" selection-start-column="83" selection-end-line="463" selection-end-column="83" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="piGUI_Working_10.14.17.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PiGui/piGUI_Working_10.14.17.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5219">
+              <caret line="337" column="84" lean-forward="false" selection-start-line="337" selection-start-column="79" selection-end-line="337" selection-end-column="84" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="flrMenu_v2.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PiGui/flrMenu_v2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="25" column="23" lean-forward="false" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -107,8 +121,8 @@
       <file leaf-file-name="calibrationScreen.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PiGui/calibrationScreen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="68" column="28" lean-forward="true" selection-start-line="68" selection-start-column="28" selection-end-line="68" selection-end-column="28" />
+            <state relative-caret-position="1105">
+              <caret line="68" column="28" lean-forward="false" selection-start-line="68" selection-start-column="28" selection-end-line="68" selection-end-column="28" />
               <folding>
                 <element signature="e#206#237#0" expanded="true" />
               </folding>
@@ -116,11 +130,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="selectProtocolScreen_v2.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PiGui/selectProtocolScreen_v2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1326">
+              <caret line="78" column="28" lean-forward="false" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="measurementScreen.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PiGui/measurementScreen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="95" column="66" lean-forward="false" selection-start-line="95" selection-start-column="66" selection-end-line="95" selection-end-column="66" />
+            <state relative-caret-position="459">
+              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="35" selection-end-column="21" />
               <folding>
                 <element signature="e#206#237#0" expanded="true" />
               </folding>
@@ -131,8 +155,8 @@
       <file leaf-file-name="ccd_test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ccd_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="30" selection-end-column="19" />
+            <state relative-caret-position="119">
+              <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -140,31 +164,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="introScreen_v2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PiGui/introScreen_v2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="99" column="44" lean-forward="true" selection-start-line="99" selection-start-column="44" selection-end-line="99" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="wellSelectScreen_v2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PiGui/wellSelectScreen_v2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="983" column="55" lean-forward="false" selection-start-line="983" selection-start-column="55" selection-end-line="983" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="arudinoPi_demos.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="arudinoPi_demos.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PiGui/arudinoPi_demos.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="16" column="15" lean-forward="true" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
+            <state relative-caret-position="340">
+              <caret line="23" column="54" lean-forward="true" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -181,36 +185,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>stopwat</find>
-      <find>finished</find>
-      <find>cameraIni</find>
-      <find>savitzky_golay</find>
-      <find>measureCa</find>
-      <find>measure</find>
-      <find>setCalibration</find>
-      <find>addCurve</find>
-      <find>update</find>
-      <find>measureCalibration</find>
-      <find>calibration</find>
-      <find>getMax</find>
-      <find>savitzky</find>
-      <find>getMa</find>
-      <find>measureCali</find>
-      <find>self.interc</find>
-      <find>self.slope</find>
-      <find>self.calibrate</find>
-      <find>self.calibrate_data</find>
-      <find>setCalib</find>
-      <find>destroy</find>
-      <find>delete</find>
-      <find>self.timer</find>
+      <find>'B'</find>
+      <find>timerM</find>
+      <find>abs</find>
+      <find>Form</find>
+      <find>absProtocol</find>
+      <find>flr_protocol</find>
+      <find>abs_protocol</find>
+      <find>execute</find>
+      <find>excitation</find>
+      <find>machineInitialization</find>
+      <find>runProtocol</find>
+      <find>measureProtocol</find>
+      <find>protocolDict</find>
+      <find>calibrationcomplete</find>
+      <find>self.type == 2</find>
+      <find>type == 2</find>
+      <find>def cameraReady</find>
+      <find>type</find>
+      <find>executeProtocol</find>
+      <find>self.excitationLED</find>
+      <find>self.excitation</find>
+      <find>cameraReady</find>
+      <find>if</find>
+      <find>statusPrin</find>
+      <find>statusPrint</find>
       <find>reset</find>
-      <find>timerMeasure</find>
-      <find>print</find>
-      <find>print</find>
+      <find>flrMenu</find>
+      <find>addProtocol</find>
+      <find>self.measurementCheck</find>
       <find>timer</find>
-      <find>timerCalib</find>
-      <find>timerMeas</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -219,9 +223,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/MainGUI Scripts/optionsMenu.py" />
-        <option value="$PROJECT_DIR$/Python_GUI/testExport.py" />
-        <option value="$PROJECT_DIR$/MainGUI Scripts/absSpecMenu.py" />
         <option value="$PROJECT_DIR$/MainGUI Scripts/flrSpecMenu.py" />
         <option value="$PROJECT_DIR$/Python_GUI/protocolMenu_Widget.py" />
         <option value="$PROJECT_DIR$/Python_GUI/wellPlate_Widg.py" />
@@ -236,7 +237,6 @@
         <option value="$PROJECT_DIR$/PiGui/selectProtocolScreen.py" />
         <option value="$PROJECT_DIR$/PiGui/absMenu.py" />
         <option value="$PROJECT_DIR$/PiGui/absSpecMenu.py" />
-        <option value="$PROJECT_DIR$/PiGui/flrMenu.py" />
         <option value="$PROJECT_DIR$/PiGui/flrSpecMenu.py" />
         <option value="$PROJECT_DIR$/PiGui/emailTest.py" />
         <option value="$PROJECT_DIR$/PiGui/inputEmail.py" />
@@ -263,13 +263,17 @@
         <option value="$PROJECT_DIR$/PiGui/introScreen_v2.py" />
         <option value="$PROJECT_DIR$/PiGui/testSHen.py" />
         <option value="$PROJECT_DIR$/PiGui/piGUI_Working_10.14.17.py" />
-        <option value="$PROJECT_DIR$/ccd_test.py" />
         <option value="$PROJECT_DIR$/PiGui/calibrationScreen.py" />
         <option value="$PROJECT_DIR$/PiGui/measurementScreen.py" />
         <option value="$PROJECT_DIR$/PiGui/wellSelectScreen_v2.py" />
-        <option value="$PROJECT_DIR$/PiGui/arudinoPi_demos.py" />
         <option value="$PROJECT_DIR$/PiGui/jamboreeDemo.py" />
+        <option value="$PROJECT_DIR$/PiGui/selectProtocolScreen_v2.py" />
+        <option value="$PROJECT_DIR$/ccd_test.py" />
         <option value="$PROJECT_DIR$/PiGui/jamboreeDemo2.py" />
+        <option value="$PROJECT_DIR$/PiGui/flrMenu.py" />
+        <option value="$PROJECT_DIR$/PiGui/flrMenu_v2.py" />
+        <option value="$PROJECT_DIR$/PiGui/jamboreeDemo2_laptop.py" />
+        <option value="$PROJECT_DIR$/PiGui/arudinoPi_demos.py" />
       </list>
     </option>
   </component>
@@ -300,6 +304,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -321,7 +326,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -329,13 +333,13 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\LokoKoko\MAK-2017\PiGui" />
+      <recent name="C:\Users\LokoKoko\MAK-2017\Python_GUI" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\LokoKoko\MAK-2017\PiGui" />
       <recent name="C:\Users\LokoKoko\MAK-2017\PiGui\Demos" />
-      <recent name="C:\Users\LokoKoko\MAK-2017\Python_GUI" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\LokoKoko\MAK-2017\PiGui" />
       <recent name="C:\Users\LokoKoko\MAK-2017\Python_GUI" />
     </key>
   </component>
@@ -351,7 +355,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.jamboreeDemo">
+  <component name="RunManager" selected="Python.jamboreeDemo2_laptop">
     <configuration name="ccd_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -388,7 +392,7 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="piGUI_Working_10.14.17" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="jamboreeDemo2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -401,7 +405,25 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="MAK-2017" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PiGui/piGUI_Working_10.14.17.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PiGui/jamboreeDemo2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="jamboreeDemo2_laptop" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/PiGui" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="MAK-2017" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PiGui/jamboreeDemo2_laptop.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -424,38 +446,20 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="wellMovingDemo" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/PiGui" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="MAK-2017" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PiGui/wellMovingDemo.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.ccd_test" />
-      <item index="1" class="java.lang.String" itemvalue="Python.wellMovingDemo" />
-      <item index="2" class="java.lang.String" itemvalue="Python.piGUI_Working_10.14.17" />
-      <item index="3" class="java.lang.String" itemvalue="Python.jamboreeDemo" />
-      <item index="4" class="java.lang.String" itemvalue="Python.testSHen" />
+      <item index="1" class="java.lang.String" itemvalue="Python.jamboreeDemo" />
+      <item index="2" class="java.lang.String" itemvalue="Python.testSHen" />
+      <item index="3" class="java.lang.String" itemvalue="Python.jamboreeDemo2" />
+      <item index="4" class="java.lang.String" itemvalue="Python.jamboreeDemo2_laptop" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.jamboreeDemo" />
+        <item index="0" class="java.lang.String" itemvalue="Python.jamboreeDemo2_laptop" />
         <item index="1" class="java.lang.String" itemvalue="Python.ccd_test" />
-        <item index="2" class="java.lang.String" itemvalue="Python.testSHen" />
-        <item index="3" class="java.lang.String" itemvalue="Python.piGUI_Working_10.14.17" />
-        <item index="4" class="java.lang.String" itemvalue="Python.wellMovingDemo" />
+        <item index="2" class="java.lang.String" itemvalue="Python.jamboreeDemo2" />
+        <item index="3" class="java.lang.String" itemvalue="Python.jamboreeDemo" />
+        <item index="4" class="java.lang.String" itemvalue="Python.testSHen" />
       </list>
     </recent_temporary>
   </component>
@@ -479,7 +483,7 @@
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.200625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37090433" sideWeight="0.505" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -521,27 +525,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/MainGUI Scripts/testMessingAround.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="21" lean-forward="false" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MainGUI Scripts/abcdrawTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="24" lean-forward="false" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MainGUI Scripts/optionsMenu.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MainGUI Scripts/absMenu.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -649,13 +632,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PiGui/flrMenu.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3230">
-          <caret line="190" column="0" lean-forward="false" selection-start-line="190" selection-start-column="0" selection-end-line="193" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PiGui/introScreen.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="409">
@@ -753,9 +729,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3485">
           <caret line="213" column="36" lean-forward="false" selection-start-line="163" selection-start-column="4" selection-end-line="213" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#23#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -763,9 +736,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1513">
           <caret line="97" column="36" lean-forward="false" selection-start-line="97" selection-start-column="36" selection-end-line="97" selection-end-column="36" />
-          <folding>
-            <element signature="e#662#685#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -781,7 +751,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="602">
           <caret line="182" column="24" lean-forward="false" selection-start-line="182" selection-start-column="24" selection-end-line="182" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -789,33 +758,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PiGui/wellMovingDemo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
+        <state relative-caret-position="1513">
           <caret line="97" column="46" lean-forward="false" selection-start-line="97" selection-start-column="33" selection-end-line="97" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PiGui/piGUI_Working_10.14.17.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-27">
-          <caret line="340" column="29" lean-forward="false" selection-start-line="340" selection-start-column="18" selection-end-line="340" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PiGui/wellSelectScreen_v2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
+        <state relative-caret-position="16711">
           <caret line="983" column="55" lean-forward="false" selection-start-line="983" selection-start-column="55" selection-end-line="983" selection-end-column="55" />
           <folding />
         </state>
@@ -823,16 +778,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PiGui/introScreen_v2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="99" column="44" lean-forward="true" selection-start-line="99" selection-start-column="44" selection-end-line="99" selection-end-column="44" />
+        <state relative-caret-position="1683">
+          <caret line="99" column="44" lean-forward="false" selection-start-line="99" selection-start-column="44" selection-end-line="99" selection-end-column="44" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PiGui/EL222_Photocycle_Demo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1683">
+          <caret line="109" column="27" lean-forward="false" selection-start-line="109" selection-start-column="27" selection-end-line="109" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PiGui/jamboreeDemo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9537">
+          <caret line="596" column="28" lean-forward="false" selection-start-line="596" selection-start-column="28" selection-end-line="596" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PiGui/measurementScreen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="95" column="66" lean-forward="false" selection-start-line="95" selection-start-column="66" selection-end-line="95" selection-end-column="66" />
+        <state relative-caret-position="459">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="35" selection-end-column="21" />
           <folding>
             <element signature="e#206#237#0" expanded="true" />
           </folding>
@@ -841,59 +813,80 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PiGui/calibrationScreen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="68" column="28" lean-forward="true" selection-start-line="68" selection-start-column="28" selection-end-line="68" selection-end-column="28" />
+        <state relative-caret-position="1105">
+          <caret line="68" column="28" lean-forward="false" selection-start-line="68" selection-start-column="28" selection-end-line="68" selection-end-column="28" />
           <folding>
             <element signature="e#206#237#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PiGui/arudinoPi_demos.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" column="15" lean-forward="true" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PiGui/EL222_Photocycle_Demo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="109" column="27" lean-forward="false" selection-start-line="109" selection-start-column="27" selection-end-line="109" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PiGui/jamboreeDemo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="596" column="28" lean-forward="true" selection-start-line="596" selection-start-column="28" selection-end-line="596" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ccd_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="30" selection-end-column="19" />
+        <state relative-caret-position="119">
+          <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/PiGui/selectProtocolScreen_v2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1326">
+          <caret line="78" column="28" lean-forward="false" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PiGui/flrMenu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="22" column="68" lean-forward="true" selection-start-line="22" selection-start-column="68" selection-end-line="23" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PiGui/flrMenu_v2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="23" lean-forward="false" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/PiGui/jamboreeDemo2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="711" column="28" lean-forward="true" selection-start-line="711" selection-start-column="28" selection-end-line="711" selection-end-column="30" />
+        <state relative-caret-position="13906">
+          <caret line="853" column="21" lean-forward="false" selection-start-line="853" selection-start-column="6" selection-end-line="853" selection-end-column="21" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PiGui/piGUI_Working_10.14.17.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5219">
+          <caret line="337" column="84" lean-forward="false" selection-start-line="337" selection-start-column="79" selection-end-line="337" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PiGui/jamboreeDemo2_laptop.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-129">
+          <caret line="463" column="83" lean-forward="false" selection-start-line="463" selection-start-column="83" selection-end-line="463" selection-end-column="83" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PiGui/arudinoPi_demos.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="23" column="54" lean-forward="true" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>

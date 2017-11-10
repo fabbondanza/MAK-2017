@@ -12,7 +12,7 @@ c = LineCamera()
 print('Firmware version', c.get_firmware_ver())
 print('Device version', c.get_device_info())
 c.set_work_mode(WorkMode.NORMAL)
-c.set_exposure_time(35)
+c.set_exposure_time(8)
 
 
 # def read_frame():
