@@ -80,7 +80,7 @@ class KAMSpec(QtGui.QWidget):
         self.camera = LineCamera()
         self.measurementMenu = measurementScreen()
         self.calibrationMenu = calibrationScreen()
-        self.plateCheck = True
+        self.plateCheck = False
         self.calibrationComplete = False
         self.slope = 0
         self.intercept = 0
@@ -166,7 +166,7 @@ class KAMSpec(QtGui.QWidget):
         self.protocolCount[self.plateCount-1] += 1
         if type == 1:
             self.absMenu.hide()
-            self.protocolDict[self.plateCount].append({type: {'Exposure Time': int(self.absMenu.exposureTimeSpinBox.value()), 'Wavelength': int(self.absMenu.wavelengthSpinBox.value())}})
+            self.protocolDict[self.plateCount].append({type: {'Exposure Time': int(self.absMenu.exposureTimeSpinBox.value())}})
             self.measurementMenu.show()
             self.type = 1
         elif type == 2:
@@ -225,7 +225,7 @@ class KAMSpec(QtGui.QWidget):
             self.lengthMeasurements = len(self.selectedWellsDict[plate])
             exposureTime = int(self.protocolDict[plate][protocol][1]['Exposure Time'])
             # print exposureTime
-            wavelength = int(self.protocolDict[plate][protocol][1]['Wavelength'])
+            # wavelength = int(self.protocolDict[plate][protocol][1]['Wavelength'])
             self.abs_protocol = executeProtocol(1, self.selectedWellsDict, self.protocolDict, plate, protocol,
                                                 csvFileName, self.camera, self.machine, self.measurementMenu,
                                                 self.lengthMeasurements,self.slope,self.intercept)
@@ -253,7 +253,7 @@ class KAMSpec(QtGui.QWidget):
     def cameraStarter(self, exposureTime, wellList, waveOrled):
         self.exposureTime = exposureTime
         self.wellList = wellList
-        self.wavelength = waveOrled
+        # self.wavelength = waveOrled
         self.excitationLED = waveOrled
         self.cameraStart = cameraInitialization(self.camera, exposureTime)
         self.connect(self.cameraStart, QtCore.SIGNAL("finished()"), self.cameraReady)
@@ -275,7 +275,7 @@ class KAMSpec(QtGui.QWidget):
         # print 'runProtocol'
         self.protocolStart.stop()
         self.wellsToRead = toRead
-        self.measureThread = measureProtocol(machine, toRead, dictionary, filename, camera, graph, self.type, self.slope, self.intercept, self.wavelength, self.excitationLED)
+        self.measureThread = measureProtocol(machine, toRead, dictionary, filename, camera, graph, self.type, self.slope, self.intercept, self.excitationLED)
         self.connect(self.measureThread, QtCore.SIGNAL("addPlot(PyQt_PyObject,PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)"), self.addPlot)
         self.measureThread.start()
 
@@ -318,11 +318,10 @@ class KAMSpec(QtGui.QWidget):
             else:
                 # print 'Done All Plates'
                 plt.cla()
-                time.sleep(2)
-                self.reset()
-                # self.emailSend = sendDataEmail(self.folderName, self.folder)
-                # self.connect(self.emailSend, QtCore.SIGNAL('finished()'), self.reset)
-                # self.emailSend.start()
+                # self.reset()
+                self.emailSend = sendDataEmail(self.folderName, self.folder)
+                self.connect(self.emailSend, QtCore.SIGNAL('finished()'), self.reset)
+                self.emailSend.start()
     def stopwatch(self, seconds):
         start = time.time()
         time.clock()
@@ -462,7 +461,7 @@ class KAMSpec(QtGui.QWidget):
             self.ax.set_xlim(np.min(self.x), np.max(self.x))
             self.curve, = self.ax.plot([], [])
             self.read_frame()
-            timerMeasure = self.measurementMenu.figure.canvas.new_timer(interval=1000)
+            timerMeasure = self.measurementMenu.figure.canvas.new_timer(interval=500)
             timerMeasure.add_callback(self.update)
             # self.ax.plot(x, y, label = str(self.selectedWellsDict[self.plate][i]))
             timerMeasure.start()
@@ -654,7 +653,7 @@ class measureCalibration(QtCore.QThread):
             elapsed = time.time() - start
 
 class measureProtocol(QtCore.QThread):
-    def __init__(self, machine, toRead, dictionary, csvFileName, camera, graph, type, slope, intercept, wavelength, led):
+    def __init__(self, machine, toRead, dictionary, csvFileName, camera, graph, type, slope, intercept, led):
         QtCore.QThread.__init__(self)
         self.machine = machine
         self.toReadNum = toRead
@@ -665,7 +664,6 @@ class measureProtocol(QtCore.QThread):
         self.type = type
         self.slope = slope
         self.intercept = intercept
-        self.wavelength = wavelength
         self.excitationLED = led
 
     def __del__(self):
@@ -782,8 +780,7 @@ class executeProtocol(QtCore.QThread):
                 if self.type == 1:
                     self.wellList = self.selectedWellsDict[self.plate]
                     self.exposureTime = int(self.protocolDict[self.plate][self.protocol][1]['Exposure Time'])
-                    self.wavelength = int(self.protocolDict[self.plate][self.protocol][1]['Wavelength'])
-                    self.absProtocol(self.wellList, self.exposureTime, self.wavelength, self.csvFileName)
+                    self.absProtocol(self.wellList, self.exposureTime, self.csvFileName)
                 elif self.type == 2:
                     self.wellList =self.selectedWellsDict[self.plate]
                     self.exposureTime = int(self.protocolDict[self.plate][self.protocol][2]['Exposure Time'])
@@ -794,16 +791,15 @@ class executeProtocol(QtCore.QThread):
 
 
 
-    def absProtocol(self, wellList, exposureTime, wavelength, csvFileName):
+    def absProtocol(self, wellList, exposureTime, csvFileName):
         with open(csvFileName, 'ab') as csvfile:
             spamwriter = csv.writer(csvfile, delimiter=',',
                                     quotechar='|', quoting=csv.QUOTE_MINIMAL)
             spamwriter.writerow(['Absorbance'])
             spamwriter.writerow([' ']+['Exposure Time:'] + [str(exposureTime)+' ms'])
-            spamwriter.writerow([' ']+['Wavelength:']+[str(wavelength)+' nm'])
             spamwriter.writerow(' ')
             csvfile.close()
-        self.emit(QtCore.SIGNAL('cameraReady(PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)'), exposureTime, self.wellList, self.wavelength)
+        self.emit(QtCore.SIGNAL('cameraReady(PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)'), exposureTime, self.wellList, self.wellList)
         self.running = False
 
     def flrProtocol(self, wellList, exposureTime, led, csvFileName):
@@ -828,54 +824,62 @@ class sendDataEmail(QtCore.QThread):
         self.wait()
 
     def run(self):
-        shutil.make_archive(self.directory, 'zip', self.directory)
-        inputter = InputEmail()
-        inputter.exec_()
-        emailfrom = "kamspec2017l@gmail.com"
-        emailto = str(inputter.text.text())
-        fileToSend = self.directory + '.zip'
-        username = "kamspec2017@gmail.com"
-        password = "pennigem"
+        self.stopwatch(3)
 
-        msg = MIMEMultipart()
-        msg["From"] = emailfrom
-        msg["To"] = emailto
-        msg["Subject"] = "[KAM-Spec] Data File Transfer, Date: " + time.strftime("%d:%m:%Y") +', Time: ' + time.strftime("%H:%M:%S")
-        msg.preamble = "[KAM-Spec] Data File Transfer, Date: " + time.strftime("%d:%m:%Y") +', Time: ' + time.strftime("%H:%M:%S")
-
-        ctype, encoding = mimetypes.guess_type(fileToSend)
-        if ctype is None or encoding is not None:
-            ctype = "application/octet-stream"
-
-        maintype, subtype = ctype.split("/", 1)
-
-        if maintype == "text":
-            fp = open(fileToSend)
-            # Note: we should handle calculating the charset
-            attachment = MIMEText(fp.read(), _subtype=subtype)
-            fp.close()
-        elif maintype == "image":
-            fp = open(fileToSend, "rb")
-            attachment = MIMEImage(fp.read(), _subtype=subtype)
-            fp.close()
-        elif maintype == "audio":
-            fp = open(fileToSend, "rb")
-            attachment = MIMEAudio(fp.read(), _subtype=subtype)
-            fp.close()
-        else:
-            fp = open(fileToSend, "rb")
-            attachment = MIMEBase(maintype, subtype)
-            attachment.set_payload(fp.read())
-            fp.close()
-            encoders.encode_base64(attachment)
-        attachment.add_header("Content-Disposition", "attachment", filename=fileToSend)
-        msg.attach(attachment)
-
-        server = smtplib.SMTP("smtp.gmail.com:587")
-        server.starttls()
-        server.login(username, password)
-        server.sendmail(emailfrom, emailto, msg.as_string())
-        server.quit()
+    def stopwatch(self, seconds):
+        start = time.time()
+        time.clock()
+        elapsed = 0
+        while elapsed < seconds:
+            elapsed = time.time() - start
+        # shutil.make_archive(self.directory, 'zip', self.directory)
+        # inputter = InputEmail()
+        # inputter.exec_()
+        # emailfrom = "kamspec2017l@gmail.com"
+        # emailto = str(inputter.text.text())
+        # fileToSend = self.directory + '.zip'
+        # username = "kamspec2017@gmail.com"
+        # password = "pennigem"
+        #
+        # msg = MIMEMultipart()
+        # msg["From"] = emailfrom
+        # msg["To"] = emailto
+        # msg["Subject"] = "[KAM-Spec] Data File Transfer, Date: " + time.strftime("%d:%m:%Y") +', Time: ' + time.strftime("%H:%M:%S")
+        # msg.preamble = "[KAM-Spec] Data File Transfer, Date: " + time.strftime("%d:%m:%Y") +', Time: ' + time.strftime("%H:%M:%S")
+        #
+        # ctype, encoding = mimetypes.guess_type(fileToSend)
+        # if ctype is None or encoding is not None:
+        #     ctype = "application/octet-stream"
+        #
+        # maintype, subtype = ctype.split("/", 1)
+        #
+        # if maintype == "text":
+        #     fp = open(fileToSend)
+        #     # Note: we should handle calculating the charset
+        #     attachment = MIMEText(fp.read(), _subtype=subtype)
+        #     fp.close()
+        # elif maintype == "image":
+        #     fp = open(fileToSend, "rb")
+        #     attachment = MIMEImage(fp.read(), _subtype=subtype)
+        #     fp.close()
+        # elif maintype == "audio":
+        #     fp = open(fileToSend, "rb")
+        #     attachment = MIMEAudio(fp.read(), _subtype=subtype)
+        #     fp.close()
+        # else:
+        #     fp = open(fileToSend, "rb")
+        #     attachment = MIMEBase(maintype, subtype)
+        #     attachment.set_payload(fp.read())
+        #     fp.close()
+        #     encoders.encode_base64(attachment)
+        # attachment.add_header("Content-Disposition", "attachment", filename=fileToSend)
+        # msg.attach(attachment)
+        #
+        # server = smtplib.SMTP("smtp.gmail.com:587")
+        # server.starttls()
+        # server.login(username, password)
+        # server.sendmail(emailfrom, emailto, msg.as_string())
+        # server.quit()
 
 def main():
     import sys

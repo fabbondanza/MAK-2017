@@ -87,6 +87,9 @@ border-color: rgb(0, 0, 0);</string>
    </property>
   </widget>
   <widget class="QPushButton" name="addPlateButton">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>390</x>
@@ -122,6 +125,9 @@ border-color: rgb(0, 0, 0);</string>
    </property>
   </widget>
   <widget class="QPushButton" name="shakingButton">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>20</x>
