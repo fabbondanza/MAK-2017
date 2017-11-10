@@ -425,6 +425,7 @@ class KAMSpec(QtGui.QWidget):
 
 
     def reset(self):
+        self.emailSend.stop()
         self.wellSelect.hide()
         self.protocolSelect.hide()
         self.absMenu.hide()
@@ -442,6 +443,7 @@ class KAMSpec(QtGui.QWidget):
         for child in self.measurementMenu.gridLayout.findChildren(QtGui.QCheckBox):
             self.measurementMenu.gridLayout.removeWidget(child)
         self.measurementMenu.figure.clear()
+
 
     def updateCurrentProtocol(self, protocolString):
         self.measurementMenu.measurementLabel.setText(protocolString)
