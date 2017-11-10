@@ -828,6 +828,9 @@ class sendDataEmail(QtCore.QThread):
     def run(self):
         self.stopwatch(3)
 
+    def stop(self):
+        self.terminate()
+
     def stopwatch(self, seconds):
         start = time.time()
         time.clock()
